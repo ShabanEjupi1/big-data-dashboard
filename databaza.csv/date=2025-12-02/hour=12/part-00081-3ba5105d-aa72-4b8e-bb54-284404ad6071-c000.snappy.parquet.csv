@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.37587,"optimism",551739332,"Optimism",0.291356,137,"coingecko","OP","2025-12-02T12:11:02.166587",66324739,"2025-12-02",12
+0.04725,"arbitrum-bridged-weth-arbitrum-one",551206430,"Arbitrum Bridged WETH (Arbitrum One)",2830.28,138,"coingecko","WETH","2025-12-02T12:11:02.166594",344914883,"2025-12-02",12

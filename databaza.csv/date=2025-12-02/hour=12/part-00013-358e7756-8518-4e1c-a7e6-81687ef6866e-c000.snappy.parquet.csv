@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.09995,"chainlink",8505458283,"Chainlink",12.21,22,"coingecko","LINK","2025-12-02T12:41:00.269794",649833464,"2025-12-02",12
+-0.04252,"weth",7843164949,"WETH",2819.68,23,"coingecko","WETH","2025-12-02T12:41:00.269801",181894330,"2025-12-02",12

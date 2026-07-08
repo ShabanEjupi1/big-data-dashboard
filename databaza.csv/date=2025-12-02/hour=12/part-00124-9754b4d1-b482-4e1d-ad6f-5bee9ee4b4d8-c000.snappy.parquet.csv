@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.67207,"binance-peg-busd",313866761,"Binance-Peg BUSD",1.003,210,"coingecko","BUSD","2025-12-02T12:03:12.418602",3163186,"2025-12-02",12
+-0.41015,"arbitrum-bridged-wrapped-eeth",302085122,"Arbitrum Bridged Wrapped eETH (Arbitrum)",3055.75,211,"coingecko","WEETH","2025-12-02T12:03:12.418608",1458312,"2025-12-02",12

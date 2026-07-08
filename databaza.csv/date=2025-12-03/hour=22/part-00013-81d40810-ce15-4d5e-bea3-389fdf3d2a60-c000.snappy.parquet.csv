@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+5.20652,"wrapped-eeth",8067558529,"Wrapped eETH",3420.35,25,"coingecko","WEETH","2025-12-03T22:10:50.966659",24357923,"2025-12-03",22
+-0.52195,"monero",7587654292,"Monero",411.33,26,"coingecko","XMR","2025-12-03T22:10:50.966666",202130469,"2025-12-03",22

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.81783,"sbtc-2",408870180,"sBTC",92810,175,"coingecko","SBTC","2025-12-05T03:42:48.715119",38600,"2025-12-05",3
+-1.0836,"ether-fi-staked-eth",408021978,"ether.fi Staked ETH",3173.25,176,"coingecko","EETH","2025-12-05T03:42:48.715126",68161,"2025-12-05",3

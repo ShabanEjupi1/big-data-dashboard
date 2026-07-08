@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.255,"wrapped-solana",1684709712,"Wrapped SOL",132.41,67,"coingecko","SOL","2025-12-07T13:17:09.247522",409888481,"2025-12-07",13
+0.0629,"jupiter-perpetuals-liquidity-provider-token",1679085676,"Jupiter Perpetuals Liquidity Provider Token",4.64,68,"coingecko","JLP","2025-12-07T13:17:09.247529",11885829,"2025-12-07",13

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-5.77232,"coinbase-wrapped-staked-eth",364266201,"Coinbase Wrapped Staked ETH",3116.84,186,"coingecko","CBETH","2025-12-01T05:46:00.627040",12869838,"2025-12-01",5
+-8.22771,"helium",360029819,"Helium",1.93,187,"coingecko","HNT","2025-12-01T05:46:00.627047",7589334,"2025-12-01",5

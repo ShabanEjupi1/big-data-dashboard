@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+11.22809,"syrup",303289814,"Maple Finance",0.265756,213,"coingecko","SYRUP","2025-12-05T13:10:19.304429",56342153,"2025-12-05",13
+-1.28948,"mantle-restaked-eth",300902773,"Mantle Restaked ETH",3372.64,216,"coingecko","CMETH","2025-12-05T13:10:19.304436",6998048,"2025-12-05",13

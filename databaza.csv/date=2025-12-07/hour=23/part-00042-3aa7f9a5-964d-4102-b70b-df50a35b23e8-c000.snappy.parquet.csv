@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.02817,"syrupusdt",1300738877,"syrupUSDT",1.11,80,"coingecko","SYRUPUSDT","2025-12-07T23:28:04.751351",379761,"2025-12-07",23
+-0.00164,"ripple-usd",1292343724,"Ripple USD",0.999904,81,"coingecko","RLUSD","2025-12-07T23:28:04.751357",49191728,"2025-12-07",23

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.6829,"ecash",237981664,"eCash",0.00001194,249,"coingecko","XEC","2025-12-06T23:25:14.290748",4101766,"2025-12-06",23
+-0.55334,"ibc-bridged-usdc",234591208,"Noble USDC",0.998178,250,"coingecko","USDC.N","2025-12-06T23:25:14.290755",257328,"2025-12-06",23

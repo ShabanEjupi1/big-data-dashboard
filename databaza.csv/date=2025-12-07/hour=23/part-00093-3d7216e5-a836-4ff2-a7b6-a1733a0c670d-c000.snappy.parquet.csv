@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0,"lorenzo-wrapped-bitcoin",389737209,"Lorenzo Wrapped Bitcoin",90454,177,"coingecko","ENZOBTC","2025-12-07T23:42:53.114516",0,"2025-12-07",23
+0.53768,"coinbase-wrapped-staked-eth",389732355,"Coinbase Wrapped Staked ETH",3386.52,178,"coingecko","CBETH","2025-12-07T23:42:53.114523",2200194,"2025-12-07",23

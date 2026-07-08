@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.93317,"wrapped-bitcoin",1.118049849e+10,"Wrapped Bitcoin",89443,16,"coingecko","WBTC","2025-12-06T12:50:39.347941",212861743,"2025-12-06",12
+-3.07616,"wrapped-beacon-eth",1.0740186632e+10,"Wrapped Beacon ETH",3289.95,17,"coingecko","WBETH","2025-12-06T12:50:39.347948",4858968,"2025-12-06",12

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.58457,"usdb",404405043,"USDB",0.996853,177,"coingecko","USDB","2025-12-03T18:45:39.325394",35360,"2025-12-03",18
+3.55634,"ether-fi-staked-eth",401546176,"ether.fi Staked ETH",3133.46,179,"coingecko","EETH","2025-12-03T18:45:39.325400",48016,"2025-12-03",18

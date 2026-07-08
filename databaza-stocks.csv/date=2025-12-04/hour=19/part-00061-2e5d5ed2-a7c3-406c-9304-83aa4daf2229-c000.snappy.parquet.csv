@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+3.150005493164059,1.7539982700395675,184.51499938964844,179.97000122070312,4.44917088256e+12,179.59,182.74000549316406,"yfinance_lib","NVDA","2025-12-04T19:32:48.555078",121208343,"2025-12-04",19

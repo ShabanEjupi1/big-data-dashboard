@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0,"lorenzo-wrapped-bitcoin",389737209,"Lorenzo Wrapped Bitcoin",90454,184,"coingecko","ENZOBTC","2025-12-05T03:02:22.487329",0,"2025-12-05",3
+-1.49265,"bitcoin-avalanche-bridged-btc-b",387906271,"Avalanche Bridged BTC (Avalanche)",92514,185,"coingecko","BTC.B","2025-12-05T03:02:22.487335",25900068,"2025-12-05",3

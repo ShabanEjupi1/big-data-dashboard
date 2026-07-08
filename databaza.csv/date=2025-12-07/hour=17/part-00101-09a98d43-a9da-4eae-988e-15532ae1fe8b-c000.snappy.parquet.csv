@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.38682,"flow",360567118,"Flow",0.222419,192,"coingecko","FLOW","2025-12-07T17:18:15.299559",6922933,"2025-12-07",17
+-0.43113,"binance-peg-dogecoin",356134198,"Binance-Peg Dogecoin",0.139105,193,"coingecko","DOGE","2025-12-07T17:18:15.299566",2731806,"2025-12-07",17

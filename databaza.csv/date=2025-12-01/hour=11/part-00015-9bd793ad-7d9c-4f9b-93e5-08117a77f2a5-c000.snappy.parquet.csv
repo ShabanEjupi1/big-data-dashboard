@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-5.42526,"wrapped-eeth",7252425147,"Wrapped eETH",3072.63,26,"coingecko","WEETH","2025-12-01T11:53:51.246751",23361226,"2025-12-01",11
+-0.0268,"ethena-usde",7147785286,"Ethena USDe",0.998888,27,"coingecko","USDE","2025-12-01T11:53:51.246758",113687827,"2025-12-01",11

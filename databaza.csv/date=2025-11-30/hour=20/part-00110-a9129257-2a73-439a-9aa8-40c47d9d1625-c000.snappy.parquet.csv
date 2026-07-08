@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.80936,"coinbase-wrapped-staked-eth",392553462,"Coinbase Wrapped Staked ETH",3365.73,186,"coingecko","CBETH","2025-11-30T20:12:59.549395",11251984,"2025-11-30",20
+-2.74888,"decred",391678456,"Decred",22.88,187,"coingecko","DCR","2025-11-30T20:12:59.549402",3997085,"2025-11-30",20

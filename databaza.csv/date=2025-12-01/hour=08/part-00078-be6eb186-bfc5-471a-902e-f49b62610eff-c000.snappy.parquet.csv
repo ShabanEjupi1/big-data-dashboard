@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-6.10346,"stakewise-v3-oseth",574140868,"StakeWise Staked ETH",2941.28,132,"coingecko","OSETH","2025-12-01T08:51:57.832562",521357,"2025-12-01",8
+-10.69414,"starknet",567899855,"Starknet",0.118136,133,"coingecko","STRK","2025-12-01T08:51:57.832570",139348168,"2025-12-01",8

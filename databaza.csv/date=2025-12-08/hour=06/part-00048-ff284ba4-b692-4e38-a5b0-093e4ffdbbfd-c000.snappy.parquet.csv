@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.10803,"arbitrum",1183871037,"Arbitrum",0.21078,91,"coingecko","ARB","2025-12-08T06:46:41.358231",125229096,"2025-12-08",6
+1.65803,"binance-staked-sol",1163725379,"Binance Staked SOL",147.08,92,"coingecko","BNSOL","2025-12-08T06:46:41.358239",3349810,"2025-12-08",6

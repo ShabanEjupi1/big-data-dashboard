@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.12934,"instadapp",264035511,"Fluid",3.42,237,"coingecko","FLUID","2025-12-05T11:12:54.801099",7256823,"2025-12-05",11
+-0.64933,"wrapped-ether-mantle-bridge",263797187,"Mantle Bridged WETH (Mantle)",3168.63,238,"coingecko","WETH","2025-12-05T11:12:54.801106",3433046,"2025-12-05",11

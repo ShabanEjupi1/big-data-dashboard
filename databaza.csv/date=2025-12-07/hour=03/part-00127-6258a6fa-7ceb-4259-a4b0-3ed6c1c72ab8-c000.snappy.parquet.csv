@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.28433,"wrapped-ether-mantle-bridge",255352497,"Mantle Bridged WETH (Mantle)",3050.61,241,"coingecko","WETH","2025-12-07T03:57:15.443995",1061463,"2025-12-07",3
+1.85962,"ethena-staked-ena",251704731,"Ethena Staked ENA",0.269631,242,"coingecko","SENA","2025-12-07T03:57:15.444002",127106,"2025-12-07",3

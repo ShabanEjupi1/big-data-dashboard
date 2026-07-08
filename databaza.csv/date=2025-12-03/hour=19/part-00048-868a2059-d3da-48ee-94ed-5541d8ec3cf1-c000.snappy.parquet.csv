@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.0115,"syrupusdt",1191774183,"syrupUSDT",1.11,91,"coingecko","SYRUPUSDT","2025-12-03T19:34:16.196839",493883,"2025-12-03",19
+0.89158,"binance-staked-sol",1188009401,"Binance Staked SOL",153.36,92,"coingecko","BNSOL","2025-12-03T19:34:16.196846",3545653,"2025-12-03",19

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-10.29547,"arbitrum-bridged-weth-arbitrum-one",475562745,"Arbitrum Bridged WETH (Arbitrum One)",2735.79,154,"coingecko","WETH","2025-12-01T16:53:56.288916",397972965,"2025-12-01",16
+-14.73849,"celestia",472804273,"Celestia",0.55714,155,"coingecko","TIA","2025-12-01T16:53:56.288923",113601643,"2025-12-01",16

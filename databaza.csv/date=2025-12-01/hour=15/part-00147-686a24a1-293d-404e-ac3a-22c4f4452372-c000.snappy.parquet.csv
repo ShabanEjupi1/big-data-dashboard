@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.23084,"ibc-bridged-usdc",229305348,"Noble USDC",0.999515,249,"coingecko","USDC.N","2025-12-01T15:15:55.294525",660955,"2025-12-01",15
+-7.22329,"immutable-x",227942803,"Immutable",0.280615,250,"coingecko","IMX","2025-12-01T15:15:55.294532",26843895,"2025-12-01",15

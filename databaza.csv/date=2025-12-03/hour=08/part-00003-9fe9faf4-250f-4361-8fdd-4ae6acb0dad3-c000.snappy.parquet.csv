@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+12.07811,"solana",7.9391791664e+10,"Solana",141.82,6,"coingecko","SOL","2025-12-03T08:26:20.171984",7862567204,"2025-12-03",8
+-0.00988,"usd-coin",7.7846478704e+10,"USDC",0.999701,7,"coingecko","USDC","2025-12-03T08:26:20.171991",6438278687,"2025-12-03",8

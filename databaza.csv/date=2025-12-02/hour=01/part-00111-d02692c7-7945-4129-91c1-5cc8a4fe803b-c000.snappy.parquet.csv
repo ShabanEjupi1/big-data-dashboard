@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.63212,"coinbase-wrapped-staked-eth",359374809,"Coinbase Wrapped Staked ETH",3093.7,188,"coingecko","CBETH","2025-12-02T01:02:13.041696",12472937,"2025-12-02",1
+-0.97565,"bitcoin-avalanche-bridged-btc-b",357195387,"Avalanche Bridged BTC (Avalanche)",86443,190,"coingecko","BTC.B","2025-12-02T01:02:13.041703",28618587,"2025-12-02",1

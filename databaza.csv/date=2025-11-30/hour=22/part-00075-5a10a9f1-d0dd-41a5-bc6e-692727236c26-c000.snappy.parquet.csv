@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+4.58913,"spx6900",650953674,"SPX6900",0.699752,127,"coingecko","SPX","2025-11-30T22:04:05.201074",25160767,"2025-11-30",22
+-0.00425,"bridged-usdc-polygon-pos-bridge",638394056,"Polygon Bridged USDC (Polygon PoS)",0.99973,128,"coingecko","USDC.E","2025-11-30T22:04:05.201080",33922204,"2025-11-30",22

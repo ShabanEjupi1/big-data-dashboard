@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.55085,"polygon-pos-bridged-weth-polygon-pos",263552506,"Polygon PoS Bridged WETH (Polygon POS)",2811.24,234,"coingecko","WETH","2025-12-02T06:50:15.274342",10240327,"2025-12-02",6
+0,"fidelity-digital-interest-token",263313200,"Fidelity Digital Interest Token",1,232,"coingecko","FDIT","2025-12-02T06:50:15.274349",0,"2025-12-02",6

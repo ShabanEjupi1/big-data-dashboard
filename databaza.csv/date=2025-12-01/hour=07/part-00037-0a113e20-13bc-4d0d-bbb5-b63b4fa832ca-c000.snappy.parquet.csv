@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-9.64721,"pepe",1748816333,"Pepe",0.00000416,63,"coingecko","PEPE","2025-12-01T07:55:13.671170",330391087,"2025-12-01",7
+-5.49065,"binance-peg-weth",1717946409,"Binance-Peg WETH",2841.18,64,"coingecko","WETH","2025-12-01T07:55:13.671178",69244760,"2025-12-01",7

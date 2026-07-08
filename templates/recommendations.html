@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Recommendations - Big Data Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e5e7eb;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .risk-profile-selector {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .risk-btn {
+            padding: 12px 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        .risk-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .risk-btn.active {
+            background: #10b981;
+            border-color: #10b981;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #10b981;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .btn-freeze {
+            background: #06b6d4;
+            border: 2px solid #0891b2;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+        
+        .btn-freeze:hover {
+            background: #0891b2;
+        }
+        
+        .btn-freeze.frozen {
+            background: #dc2626;
+            animation: pulse-freeze 2s infinite;
+        }
+        
+        @keyframes pulse-freeze {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .frozen-badge {
+            display: none;
+            background: #dc2626;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            animation: pulse-freeze 2s infinite;
+        }
+        
+        .frozen-badge.active {
+            display: inline-block;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 1.5em;
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #34d399;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .recommendation-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border-color: rgba(52, 211, 153, 0.5);
+        }
+        
+        .crypto-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .crypto-info {
+            flex: 1;
+        }
+        
+        .crypto-symbol {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #34d399;
+        }
+        
+        .crypto-name {
+            font-size: 0.9em;
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+        
+        .category-badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .category-safe {
+            background: #10b981;
+            color: white;
+        }
+        
+        .category-balanced {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .category-growth {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .category-risk {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .scores-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .score-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .score-label {
+            font-size: 0.85em;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+        
+        .score-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #34d399;
+        }
+        
+        .score-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        
+        .score-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+            transition: width 0.5s;
+        }
+        
+        .investment-score {
+            background: rgba(16, 185, 129, 0.2);
+            border: 2px solid #10b981;
+            grid-column: span 2;
+        }
+        
+        .investment-score .score-value {
+            font-size: 2.5em;
+            color: #10b981;
+        }
+        
+        .price-info {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+        
+        .price-label {
+            color: #9ca3af;
+            font-size: 0.9em;
+        }
+        
+        .price-value {
+            font-weight: bold;
+        }
+        
+        .change-positive {
+            color: #10b981;
+        }
+        
+        .change-negative {
+            color: #ef4444;
+        }
+        
+        .allocation-section {
+            background: rgba(52, 211, 153, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #10b981;
+        }
+        
+        .allocation-label {
+            font-size: 0.9em;
+            color: #9ca3af;
+            margin-bottom: 5px;
+        }
+        
+        .allocation-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #10b981;
+        }
+        
+        .advice-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .advice-title {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #34d399;
+            font-weight: bold;
+        }
+        
+        .advice-item {
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .advice-item.warning {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 3px solid #ef4444;
+        }
+        
+        .advice-item.success {
+            background: rgba(16, 185, 129, 0.2);
+            border-left: 3px solid #10b981;
+        }
+        
+        .summary-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .summary-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .summary-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #34d399;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💼 Smart Investment Recommendations</h1>
+            <p>AI-Powered Investment Advice - Focusing on Stable, Long-Term Assets</p>
+            
+            <div class="risk-profile-selector">
+                <button class="risk-btn" onclick="selectRiskProfile('conservative')">
+                    🛡️ Conservative
+                </button>
+                <button class="risk-btn active" onclick="selectRiskProfile('balanced')">
+                    ⚖️ Balanced
+                </button>
+                <button class="risk-btn" onclick="selectRiskProfile('aggressive')">
+                    🚀 Aggressive
+                </button>
+            </div>
+            
+            <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <a href="/" class="nav-back">← Back to Dashboard</a>
+                <button class="nav-back btn-freeze" id="freezeBtn" onclick="toggleFreeze()">❄️ Freeze Dashboard</button>
+                <span class="frozen-badge" id="frozenBadge">❄️ FROZEN - Presentation Mode</span>
+            </div>
+        </div>
+        
+        <div id="summary" class="summary-section" style="display: none;">
+            <h2 style="margin-bottom: 20px;">📊 Portfolio Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-box">
+                    <div class="price-label">Safe Investments</div>
+                    <div class="summary-value" id="safeCount">0</div>
+                </div>
+                <div class="summary-box">
+                    <div class="price-label">Balanced Growth</div>
+                    <div class="summary-value" id="balancedCount">0</div>
+                </div>
+                <div class="summary-box">
+                    <div class="price-label">Growth Opportunities</div>
+                    <div class="summary-value" id="growthCount">0</div>
+                </div>
+                <div class="summary-box">
+                    <div class="price-label">High Risk (Avoid)</div>
+                    <div class="summary-value" style="color: #ef4444;" id="riskCount">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Algorithm Documentation Section -->
+        <div class="summary-section" style="margin-bottom: 30px;">
+            <h2 style="margin-bottom: 15px; color: #34d399;">📚 Sistemi Multi-Faktor i Rekomandimeve</h2>
+            <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #10b981; margin-bottom: 15px;">Faktorët e Vlerësimit:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                    <div style="background: rgba(16,185,129,0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #10b981;">
+                        <strong style="color: #10b981;">📊 Stability Score (35%)</strong>
+                        <ul style="font-size: 0.85em; margin-top: 8px; padding-left: 15px; line-height: 1.6;">
+                            <li>Volatiliteti i çmimit (35%)</li>
+                            <li>Konsistenca e volumit (25%)</li>
+                            <li>Stabiliteti i trendit (20%)</li>
+                            <li>Market Cap stability (20%)</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(59,130,246,0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #3b82f6;">
+                        <strong style="color: #3b82f6;">📈 Growth Potential (30%)</strong>
+                        <ul style="font-size: 0.85em; margin-top: 8px; padding-left: 15px; line-height: 1.6;">
+                            <li>Momentum i rritjes (40%)</li>
+                            <li>Trendi i volumit (30%)</li>
+                            <li>Rritja e market cap (30%)</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(239,68,68,0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #ef4444;">
+                        <strong style="color: #ef4444;">⚠️ Liquidity Risk (35%)</strong>
+                        <ul style="font-size: 0.85em; margin-top: 8px; padding-left: 15px; line-height: 1.6;">
+                            <li>Volumi ditor < $1M = Risk 80</li>
+                            <li>Volumi ditor < $10M = Risk 50</li>
+                            <li>Slippage risk nga volatiliteti</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px;">
+                <h4 style="color: #34d399; margin-bottom: 10px;">Formula e Investment Score sipas Profilit:</h4>
+                <div style="font-family: monospace; font-size: 0.9em; line-height: 1.8;">
+                    <div><strong style="color: #10b981;">Conservative:</strong> stability×0.6 + growth×0.2 - liquidity_risk×0.2</div>
+                    <div><strong style="color: #3b82f6;">Balanced:</strong> stability×0.4 + growth×0.4 - liquidity_risk×0.2</div>
+                    <div><strong style="color: #f59e0b;">Aggressive:</strong> stability×0.2 + growth×0.6 - liquidity_risk×0.2</div>
+                </div>
+            </div>
+            <div style="margin-top: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                <div style="background: rgba(16,185,129,0.3); padding: 10px; border-radius: 8px; text-align: center;">
+                    <strong>Safe Investment</strong><br><small>stability≥70 & risk≤30</small>
+                </div>
+                <div style="background: rgba(59,130,246,0.3); padding: 10px; border-radius: 8px; text-align: center;">
+                    <strong>Balanced Growth</strong><br><small>stability≥50 & growth≥60</small>
+                </div>
+                <div style="background: rgba(245,158,11,0.3); padding: 10px; border-radius: 8px; text-align: center;">
+                    <strong>Growth Opportunity</strong><br><small>growth≥70 & risk≤60</small>
+                </div>
+                <div style="background: rgba(239,68,68,0.3); padding: 10px; border-radius: 8px; text-align: center;">
+                    <strong>High Risk</strong><br><small>liquidity_risk≥70</small>
+                </div>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <p>Analyzing investment opportunities...</p>
+            <p style="font-size: 0.8em; margin-top: 10px; color: #9ca3af;">
+                Calculating stability scores, risk ratings, and growth potential
+            </p>
+        </div>
+        
+        <div id="recommendations" class="recommendations-grid" style="display: none;">
+            <!-- Recommendations will be loaded here -->
+        </div>
+    </div>
+    
+    <script>
+        let currentRiskProfile = 'balanced';
+        
+        function selectRiskProfile(profile) {
+            currentRiskProfile = profile;
+            
+            // Update UI
+            document.querySelectorAll('.risk-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Reload recommendations
+            loadRecommendations();
+        }
+        
+        async function loadRecommendations() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('recommendations').style.display = 'none';
+                
+                const response = await fetch(`/api/investment/recommendations?risk_profile=${currentRiskProfile}`);
+                const data = await response.json();
+                
+                if (data.success && data.recommendations) {
+                    displayRecommendations(data.recommendations);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('recommendations').style.display = 'grid';
+                    document.getElementById('summary').style.display = 'block';
+                } else {
+                    document.getElementById('loading').innerHTML = `
+                        <h2>⚠️ Unable to load recommendations</h2>
+                        <p>${data.error || 'Recommendation module not available'}</p>
+                        <p style="margin-top: 20px;">
+                            <a href="/" class="nav-back">← Back to Dashboard</a>
+                        </p>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading recommendations:', error);
+                document.getElementById('loading').innerHTML = `
+                    <h2>❌ Error Loading Recommendations</h2>
+                    <p>${error.message}</p>
+                    <p style="margin-top: 20px;">
+                        <a href="/" class="nav-back">← Back to Dashboard</a>
+                    </p>
+                `;
+            }
+        }
+        
+        function displayRecommendations(recommendations) {
+            const container = document.getElementById('recommendations');
+            if (!container) {
+                console.error('Recommendations container not found');
+                return;
+            }
+            container.innerHTML = '';
+            
+            if (!recommendations || !Array.isArray(recommendations)) {
+                console.error('Invalid recommendations data:', recommendations);
+                document.getElementById('loading').innerHTML = `
+                    <h2>❌ Error Loading Recommendations</h2>
+                    <p>Invalid recommendations data format</p>
+                    <p style="margin-top: 20px;">
+                        <a href="/" class="nav-back">← Back to Dashboard</a>
+                    </p>
+                `;
+                return;
+            }
+            
+            // Count categories
+            let safeCount = 0, balancedCount = 0, growthCount = 0, riskCount = 0;
+            
+            recommendations.forEach(rec => {
+                if (!rec || typeof rec !== 'object') {
+                    console.warn('Skipping invalid recommendation:', rec);
+                    return;
+                }
+                
+                const category = rec.category || '';
+                if (category === 'Safe Investment') safeCount++;
+                else if (category === 'Balanced Growth') balancedCount++;
+                else if (category === 'Growth Opportunity') growthCount++;
+                else riskCount++;
+                
+                try {
+                    const card = createRecommendationCard(rec);
+                    container.appendChild(card);
+                } catch (error) {
+                    console.error('Error creating recommendation card:', error, rec);
+                }
+            });
+            
+            // Update summary (with null checks)
+            const safeEl = document.getElementById('safeCount');
+            const balancedEl = document.getElementById('balancedCount');
+            const growthEl = document.getElementById('growthCount');
+            const riskEl = document.getElementById('riskCount');
+            
+            if (safeEl) safeEl.textContent = safeCount;
+            if (balancedEl) balancedEl.textContent = balancedCount;
+            if (growthEl) growthEl.textContent = growthCount;
+            if (riskEl) riskEl.textContent = riskCount;
+        }
+        
+        function createRecommendationCard(rec) {
+            const card = document.createElement('div');
+            card.className = 'recommendation-card';
+            
+            // Validate input
+            if (!rec || typeof rec !== 'object') {
+                console.error('Invalid recommendation object:', rec);
+                return card; // Return empty card
+            }
+            
+            // Safely extract values with defaults
+            const category = rec.category || 'Unknown';
+            const symbol = rec.symbol || 'UNKNOWN';
+            const name = rec.name || symbol;
+            const currentPrice = parseFloat(rec.current_price) || 0;
+            const change24h = parseFloat(rec.change_24h) || 0;
+            const marketCap = parseFloat(rec.market_cap) || 0;
+            const volume24h = parseFloat(rec.volume_24h) || 0;
+            const recommendedAllocation = rec.recommended_allocation || 'N/A';
+            
+            const categoryClass = getCategoryClass(category);
+            const changeClass = change24h >= 0 ? 'change-positive' : 'change-negative';
+            const changeSymbol = change24h >= 0 ? '+' : '';
+            
+            const scores = rec.scores || {};
+            const advice = rec.advice || [];
+            const adviceItems = advice.map(item => {
+                const isWarning = item.includes('⛔') || item.includes('⚠️');
+                const isSuccess = item.includes('✅');
+                const className = isWarning ? 'warning' : isSuccess ? 'success' : '';
+                return `<div class="advice-item ${className}">${item}</div>`;
+            }).join('');
+            
+            card.innerHTML = `
+                <div class="crypto-header">
+                    <div class="crypto-info">
+                        <div class="crypto-symbol">${symbol}</div>
+                        <div class="crypto-name">${name}</div>
+                    </div>
+                    <div class="category-badge ${categoryClass}">
+                        ${category}
+                    </div>
+                </div>
+                
+                <div class="price-info">
+                    <div class="price-row">
+                        <span class="price-label">Current Price</span>
+                        <span class="price-value">$${currentPrice.toFixed(4)}</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">24h Change</span>
+                        <span class="price-value ${changeClass}">
+                            ${changeSymbol}${change24h.toFixed(2)}%
+                        </span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">Market Cap</span>
+                        <span class="price-value">
+                            $${(marketCap / 1e9).toFixed(2)}B
+                        </span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">24h Volume</span>
+                        <span class="price-value">
+                            $${(volume24h / 1e6).toFixed(2)}M
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="scores-section">
+                    <div class="score-box investment-score">
+                        <div class="score-label">Investment Score</div>
+                        <div class="score-value">${(scores.investment_score || 0).toFixed(1)}</div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill" style="width: ${scores.investment_score || 0}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="score-box">
+                        <div class="score-label">Stability</div>
+                        <div class="score-value">${(scores.stability || 0).toFixed(1)}</div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill" style="width: ${scores.stability || 0}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="score-box">
+                        <div class="score-label">Growth Potential</div>
+                        <div class="score-value">${(scores.growth_potential || 0).toFixed(1)}</div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill" style="width: ${scores.growth_potential || 0}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="score-box">
+                        <div class="score-label">Liquidity Risk</div>
+                        <div class="score-value" style="color: ${getRiskColor(scores.liquidity_risk || 0)}">
+                            ${(scores.liquidity_risk || 0).toFixed(1)}
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill" style="width: ${scores.liquidity_risk || 0}%; background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="allocation-section">
+                    <div class="allocation-label">Recommended Portfolio Allocation</div>
+                    <div class="allocation-value">${recommendedAllocation}</div>
+                </div>
+                
+                <div class="advice-section">
+                    <div class="advice-title">💡 Investment Advice</div>
+                    ${adviceItems}
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function getCategoryClass(category) {
+            if (category === 'Safe Investment') return 'category-safe';
+            if (category === 'Balanced Growth') return 'category-balanced';
+            if (category === 'Growth Opportunity') return 'category-growth';
+            return 'category-risk';
+        }
+        
+        function getRiskColor(risk) {
+            if (risk < 30) return '#10b981';
+            if (risk < 70) return '#f59e0b';
+            return '#ef4444';
+        }
+        
+        // Freeze mode functionality
+        let isFrozen = false;
+        let autoRefreshInterval = null;
+        
+        function toggleFreeze() {
+            const freezeBtn = document.getElementById('freezeBtn');
+            const frozenBadge = document.getElementById('frozenBadge');
+            
+            isFrozen = !isFrozen;
+            
+            if (isFrozen) {
+                freezeBtn.textContent = '▶️ Resume Live Mode';
+                freezeBtn.classList.add('frozen');
+                frozenBadge.classList.add('active');
+                
+                if (autoRefreshInterval) {
+                    clearInterval(autoRefreshInterval);
+                }
+            } else {
+                freezeBtn.textContent = '❄️ Freeze Dashboard';
+                freezeBtn.classList.remove('frozen');
+                frozenBadge.classList.remove('active');
+                
+                // Resume auto-refresh
+                loadRecommendations();
+                autoRefreshInterval = setInterval(loadRecommendations, 300000); // 5 minutes
+            }
+        }
+        
+        // Start auto-refresh (5 minutes)
+        autoRefreshInterval = setInterval(() => {
+            if (!isFrozen) {
+                loadRecommendations();
+            }
+        }, 300000);
+        
+        // Load recommendations on page load
+        loadRecommendations();
+    </script>
+</body>
+</html>

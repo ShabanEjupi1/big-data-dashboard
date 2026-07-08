@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.59426,"spx6900",597392739,"SPX6900",0.640772,133,"coingecko","SPX","2025-12-07T11:46:01.220227",15950320,"2025-12-07",11
+0.09753,"l2-standard-bridged-weth-base",593905180,"L2 Standard Bridged WETH (Base)",3039.65,134,"coingecko","WETH","2025-12-07T11:46:01.220234",300185943,"2025-12-07",11

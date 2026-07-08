@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.52563,"solana",7.0897968924e+10,"Solana",126.72,7,"coingecko","SOL","2025-12-02T05:51:20.825873",5359503000,"2025-12-02",5
+-0.18986,"tron",2.6226981271e+10,"TRON",0.277008,8,"coingecko","TRX","2025-12-02T05:51:20.825880",742007755,"2025-12-02",5

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.65637,"tbtc",572237963,"tBTC",92708,146,"coingecko","TBTC","2025-12-04T01:03:59.527957",23885328,"2025-12-04",1
+6.41522,"arbitrum-bridged-weth-arbitrum-one",562715230,"Arbitrum Bridged WETH (Arbitrum One)",3196.41,147,"coingecko","WETH","2025-12-04T01:03:59.527963",523100193,"2025-12-04",1

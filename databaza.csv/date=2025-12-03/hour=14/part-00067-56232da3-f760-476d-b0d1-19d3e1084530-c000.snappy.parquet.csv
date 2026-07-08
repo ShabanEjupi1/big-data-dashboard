@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.00031,"bridged-usdc-polygon-pos-bridge",653152354,"Polygon Bridged USDC (Polygon PoS)",0.999803,127,"coingecko","USDC.E","2025-12-03T14:57:49.266921",24391335,"2025-12-03",14
+11.11077,"virtual-protocol",651763933,"Virtuals Protocol",0.986823,128,"coingecko","VIRTUAL","2025-12-03T14:57:49.266929",188463314,"2025-12-03",14

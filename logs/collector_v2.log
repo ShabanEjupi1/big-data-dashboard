@@ -1,0 +1,1975 @@
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/11/30 20:04:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/30 20:04:10 WARN SparkContext: Spark is not running in local mode, therefore the checkpoint directory must not be on the local filesystem. Directory '/home/krenuser/big-data-dashboard/checkpoints/' appears to be on the local filesystem.
+[Stage 0:>                                                          (0 + 2) / 2]                                                                                [Stage 1:>                                                      (0 + 148) / 148][Stage 1:=>                                                     (4 + 144) / 148][Stage 1:==>                                                    (8 + 140) / 148][Stage 1:====>                                                 (12 + 136) / 148][Stage 1:=====>                                                (16 + 132) / 148][Stage 1:=======>                                              (20 + 128) / 148][Stage 1:==========>                                           (28 + 120) / 148][Stage 1:===========>                                          (32 + 116) / 148][Stage 1:=============>                                        (36 + 112) / 148][Stage 1:================>                                     (44 + 104) / 148][Stage 1:=================>                                    (48 + 100) / 148][Stage 1:==================>                                    (50 + 98) / 148][Stage 1:==================>                                    (51 + 97) / 148][Stage 1:=====================>                                 (59 + 89) / 148][Stage 1:========================>                              (67 + 81) / 148][Stage 1:==========================>                            (71 + 77) / 148][Stage 1:===========================>                           (75 + 73) / 148][Stage 1:=============================>                         (79 + 69) / 148][Stage 1:====================================>                  (99 + 49) / 148][Stage 1:=========================================>            (115 + 33) / 148][Stage 1:=============================================>        (125 + 23) / 148][Stage 1:=================================================>    (136 + 12) / 148][Stage 1:====================================================>  (140 + 8) / 148][Stage 1:======================================================>(146 + 2) / 148]                                                                                [Stage 2:>                                                      (0 + 148) / 148][Stage 2:====>                                                 (11 + 137) / 148][Stage 2:============================>                          (76 + 72) / 148][Stage 2:=====================================>                (104 + 44) / 148][Stage 2:=======================================>              (108 + 40) / 148][Stage 2:========================================>             (112 + 36) / 148][Stage 2:==========================================>           (116 + 32) / 148][Stage 2:===========================================>          (120 + 28) / 148][Stage 2:=============================================>        (124 + 24) / 148][Stage 2:==============================================>       (128 + 20) / 148][Stage 2:================================================>     (132 + 16) / 148][Stage 2:=====================================================> (144 + 4) / 148]                                                                                [Stage 3:======>                                               (17 + 131) / 148][Stage 3:==============>                                       (41 + 107) / 148][Stage 3:=====================================>                (104 + 44) / 148]                                                                                [Stage 4:>                                                      (2 + 146) / 148][Stage 4:==========>                                           (28 + 120) / 148][Stage 4:===========================>                           (73 + 75) / 148][Stage 4:=====================================>                (103 + 45) / 148][Stage 4:================================================>     (133 + 15) / 148]                                                                                [Stage 5:========================>                              (67 + 81) / 148][Stage 5:=========================================>            (115 + 33) / 148][Stage 5:=====================================================> (144 + 4) / 148]                                                                                [Stage 6:========>                                             (22 + 126) / 148][Stage 6:=============================>                         (79 + 69) / 148][Stage 6:===================================================>   (139 + 9) / 148]                                                                                [Stage 7:====================================>                  (99 + 49) / 148][Stage 7:=================================================>    (136 + 12) / 148]                                                                                [Stage 8:===============>                                      (43 + 105) / 148][Stage 8:=====================================================> (145 + 3) / 148]                                                                                [Stage 9:================================================>     (132 + 16) / 148]                                                                                [Stage 10:==================>                                   (51 + 97) / 148][Stage 10:=====================================================>(147 + 1) / 148]                                                                                [Stage 11:===========================>                          (76 + 72) / 148]                                                                                [Stage 12:==================================================>   (139 + 9) / 148]                                                                                [Stage 13:===============================================>     (134 + 14) / 148][Stage 13:=====================================================>(147 + 1) / 148]                                                                                [Stage 14:=======================>                              (65 + 83) / 148][Stage 14:=================================================>   (137 + 11) / 148]                                                                                [Stage 15:========================>                             (66 + 82) / 148][Stage 15:===================================================>  (141 + 7) / 148]                                                                                [Stage 16:===============================================>     (134 + 14) / 148]                                                                                [Stage 17:===========================================>         (122 + 26) / 148][Stage 17:=====================================================>(146 + 2) / 148]                                                                                [Stage 18:===============================================>     (133 + 15) / 148]                                                                                [Stage 19:==========>                                          (30 + 118) / 148][Stage 19:=================================================>   (137 + 11) / 148]                                                                                [Stage 22:====================================================> (143 + 5) / 148]                                                                                [Stage 23:====================================================> (144 + 4) / 148]                                                                                [Stage 25:====================================================> (145 + 3) / 148]                                                                                [Stage 42:====================================================> (144 + 4) / 148]                                                                                [Stage 44:=====================================================>(147 + 1) / 148]                                                                                [Stage 59:====================================================> (143 + 5) / 148]                                                                                [Stage 66:================================================>    (136 + 12) / 148]                                                                                \n================================================================================
+ STARTING ENHANCED CRYPTO-FOCUSED COLLECTION
+ Time: 2025-11-30 20:04:01
+================================================================================\n
+================================================================================
+ 🚀 ENHANCED DATA COLLECTOR - CRYPTO FOCUSED
+ 📊 Primary: 350+ Cryptos | Secondary: Stocks when available
+================================================================================
+✓ Connected to Spark cluster: spark://10.0.0.8:7077
+✓ Directories created and checkpoint set
+\n🚀 Starting 8-day crypto-focused collection
+Target: ~138,240 batches (5-sec intervals)
+Expected crypto rows: ~48,384,000\n
+\n[20:04:11] Batch #1...
+  ✓ Collected 350 rows in 25.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:04:42] Batch #2...
+  ✓ Collected 350 rows in 6.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:04:53] Batch #3...
+  ✓ Collected 350 rows in 4.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:05:03] Batch #4...
+  ✓ Collected 350 rows in 4.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:05:12] Batch #5...
+  ✓ Collected 350 rows in 3.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:05:20] Batch #6...
+  ✓ Collected 350 rows in 3.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:05:29] Batch #7...
+  ✓ Collected 350 rows in 3.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:05:37] Batch #8...
+  ✓ Collected 100 rows in 63.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:06:45] Batch #9...
+  ✓ Collected 350 rows in 3.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:06:54] Batch #10...
+  ✓ Collected 350 rows in 3.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:07:02] Batch #11...
+  ✓ Collected 350 rows in 3.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:07:11] Batch #12...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:07:18] Batch #13...
+  ✓ Collected 350 rows in 3.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:07:27] Batch #14...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:07:34] Batch #15...
+  ✓ Collected 350 rows in 3.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:07:42] Batch #16...
+  ✓ Collected 100 rows in 62.2s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:08:49] Batch #17...
+  ✓ Collected 350 rows in 3.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:08:57] Batch #18...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:09:05] Batch #19...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:09:12] Batch #20...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:09:20] Batch #21...
+  ✓ Collected 350 rows in 3.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:09:28] Batch #22...
+  ✓ Collected 350 rows in 3.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:09:36] Batch #23...
+  ✓ Collected 350 rows in 3.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:09:44] Batch #24...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:10:51] Batch #25...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:10:59] Batch #26...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:11:06] Batch #27...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:11:14] Batch #28...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:11:21] Batch #29...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:11:28] Batch #30...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:11:36] Batch #31...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:11:43] Batch #32...
+  ✓ Collected 100 rows in 62.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:12:51] Batch #33...
+  ✓ Collected 350 rows in 2.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:12:59] Batch #34...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:13:06] Batch #35...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:13:14] Batch #36...
+  ✓ Collected 350 rows in 2.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:13:21] Batch #37...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:13:28] Batch #38...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:13:35] Batch #39...
+  ✓ Collected 350 rows in 3.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:13:44] Batch #40...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:14:50] Batch #41...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:14:58] Batch #42...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:15:05] Batch #43...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:15:12] Batch #44...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:15:20] Batch #45...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:15:27] Batch #46...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:15:35] Batch #47...
+  ✓ Collected 350 rows in 2.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:15:43] Batch #48...
+  ✓ Collected 100 rows in 62.4s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:16:50] Batch #49...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:16:58] Batch #50...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n============================================================
+ COLLECTION STATS (Batch #50)
+============================================================
+  coingecko    - Calls:     44 | Errors:    0 | Last: 20:16:58
+  binance      - Calls:     50 | Errors:    0 | Last: 20:16:59
+  yahoo        - Calls:      0 | Errors:    0 | Last: Never
+============================================================\n
+\n[20:17:05] Batch #51...
+  ✓ Collected 350 rows in 2.7s
+[Stage 122:==================================================>  (142 + 6) / 148]                                                                                    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:17:13] Batch #52...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:17:20] Batch #53...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:17:27] Batch #54...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:17:34] Batch #55...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:17:41] Batch #56...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:18:48] Batch #57...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:18:56] Batch #58...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:19:03] Batch #59...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:19:10] Batch #60...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n💾 Checkpoint: 19,250 rows collected
+\n[20:19:17] Batch #61...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:19:25] Batch #62...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:19:32] Batch #63...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:19:39] Batch #64...
+  ✓ Collected 100 rows in 62.3s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:20:46] Batch #65...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:20:54] Batch #66...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:21:01] Batch #67...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:21:08] Batch #68...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:21:16] Batch #69...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:21:23] Batch #70...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:21:30] Batch #71...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:22:37] Batch #72...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:22:45] Batch #73...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:22:52] Batch #74...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:22:59] Batch #75...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:23:07] Batch #76...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:23:14] Batch #77...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:23:21] Batch #78...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:23:28] Batch #79...
+  ✓ Collected 100 rows in 62.3s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:24:36] Batch #80...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:24:43] Batch #81...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:24:50] Batch #82...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:24:58] Batch #83...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:25:05] Batch #84...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:25:12] Batch #85...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:25:19] Batch #86...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:25:26] Batch #87...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:26:33] Batch #88...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:26:41] Batch #89...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:26:48] Batch #90...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:26:56] Batch #91...
+  ✓ Collected 350 rows in 2.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:27:03] Batch #92...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:27:10] Batch #93...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:27:17] Batch #94...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:27:25] Batch #95...
+  ✓ Collected 100 rows in 62.2s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:28:32] Batch #96...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:28:40] Batch #97...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:28:47] Batch #98...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:28:54] Batch #99...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:29:01] Batch #100...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n============================================================
+ COLLECTION STATS (Batch #100)
+============================================================
+  coingecko    - Calls:     88 | Errors:    0 | Last: 20:29:01
+  binance      - Calls:    100 | Errors:    0 | Last: 20:29:02
+  yahoo        - Calls:      0 | Errors:    0 | Last: Never
+============================================================\n
+\n[20:29:08] Batch #101...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:29:16] Batch #102...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:29:23] Batch #103...
+  ✓ Collected 100 rows in 62.4s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:30:30] Batch #104...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:30:37] Batch #105...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:30:45] Batch #106...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:30:52] Batch #107...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:30:59] Batch #108...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:31:06] Batch #109...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:31:13] Batch #110...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:31:20] Batch #111...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:32:27] Batch #112...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:32:35] Batch #113...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:32:43] Batch #114...
+  ✓ Collected 350 rows in 2.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:32:50] Batch #115...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:32:57] Batch #116...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:33:05] Batch #117...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:33:12] Batch #118...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:34:19] Batch #119...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:34:26] Batch #120...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n💾 Checkpoint: 38,250 rows collected
+\n[20:34:34] Batch #121...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:34:41] Batch #122...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:34:48] Batch #123...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:34:55] Batch #124...
+  ✓ Collected 100 rows in 66.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:36:07] Batch #125...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:36:14] Batch #126...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:36:21] Batch #127...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:36:28] Batch #128...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:36:35] Batch #129...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:36:42] Batch #130...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:37:49] Batch #131...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:37:57] Batch #132...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:38:04] Batch #133...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:38:11] Batch #134...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:38:18] Batch #135...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:38:25] Batch #136...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:38:32] Batch #137...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:38:39] Batch #138...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:39:46] Batch #139...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:39:54] Batch #140...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:40:01] Batch #141...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:40:08] Batch #142...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:40:15] Batch #143...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:40:22] Batch #144...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:40:29] Batch #145...
+  ✓ Collected 100 rows in 62.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:41:37] Batch #146...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:41:44] Batch #147...
+  ✓ Collected 350 rows in 2.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:41:52] Batch #148...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:41:59] Batch #149...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:42:06] Batch #150...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n============================================================
+ COLLECTION STATS (Batch #150)
+============================================================
+  coingecko    - Calls:    131 | Errors:    0 | Last: 20:42:06
+  binance      - Calls:    150 | Errors:    0 | Last: 20:42:08
+  yahoo        - Calls:      0 | Errors:    0 | Last: Never
+============================================================\n
+\n[20:42:14] Batch #151...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:42:21] Batch #152...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:42:28] Batch #153...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:43:35] Batch #154...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:43:42] Batch #155...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:43:49] Batch #156...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:43:56] Batch #157...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:44:03] Batch #158...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:44:10] Batch #159...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:44:17] Batch #160...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:44:24] Batch #161...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:45:31] Batch #162...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:45:38] Batch #163...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:45:45] Batch #164...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:45:52] Batch #165...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:45:59] Batch #166...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:46:06] Batch #167...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:46:13] Batch #168...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:46:20] Batch #169...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:47:27] Batch #170...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:47:34] Batch #171...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:47:41] Batch #172...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:47:48] Batch #173...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:47:55] Batch #174...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:48:02] Batch #175...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:48:09] Batch #176...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:49:16] Batch #177...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:49:24] Batch #178...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:49:31] Batch #179...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:49:37] Batch #180...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n💾 Checkpoint: 57,250 rows collected
+\n[20:49:45] Batch #181...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:49:52] Batch #182...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:50:59] Batch #183...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:51:06] Batch #184...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:51:13] Batch #185...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:51:20] Batch #186...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:51:27] Batch #187...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:51:34] Batch #188...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:51:41] Batch #189...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:52:48] Batch #190...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:52:55] Batch #191...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:53:02] Batch #192...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:53:09] Batch #193...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:53:16] Batch #194...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:53:23] Batch #195...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:53:30] Batch #196...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:54:37] Batch #197...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:54:44] Batch #198...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:54:51] Batch #199...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:54:58] Batch #200...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n============================================================
+ COLLECTION STATS (Batch #200)
+============================================================
+  coingecko    - Calls:    174 | Errors:    0 | Last: 20:54:58
+  binance      - Calls:    200 | Errors:    0 | Last: 20:54:59
+  yahoo        - Calls:      0 | Errors:    0 | Last: Never
+============================================================\n
+\n[20:55:05] Batch #201...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:55:12] Batch #202...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:55:19] Batch #203...
+  ✓ Collected 350 rows in 2.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:55:27] Batch #204...
+  ✓ Collected 100 rows in 62.4s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:56:34] Batch #205...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:56:42] Batch #206...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:56:49] Batch #207...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:56:56] Batch #208...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:57:02] Batch #209...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:57:10] Batch #210...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:57:17] Batch #211...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:57:24] Batch #212...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:58:31] Batch #213...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:58:38] Batch #214...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:58:45] Batch #215...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:58:53] Batch #216...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:59:00] Batch #217...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:59:07] Batch #218...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[20:59:14] Batch #219...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:00:20] Batch #220...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:00:28] Batch #221...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:00:35] Batch #222...
+  ✓ Collected 350 rows in 3.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:00:43] Batch #223...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:00:50] Batch #224...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:00:57] Batch #225...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:02:04] Batch #226...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:02:11] Batch #227...
+  ✓ Collected 350 rows in 2.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:02:19] Batch #228...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:02:26] Batch #229...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:02:33] Batch #230...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:02:40] Batch #231...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:03:47] Batch #232...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:03:54] Batch #233...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:04:01] Batch #234...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:04:08] Batch #235...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:04:16] Batch #236...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:04:23] Batch #237...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:04:30] Batch #238...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:05:36] Batch #239...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:05:44] Batch #240...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n💾 Checkpoint: 76,000 rows collected
+\n[21:05:51] Batch #241...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:05:58] Batch #242...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:06:04] Batch #243...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:06:12] Batch #244...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:06:19] Batch #245...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:06:26] Batch #246...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:07:32] Batch #247...
+  ✓ Collected 350 rows in 3.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:07:41] Batch #248...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:07:47] Batch #249...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:07:54] Batch #250...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n============================================================
+ COLLECTION STATS (Batch #250)
+============================================================
+  coingecko    - Calls:    217 | Errors:    0 | Last: 21:07:55
+  binance      - Calls:    250 | Errors:    0 | Last: 21:07:56
+  yahoo        - Calls:      0 | Errors:    0 | Last: Never
+============================================================\n
+\n[21:08:01] Batch #251...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:08:08] Batch #252...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:08:15] Batch #253...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:09:22] Batch #254...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:09:29] Batch #255...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:09:36] Batch #256...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:09:43] Batch #257...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:09:50] Batch #258...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:09:57] Batch #259...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:11:04] Batch #260...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:11:11] Batch #261...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:11:18] Batch #262...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:11:25] Batch #263...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:11:33] Batch #264...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:11:39] Batch #265...
+  ✓ Collected 100 rows in 62.0s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:12:46] Batch #266...
+  ✓ Collected 350 rows in 3.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:12:54] Batch #267...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:13:02] Batch #268...
+  ✓ Collected 350 rows in 3.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:13:10] Batch #269...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:13:17] Batch #270...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:13:24] Batch #271...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins[Stage 538:=========================================>          (119 + 29) / 148]                                                                                
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:13:31] Batch #272...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:13:38] Batch #273...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:14:45] Batch #274...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:14:52] Batch #275...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:14:59] Batch #276...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:15:06] Batch #277...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:15:13] Batch #278...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:15:20] Batch #279...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:15:28] Batch #280...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:15:35] Batch #281...
+  ✓ Collected 100 rows in 62.3s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:16:42] Batch #282...
+  ✓ Collected 350 rows in 2.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:16:49] Batch #283...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:16:57] Batch #284...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:17:04] Batch #285...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:17:11] Batch #286...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:17:18] Batch #287...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:17:25] Batch #288...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:17:32] Batch #289...
+  ✓ Collected 100 rows in 62.1s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:18:39] Batch #290...
+  ✓ Collected 350 rows in 2.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:18:47] Batch #291...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:18:54] Batch #292...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:19:01] Batch #293...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:19:07] Batch #294...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:19:15] Batch #295...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:19:22] Batch #296...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:19:29] Batch #297...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:20:35] Batch #298...
+  ✓ Collected 350 rows in 2.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:20:43] Batch #299...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:20:50] Batch #300...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n============================================================
+ COLLECTION STATS (Batch #300)
+============================================================
+  coingecko    - Calls:    260 | Errors:    0 | Last: 21:20:51
+  binance      - Calls:    300 | Errors:    0 | Last: 21:20:52
+  yahoo        - Calls:      0 | Errors:    0 | Last: Never
+============================================================\n
+\n💾 Checkpoint: 95,000 rows collected
+\n[21:20:57] Batch #301...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:21:05] Batch #302...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:21:11] Batch #303...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:21:19] Batch #304...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:21:26] Batch #305...
+  ✓ Collected 100 rows in 62.3s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:22:33] Batch #306...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:22:40] Batch #307...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:22:47] Batch #308...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:22:54] Batch #309...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:23:01] Batch #310...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:23:08] Batch #311...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:23:15] Batch #312...
+  ✓ Collected 100 rows in 61.9s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:24:22] Batch #313...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:24:29] Batch #314...
+  ✓ Collected 350 rows in 2.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:24:36] Batch #315...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:24:43] Batch #316...
+  ✓ Collected 350 rows in 1.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:24:50] Batch #317...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:24:57] Batch #318...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:26:04] Batch #319...
+  ✓ Collected 350 rows in 2.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:26:11] Batch #320...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:26:18] Batch #321...
+  ✓ Collected 350 rows in 1.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:26:25] Batch #322...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:26:32] Batch #323...
+  ✓ Collected 350 rows in 2.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:26:39] Batch #324...
+  ✓ Collected 100 rows in 61.8s
+    - CoinGecko: 0 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:27:46] Batch #325...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Yahoo Stocks: 0 stocks
+\n[21:27:53] Batch #326...
+  ✓ Collected 350 rows in 2.1s
+    - CoinGecko: 250 coinsSetting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/11/30 21:39:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/30 21:39:24 WARN SparkContext: Spark is not running in local mode, therefore the checkpoint directory must not be on the local filesystem. Directory '/home/krenuser/big-data-dashboard/checkpoints/' appears to be on the local filesystem.
+[Stage 0:>                                                      (0 + 148) / 148][Stage 0:=>                                                     (4 + 144) / 148][Stage 0:==>                                                    (7 + 141) / 148][Stage 0:======>                                               (17 + 131) / 148][Stage 0:====================>                                  (55 + 93) / 148][Stage 0:==================================>                    (93 + 55) / 148][Stage 0:=======================================>              (109 + 39) / 148][Stage 0:============================================>         (121 + 27) / 148][Stage 0:============================================>         (122 + 26) / 148][Stage 0:=============================================>        (124 + 24) / 148][Stage 0:==============================================>       (127 + 21) / 148][Stage 0:================================================>     (133 + 15) / 148][Stage 0:=================================================>    (137 + 11) / 148][Stage 0:====================================================>  (141 + 7) / 148][Stage 0:=====================================================> (143 + 5) / 148][Stage 0:=====================================================> (144 + 4) / 148][Stage 0:======================================================>(146 + 2) / 148][Stage 0:======================================================>(147 + 1) / 148]                                                                                [Stage 1:>                                                      (0 + 148) / 148][Stage 1:==>                                                    (8 + 140) / 148][Stage 1:=======>                                              (20 + 128) / 148][Stage 1:====================>                                  (56 + 92) / 148][Stage 1:=======================>                               (64 + 84) / 148][Stage 1:=========================>                             (68 + 80) / 148][Stage 1:============================>                          (76 + 72) / 148][Stage 1:===================================>                   (96 + 52) / 148][Stage 1:===========================================>          (120 + 28) / 148][Stage 1:=================================================>    (136 + 12) / 148]                                                                                [Stage 2:====>                                                 (13 + 135) / 148][Stage 2:==========>                                           (28 + 120) / 148][Stage 2:================================>                      (88 + 60) / 148][Stage 2:=====================================================> (144 + 4) / 148]                                                                                [Stage 3:====================>                                  (54 + 94) / 148][Stage 3:===============================================>      (130 + 18) / 148][Stage 3:======================================================>(147 + 1) / 148]                                                                                [Stage 4:==>                                                    (6 + 142) / 148][Stage 4:=====>                                                (15 + 133) / 148][Stage 4:====================>                                  (55 + 93) / 148][Stage 4:============================================>         (123 + 25) / 148][Stage 4:==================================================>   (138 + 10) / 148]                                                                                [Stage 5:=======>                                              (20 + 128) / 148][Stage 5:=======================>                               (64 + 84) / 148][Stage 5:========================================>             (110 + 38) / 148][Stage 5:======================================================>(146 + 2) / 148]                                                                                === STARTING FRESH COLLECTOR ===
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/11/30 21:42:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/30 21:43:03 WARN SparkContext: Spark is not running in local mode, therefore the checkpoint directory must not be on the local filesystem. Directory '/home/krenuser/big-data-dashboard/checkpoints/' appears to be on the local filesystem.
+[Stage 0:>                                                       (0 + 73) / 148][Stage 0:>                                                      (0 + 148) / 148][Stage 0:=>                                                     (3 + 145) / 148][Stage 0:======>                                               (17 + 131) / 148][Stage 0:=================>                                    (47 + 101) / 148][Stage 0:====================================>                  (98 + 50) / 148][Stage 0:==========================================>           (116 + 32) / 148][Stage 0:===========================================>          (120 + 28) / 148][Stage 0:=============================================>        (125 + 23) / 148][Stage 0:==============================================>       (127 + 21) / 148][Stage 0:===================================================>   (139 + 9) / 148][Stage 0:=====================================================> (143 + 5) / 148][Stage 0:=====================================================> (145 + 3) / 148][Stage 0:======================================================>(146 + 2) / 148]                                                                                [Stage 1:>                                                      (0 + 148) / 148][Stage 1:=>                                                     (4 + 144) / 148][Stage 1:==>                                                    (8 + 140) / 148][Stage 1:=====>                                                (14 + 134) / 148][Stage 1:==================>                                    (51 + 97) / 148][Stage 1:=======================>                               (64 + 84) / 148][Stage 1:=============================>                         (80 + 68) / 148][Stage 1:====================================>                  (97 + 51) / 148][Stage 1:======================================>               (105 + 43) / 148][Stage 1:=================================================>    (135 + 13) / 148][Stage 1:=====================================================> (144 + 4) / 148]                                                                                [Stage 2:=====>                                                (15 + 133) / 148][Stage 2:===============>                                      (42 + 106) / 148][Stage 2:=========================================>            (114 + 34) / 148][Stage 2:=====================================================> (145 + 3) / 148]                                                                                [Stage 3:=======================================>              (108 + 40) / 148][Stage 3:=====================================================> (145 + 3) / 148]                                                                                [Stage 4:>                                                      (1 + 147) / 148][Stage 4:====================>                                  (54 + 94) / 148][Stage 4:=======================================>              (107 + 41) / 148][Stage 4:=================================================>    (135 + 13) / 148]                                                                                [Stage 5:=========>                                            (26 + 122) / 148][Stage 5:=====================================>                (104 + 44) / 148][Stage 5:======================================================>(146 + 2) / 148]                                                                                [Stage 6:>                                                      (1 + 147) / 148][Stage 6:========>                                             (24 + 124) / 148][Stage 6:====================================>                 (100 + 48) / 148]                                                                                [Stage 7:==========>                                           (29 + 119) / 148][Stage 7:======================================>               (105 + 43) / 148][Stage 7:=====================================================> (145 + 3) / 148]                                                                                [Stage 8:====================================================>  (140 + 8) / 148]                                                                                [Stage 9:============================================>         (123 + 25) / 148]                                                                                [Stage 10:====================>                                 (55 + 93) / 148][Stage 10:====================================================> (144 + 4) / 148]                                                                                [Stage 11:================>                                    (45 + 103) / 148][Stage 11:==========================================>          (118 + 30) / 148][Stage 11:===================================================>  (140 + 8) / 148]                                                                                [Stage 12:====================================================> (143 + 5) / 148]                                                                                [Stage 13:=========================================>           (116 + 32) / 148]                                                                                [Stage 15:=====================================================>(146 + 2) / 148]                                                                                [Stage 16:=============================================>       (127 + 21) / 148]                                                                                [Stage 17:====================================================> (144 + 4) / 148]                                                                                [Stage 19:=============================================>       (126 + 22) / 148]                                                                                [Stage 20:==========================================>          (119 + 29) / 148]                                                                                [Stage 22:===============================================>     (134 + 14) / 148]                                                                                [Stage 26:=====================================================>(147 + 1) / 148]                                                                                [Stage 28:=================================================>   (138 + 10) / 148]                                                                                [Stage 29:================================>                     (90 + 58) / 148][Stage 29:====================================================> (143 + 5) / 148]                                                                                [Stage 31:====================================================> (144 + 4) / 148]                                                                                [Stage 32:=================================================>   (137 + 11) / 148]                                                                                [Stage 35:=====================================================>(146 + 2) / 148]                                                                                [Stage 37:===============================>                      (87 + 61) / 148][Stage 37:====================================================> (145 + 3) / 148]                                                                                [Stage 38:====================================================> (144 + 4) / 148]                                                                                [Stage 49:=================================>                    (93 + 55) / 148][Stage 49:===================================================>  (142 + 6) / 148]                                                                                [Stage 52:===================================================>  (142 + 6) / 148]                                                                                [Stage 56:===================================================>  (142 + 6) / 148]                                                                                [Stage 58:=====================================================>(147 + 1) / 148]                                                                                [Stage 63:===========================>                          (76 + 72) / 148][Stage 63:=====================================================>(147 + 1) / 148]                                                                                [Stage 64:================================================>    (135 + 13) / 148]                                                                                [Stage 91:===========================================>         (122 + 26) / 148]                                                                                [Stage 93:=========================================>           (115 + 33) / 148]                                                                                \n================================================================================
+ STARTING ENHANCED CRYPTO-FOCUSED COLLECTION
+ Time: 2025-11-30 21:42:54
+================================================================================\n
+================================================================================
+ 🚀 ENHANCED DATA COLLECTOR - CRYPTO FOCUSED
+ 📊 Primary: 350+ Cryptos | Secondary: Stocks when available
+================================================================================
+✓ Connected to Spark cluster: spark://10.0.0.8:7077
+✓ Directories created and checkpoint set
+\n🚀 Starting 8-day crypto-focused collection
+Target: ~138,240 batches (5-sec intervals)
+Expected crypto rows: ~48,384,000\n
+
+[21:43:04] Batch #1...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 42.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:43:51] Batch #2...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 55.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:44:51] Batch #3...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 66.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[21:46:03] Batch #4...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 84.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:47:32] Batch #5...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 17.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:47:55] Batch #6...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 58.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:48:59] Batch #7...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 64.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[21:50:08] Batch #8...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 83.2s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:51:37] Batch #9...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 17.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:51:59] Batch #10...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 55.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:52:59] Batch #11...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 65.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[21:54:09] Batch #12...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 84.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:55:38] Batch #13...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 18.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:56:01] Batch #14...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 54.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:57:01] Batch #15...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 65.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[21:58:11] Batch #16...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 83.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[21:59:40] Batch #17...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 18.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:00:03] Batch #18...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 55.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:01:03] Batch #19...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 64.9s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[22:02:13] Batch #20...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 83.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:03:42] Batch #21...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 17.4s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:04:05] Batch #22...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 56.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:05:06] Batch #23...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 64.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[22:06:15] Batch #24...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 83.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:07:44] Batch #25...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 17.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:08:06] Batch #26...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 54.6s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:09:06] Batch #27...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 65.0s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[22:10:16] Batch #28...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 83.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:11:44] Batch #29...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 17.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:12:06] Batch #30...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 54.5s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:13:06] Batch #31...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 66.1s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 1 stocks
+
+[22:14:17] Batch #32...
+    ⚠️  polygon failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 83.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:15:46] Batch #33...
+    📈 Using yfinance_lib: 15 stocks
+  ✓ Collected 365 rows in 17.3s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:16:08] Batch #34...
+    ⚠️  finnhub failed, trying yfinance library...
+    ✓ yfinance_lib fallback: 15 stocks
+  ✓ Collected 365 rows in 54.8s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+    - Stocks (Multi-API): 15 stocks
+
+[22:17:08] Batch #35...
+    📈 Using alpha_vantage: 1 stocks
+  ✓ Collected 351 rows in 64.7s
+    - CoinGecko: 250 coins
+    - Binance: 100 pairs
+[Stage 106:==================================================>  (141 + 7) / 148]                                                                                [Stage 130:=========================================>          (117 + 31) / 148][Stage 130:==================================================>  (140 + 8) / 148]                                                                                [Stage 142:================================================>   (138 + 10) / 148]                                                                                

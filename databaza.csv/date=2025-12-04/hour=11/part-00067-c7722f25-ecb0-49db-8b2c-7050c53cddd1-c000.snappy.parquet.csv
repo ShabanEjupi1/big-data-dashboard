@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.00951,"bridged-usdc-polygon-pos-bridge",656780759,"Polygon Bridged USDC (Polygon PoS)",0.999779,127,"coingecko","USDC.E","2025-12-04T11:36:26.331941",34986720,"2025-12-04",11
+4.27445,"stakewise-v3-oseth",641027944,"StakeWise Staked ETH",3285.36,128,"coingecko","OSETH","2025-12-04T11:36:26.331948",491939,"2025-12-04",11

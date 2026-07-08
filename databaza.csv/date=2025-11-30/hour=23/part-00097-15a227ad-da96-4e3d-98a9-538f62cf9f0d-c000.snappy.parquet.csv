@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.09941,"ether-fi-liquid-eth",439408262,"Ether.Fi Liquid ETH",3164.32,164,"coingecko","LIQUIDETH","2025-11-30T23:47:22.793976",16942.11,"2025-11-30",23
+-0.25304,"pendle",439114724,"Pendle",2.67,165,"coingecko","PENDLE","2025-11-30T23:47:22.793983",51128648,"2025-11-30",23

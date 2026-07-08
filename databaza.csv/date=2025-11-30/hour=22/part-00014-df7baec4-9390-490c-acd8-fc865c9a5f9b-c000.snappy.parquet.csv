@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.99279,"weth",7946020282,"WETH",3025.17,24,"coingecko","WETH","2025-11-30T22:08:06.735585",35765719,"2025-11-30",22
+1.02541,"wrapped-eeth",7731238211,"Wrapped eETH",3272.17,25,"coingecko","WEETH","2025-11-30T22:08:06.735593",24977208,"2025-11-30",22

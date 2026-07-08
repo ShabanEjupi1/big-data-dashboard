@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.21941,"frax-ether",294541560,"Frax Ether",2975.71,227,"coingecko","FRXETH","2025-11-30T22:57:23.060128",7211547,"2025-11-30",22
+1.31829,"polygon-pos-bridged-weth-polygon-pos",284029218,"Polygon PoS Bridged WETH (Polygon POS)",3027.12,228,"coingecko","WETH","2025-11-30T22:57:23.060134",5723281,"2025-11-30",22

@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+0.6100012207031114,0.41821007863918236,148.27000427246094,145.87339782714844,3.42810886144e+11,145.86,146.47000122070312,"yfinance_lib","PG","2025-12-03T19:55:43.860944",4974698,"2025-12-03",19

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza e Aksioneve - Big Data Dashboard</title>
+    <!-- Shaban Ejupi & Majlinda Bajraktari - UP FSHMN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.1.1"></script>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --border-color: #e5e7eb;
+            --kosovo-blue: #244AA5;
+            --kosovo-red: #D32F2F;
+            --kosovo-gold: #FFD700;
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --border-color: #374151;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s;
+        }
+        
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .back-btn, .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .back-btn:hover, .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .btn-freeze {
+            background: #f59e0b;
+            font-weight: bold;
+        }
+        
+        .btn-freeze:hover {
+            background: #d97706;
+        }
+        
+        .btn-freeze.frozen {
+            background: #dc2626;
+            animation: pulse-freeze 2s infinite;
+        }
+        
+        @keyframes pulse-freeze {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .btn-export {
+            background: var(--success-color);
+        }
+        
+        .btn-export:hover {
+            background: #059669;
+        }
+        
+        .theme-toggle {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+        
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .search-filter-bar {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 16px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .filter-group label {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .filter-group select {
+            padding: 10px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: var(--bg-primary);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-box h3 {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box .value {
+            color: var(--accent-color);
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .section {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section h2 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .stock-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stock-card::after {
+            content: '→';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            font-size: 2em;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .stock-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .stock-card:hover::after {
+            right: 20px;
+            opacity: 1;
+        }
+        
+        .stock-card .symbol {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stock-card .name {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .stock-card .price {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stock-card .change {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .change-positive {
+            background: rgba(16, 185, 129, 0.9);
+        }
+        
+        .change-negative {
+            background: rgba(239, 68, 68, 0.9);
+        }
+        
+        .trend-arrow {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .stock-meta {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9em;
+        }
+        
+        .stock-meta div {
+            margin-bottom: 5px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        th:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        tr:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .trend-up {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .trend-down {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+        
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.7;
+            }
+        }
+        
+        .auto-refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .stock-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-filter-bar {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+        }
+        
+        /* Stili Universitar */
+        .university-header {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 12px 25px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            text-align: center;
+            border-top: 3px solid var(--kosovo-blue);
+            border-bottom: 3px solid var(--kosovo-red);
+        }
+        
+        .university-header h3 {
+            color: var(--kosovo-blue);
+            font-size: 1.15em;
+            margin-bottom: 3px;
+        }
+        
+        .university-header p {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            margin: 2px 0;
+        }
+        
+        .student-footer {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            border-top: 2px solid var(--kosovo-gold);
+        }
+        
+        .student-footer h4 {
+            color: var(--kosovo-blue);
+            margin-bottom: 8px;
+        }
+        
+        .student-footer p {
+            color: var(--text-secondary);
+            margin: 4px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="container">
+        <!-- Header Universitar -->
+        <div class="university-header">
+            <h3>🎓 UNIVERSITETI I PRISHTINËS | FSHMN</h3>
+            <p>Shkenca Kompjuterike - Analizë e Aksioneve me Big Data</p>
+        </div>
+        
+        <div class="auto-refresh-indicator" id="refreshIndicator">🔄 Auto-refresh: 30s</div>
+        
+        <div class="header">
+            <div class="header-top">
+                <h1>
+                    📈 Analiza e Aksioneve
+                    <span class="live-indicator">
+                        <span class="live-dot"></span>
+                        LIVE
+                    </span>
+                </h1>
+                <div class="controls">
+                    <a href="/" class="back-btn">← Kthehu në Ballina</a>
+                    <button class="btn btn-freeze" id="freezeBtn" onclick="toggleFreeze()">❄️ Freeze Dashboard</button>
+                    <button class="btn btn-export" onclick="exportCSV()">📥 Export CSV</button>
+                    <button class="btn btn-export" onclick="exportJSON()">📥 Export JSON</button>
+                    <button class="btn theme-toggle" onclick="toggleTheme()">🌓 Dark Mode</button>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 1.1em;">
+                📡 Alpha Vantage & Yahoo Finance - Real-time from 10 VM Cluster - {{ data.summary.total_records }} Total Records
+            </p>
+        </div>
+        
+        <!-- Kërkimi dhe Filtri -->
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Kërko aksione (simbol ose emër)..." onkeyup="filterStocks()">
+            </div>
+            <div class="filter-group">
+                <label>Radhit sipas:</label>
+                <select id="sortSelect" onchange="sortStocks()">
+                    <option value="symbol">Simboli</option>
+                    <option value="price-high">Çmimi (Highest)</option>
+                    <option value="price-low">Çmimi (Lowest)</option>
+                    <option value="change-high">Change % (Highest)</option>
+                    <option value="change-low">Change % (Lowest)</option>
+                    <option value="volume">Volume</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Statistikat -->
+        <div class="stats-row">
+            <div class="stat-box">
+                <h3>TOTALI I AKSIONEVE</h3>
+                <div class="value">{{ data.stocks.total }}</div>
+                <div style="font-size: 0.7em; opacity: 0.8; margin-top: 5px;">
+                    {{ data.stocks.total_records }} total records
+                </div>
+            </div>
+            <div class="stat-box">
+                <h3>MË TË FITUARA 24H</h3>
+                <div class="value trend-up">{{ data.stocks.top_gainers|length }}</div>
+            </div>
+            <div class="stat-box">
+                <h3>MË TË HUMBURIT 24H</h3>
+                <div class="value trend-down">{{ data.stocks.top_losers|length }}</div>
+            </div>
+            <div class="stat-box">
+                <h3>VËLLIMI MESATAR</h3>
+                <div class="value" style="font-size: 1.5em;">
+                    {% set total_volume = 0 %}
+                    {% for stock in data.stocks.all_stocks %}
+                        {% if stock.volume %}
+                            {% set total_volume = total_volume + stock.volume %}
+                        {% endif %}
+                    {% endfor %}
+                    {{ "%.1f"|format(total_volume / (data.stocks.total if data.stocks.total > 0 else 1) / 1e6) }}M
+                </div>
+            </div>
+            <div class="stat-box" id="clusterStatus">
+                <h3>⚙️ CLUSTER STATUS</h3>
+                <div class="value" id="clusterStatusValue" style="font-size: 0.8em;">Loading...</div>
+            </div>
+            <div class="stat-box" id="collectionRate">
+                <h3>📊 TOTAL RECORDS</h3>
+                <div class="value" id="collectionRateValue">{{ data.summary.total_records }}</div>
+            </div>
+        </div>
+        
+        <!-- Chart Section - Top Stocks by Volume -->
+        <div class="section">
+            <h2>📊 Top 10 Aksione sipas Vëllimit</h2>
+            <div class="chart-container">
+                <canvas id="volumeChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Top Gainers -->
+        <div class="section">
+            <h2>🚀 Top 10 më të fituara - 24 orët e fundit</h2>
+            <div class="stock-grid" id="topGainersGrid">
+                {% for stock in data.stocks.top_gainers %}
+                <div class="stock-card" data-symbol="{{ stock.symbol|lower }}" data-price="{{ stock.price }}" data-change="{{ stock.change_percent }}" data-volume="{{ stock.volume|default(0) }}">
+                    <div class="symbol">{{ stock.symbol }}</div>
+                    <div class="name">{{ stock.name|default(stock.symbol) }}</div>
+                    <div class="price">${{ "%.2f"|format(stock.price) }}</div>
+                    <div class="change change-positive">
+                        <span class="trend-arrow">↑</span> {{ "%.2f"|format(stock.change_percent) }}%
+                    </div>
+                    <div class="stock-meta">
+                        <div><strong>Ndryshim:</strong> ${{ "%.2f"|format(stock.change) }}</div>
+                        <div><strong>Vëllimi:</strong> {{ "%.2f"|format(stock.volume / 1e6) }}M</div>
+                        <div><strong>Source:</strong> {{ stock.source }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Top Losers -->
+        <div class="section">
+            <h2>📉 Top 10 më të humburit - 24 orët e fundit</h2>
+            <div class="stock-grid">
+                {% for stock in data.stocks.top_losers %}
+                <div class="stock-card">
+                    <div class="symbol">{{ stock.symbol }}</div>
+                    <div class="name">{{ stock.name|default(stock.symbol) }}</div>
+                    <div class="price">${{ "%.2f"|format(stock.price) }}</div>
+                    <div class="change change-negative">
+                        <span class="trend-arrow">↓</span> {{ "%.2f"|format(stock.change_percent|abs) }}%
+                    </div>
+                    <div class="stock-meta">
+                        <div><strong>Ndryshim:</strong> ${{ "%.2f"|format(stock.change) }}</div>
+                        <div><strong>Vëllimi:</strong> {{ "%.2f"|format(stock.volume / 1e6) }}M</div>
+                        <div><strong>Source:</strong> {{ stock.source }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- All Stocks Table -->
+        <div class="section">
+            <h2>📊 Të gjitha aksionet - Tabela e plotë</h2>
+            <div class="table-container">
+                <table id="stocksTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Simboli ⇅</th>
+                            <th onclick="sortTable(1)">Emri ⇅</th>
+                            <th onclick="sortTable(2)">Çmimi ⇅</th>
+                            <th onclick="sortTable(3)">Ndryshimi ⇅</th>
+                            <th onclick="sortTable(4)">Ndryshimi % ⇅</th>
+                            <th onclick="sortTable(5)">Vëllimi ⇅</th>
+                            <th onclick="sortTable(6)">Source ⇅</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stocksTableBody">
+                        {% for stock in data.stocks.all_stocks %}
+                        <tr class="stock-row" data-symbol="{{ stock.symbol|lower }}" data-name="{{ stock.name|default(stock.symbol)|lower }}">
+                            <td><strong>{{ stock.symbol }}</strong></td>
+                            <td>{{ stock.name|default(stock.symbol) }}</td>
+                            <td>${{ "%.2f"|format(stock.price) }}</td>
+                            <td class="{% if stock.change >= 0 %}trend-up{% else %}trend-down{% endif %}">
+                                ${{ "%.2f"|format(stock.change|abs) }}
+                            </td>
+                            <td class="{% if stock.change_percent >= 0 %}trend-up{% else %}trend-down{% endif %}">
+                                <span class="trend-arrow">{% if stock.change_percent >= 0 %}↑{% else %}↓{% endif %}</span>
+                                {{ "%.2f"|format(stock.change_percent|abs) }}%
+                            </td>
+                            <td>{{ "%.2f"|format(stock.volume / 1e6) }}M</td>
+                            <td>{{ stock.source }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Dark mode toggle
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        
+        // Search and filter
+        function filterStocks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.stock-card');
+            const rows = document.querySelectorAll('.stock-row');
+            
+            cards.forEach(card => {
+                const symbol = card.getAttribute('data-symbol') || '';
+                if (symbol.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            rows.forEach(row => {
+                const symbol = row.getAttribute('data-symbol') || '';
+                const name = row.getAttribute('data-name') || '';
+                if (symbol.includes(searchTerm) || name.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        
+        // Sort stock cards
+        function sortStocks() {
+            const sortBy = document.getElementById('sortSelect').value;
+            const grid = document.getElementById('topGainersGrid');
+            const cards = Array.from(grid.getElementsByClassName('stock-card'));
+            
+            cards.sort((a, b) => {
+                switch(sortBy) {
+                    case 'symbol':
+                        return a.getAttribute('data-symbol').localeCompare(b.getAttribute('data-symbol'));
+                    case 'price-high':
+                        return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+                    case 'price-low':
+                        return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
+                    case 'change-high':
+                        return parseFloat(b.getAttribute('data-change')) - parseFloat(a.getAttribute('data-change'));
+                    case 'change-low':
+                        return parseFloat(a.getAttribute('data-change')) - parseFloat(b.getAttribute('data-change'));
+                    case 'volume':
+                        return parseFloat(b.getAttribute('data-volume')) - parseFloat(a.getAttribute('data-volume'));
+                }
+            });
+            
+            cards.forEach(card => grid.appendChild(card));
+        }
+        
+        // Table sorting
+        function sortTable(columnIndex) {
+            const table = document.getElementById('stocksTable');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].textContent.replace(/[$,M↑↓]/g, '').trim();
+                const bText = b.cells[columnIndex].textContent.replace(/[$,M↑↓]/g, '').trim();
+                
+                const aNum = parseFloat(aText);
+                const bNum = parseFloat(bText);
+                
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return bNum - aNum;
+                }
+                return aText.localeCompare(bText);
+            });
+            
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        
+        // Export functions
+        function exportCSV() {
+            window.location.href = '/api/export/stocks/csv';
+        }
+        
+        function exportJSON() {
+            window.location.href = '/api/export/json';
+        }
+        
+        // Chart.js - Volume Chart
+        const ctx = document.getElementById('volumeChart').getContext('2d');
+        
+        const allStocks = [{% for stock in data.stocks.all_stocks %}{symbol: '{{ stock.symbol }}', volume: {{ stock.volume if stock.volume else 0 }}},{% endfor %}];
+        const topStocksByVolume = allStocks
+            .filter(s => s.volume > 0)
+            .sort((a, b) => b.volume - a.volume)
+            .slice(0, 10);
+        
+        const chartData = {
+            labels: topStocksByVolume.map(s => s.symbol),
+            datasets: [{
+                label: 'Volume (Million)',
+                data: topStocksByVolume.map(s => s.volume / 1e6),
+                backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderWidth: 2
+            }]
+        };
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed.y.toFixed(2) + 'M';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Volume (Million)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Auto-refresh countdown
+        let refreshCountdown = 30;
+        let isFrozen = false;
+        
+        function toggleFreeze() {
+            const freezeBtn = document.getElementById('freezeBtn');
+            isFrozen = !isFrozen;
+            
+            if (isFrozen) {
+                freezeBtn.textContent = '▶️ Resume Live Mode';
+                freezeBtn.classList.add('frozen');
+                document.getElementById('refreshIndicator').textContent = '❄️ FROZEN - Presentation Mode';
+            } else {
+                freezeBtn.textContent = '❄️ Freeze Dashboard';
+                freezeBtn.classList.remove('frozen');
+                refreshCountdown = 30;
+            }
+        }
+        
+        setInterval(() => {
+            if (!isFrozen) {
+                refreshCountdown--;
+                document.getElementById('refreshIndicator').textContent = `🔄 Auto-refresh: ${refreshCountdown}s`;
+                if (refreshCountdown <= 0) {
+                    location.reload();
+                }
+            }
+        }, 1000);
+        
+        // Fetch cluster status
+        function updateClusterStatus() {
+            fetch('/api/cluster_status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const statusEl = document.getElementById('clusterStatusValue');
+                        if (data.cluster_active) {
+                            statusEl.innerHTML = `<span style="color: #10b981;">✓ Active</span><br>${data.workers} Workers`;
+                        } else {
+                            statusEl.innerHTML = '<span style="color: #ef4444;">⚠ Inactive</span>';
+                        }
+                    }
+                })
+                .catch(err => console.log('Cluster status fetch failed:', err));
+        }
+        
+        // Update cluster status every 10 seconds
+        updateClusterStatus();
+        setInterval(updateClusterStatus, 10000);
+    </script>
+    
+    <!-- Footer Studentor -->
+    <div class="student-footer">
+        <h4>📚 Zhvilluar nga:</h4>
+        <p><strong>Shaban Ejupi</strong> & <strong>Majlinda Bajraktari</strong></p>
+        <p>© 2025 | Universiteti i Prishtinës - FSHMN</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.23571,"solv-btc",1002523974,"Solv Protocol BTC",91343,102,"coingecko","SOLVBTC","2025-11-30T20:09:36.484243",275517,"2025-11-30",20
+-0.01234,"syrupusdt",995260808,"syrupUSDT",1.11,103,"coingecko","SYRUPUSDT","2025-11-30T20:09:36.484251",401031,"2025-11-30",20

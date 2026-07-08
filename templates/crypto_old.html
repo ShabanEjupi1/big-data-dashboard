@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza e kriptovalutave - Big Data Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #f59e0b;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: #5568d3;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-box h3 {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box .value {
+            color: #f59e0b;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f59e0b;
+        }
+        
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .crypto-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .crypto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .crypto-card .rank {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .crypto-card .name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .crypto-card .symbol {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .crypto-card .price {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .crypto-card .change {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .change-positive {
+            background: rgba(16, 185, 129, 0.9);
+        }
+        
+        .change-negative {
+            background: rgba(239, 68, 68, 0.9);
+        }
+        
+        .crypto-meta {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9em;
+        }
+        
+        .crypto-meta div {
+            margin-bottom: 5px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f3f4f6;
+            color: #374151;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f9fafb;
+        }
+        
+        .trend-up {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .trend-down {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        .rank-badge {
+            background: #f59e0b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .crypto-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-btn">← Kthehu në Ballina</a>
+        
+        <div class="header">
+            <h1>💰 Analiza e Kriptovalutave</h1>
+            <p style="color: #666; font-size: 1.1em; margin-top: 10px;">
+                CoinGecko - Top 100 Kriptovaluta sipas Market Cap
+            </p>
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat-box">
+                <h3>TOTALI I KRIPTOVALUTAVE</h3>
+                <div class="value">{{ data.crypto.total }}</div>
+            </div>
+            <div class="stat-box">
+                <h3>MË TË FITUARA 24H</h3>
+                <div class="value trend-up">{{ data.crypto.top_gainers|length }}</div>
+            </div>
+            <div class="stat-box">
+                <h3>MË TË HUMBURIT 24H</h3>
+                <div class="value trend-down">{{ data.crypto.top_losers|length }}</div>
+            </div>
+        </div>
+        
+        <!-- Top 10 Crypto by Market Cap -->
+        <div class="section">
+            <h2>👑 Top 10 kriptovalutat sipas Market Cap</h2>
+            <div class="crypto-grid">
+                {% for crypto in data.crypto.all_crypto[:10] %}
+                <div class="crypto-card">
+                    <div class="rank">#{{ crypto.rank }}</div>
+                    <div class="name">{{ crypto.name }}</div>
+                    <div class="symbol">{{ crypto.symbol }}</div>
+                    <div class="price">${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</div>
+                    <div class="change {% if crypto.change_24h >= 0 %}change-positive{% else %}change-negative{% endif %}">
+                        {% if crypto.change_24h >= 0 %}▲{% else %}▼{% endif %}
+                        {{ "%.2f"|format(crypto.change_24h|abs) }}%
+                    </div>
+                    <div class="crypto-meta">
+                        <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+                        <div><strong>Vëllimi 24h:</strong> ${{ "%.2f"|format(crypto.volume / 1e9) }}B</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Top Gainers 24h -->
+        <div class="section">
+            <h2>🚀 Top 10 më të fituara - 24 orët e fundit</h2>
+            <div class="crypto-grid">
+                {% for crypto in data.crypto.top_gainers %}
+                <div class="crypto-card">
+                    <div class="rank">#{{ crypto.rank }}</div>
+                    <div class="name">{{ crypto.name }}</div>
+                    <div class="symbol">{{ crypto.symbol }}</div>
+                    <div class="price">${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</div>
+                    <div class="change change-positive">
+                        ▲ {{ "%.2f"|format(crypto.change_24h) }}%
+                    </div>
+                    <div class="crypto-meta">
+                        <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+                        <div><strong>Vëllimi 24h:</strong> ${{ "%.2f"|format(crypto.volume / 1e9) }}B</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Top Losers 24h -->
+        <div class="section">
+            <h2>📉 Top 10 më të humburit - 24 orët e fundit</h2>
+            <div class="crypto-grid">
+                {% for crypto in data.crypto.top_losers %}
+                <div class="crypto-card">
+                    <div class="rank">#{{ crypto.rank }}</div>
+                    <div class="name">{{ crypto.name }}</div>
+                    <div class="symbol">{{ crypto.symbol }}</div>
+                    <div class="price">${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</div>
+                    <div class="change change-negative">
+                        ▼ {{ "%.2f"|format(crypto.change_24h|abs) }}%
+                    </div>
+                    <div class="crypto-meta">
+                        <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+                        <div><strong>Vëllimi 24h:</strong> ${{ "%.2f"|format(crypto.volume / 1e9) }}B</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- All Crypto Table -->
+        <div class="section">
+            <h2>📊 Të gjitha kriptovalutat - Tabela e plotë</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Emri</th>
+                            <th>Simboli</th>
+                            <th>Çmimi</th>
+                            <th>Ndryshimi 24h</th>
+                            <th>Market Cap</th>
+                            <th>Vëllimi 24h</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for crypto in data.crypto.all_crypto[:50] %}
+                        <tr>
+                            <td><span class="rank-badge">#{{ crypto.rank }}</span></td>
+                            <td><strong>{{ crypto.name }}</strong></td>
+                            <td>{{ crypto.symbol }}</td>
+                            <td>${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</td>
+                            <td class="{% if crypto.change_24h >= 0 %}trend-up{% else %}trend-down{% endif %}">
+                                {% if crypto.change_24h >= 0 %}▲{% else %}▼{% endif %}
+                                {{ "%.2f"|format(crypto.change_24h|abs) }}%
+                            </td>
+                            <td>${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</td>
+                            <td>${{ "%.2f"|format(crypto.volume / 1e9) }}B</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Summary -->
+        <div class="section">
+            <h2>📊 Përmbledhje e tregut</h2>
+            {% set total_market_cap = data.crypto.all_crypto | sum(attribute='market_cap') %}
+            {% set total_volume = data.crypto.all_crypto | sum(attribute='volume') %}
+            {% set positive_crypto = data.crypto.all_crypto | selectattr('change_24h', 'gt', 0) | list %}
+            {% set negative_crypto = data.crypto.all_crypto | selectattr('change_24h', 'lt', 0) | list %}
+            
+            <div class="crypto-grid">
+                <div class="crypto-card">
+                    <h3 style="font-size: 1em; margin-bottom: 10px; opacity: 0.9;">TOTALI I MARKET CAP</h3>
+                    <div class="price">${{ "%.2f"|format(total_market_cap / 1e12) }}T</div>
+                </div>
+                <div class="crypto-card">
+                    <h3 style="font-size: 1em; margin-bottom: 10px; opacity: 0.9;">TOTALI I VËLLIMIT 24H</h3>
+                    <div class="price">${{ "%.2f"|format(total_volume / 1e9) }}B</div>
+                </div>
+                <div class="crypto-card">
+                    <h3 style="font-size: 1em; margin-bottom: 10px; opacity: 0.9;">CRYPTO NË RRITJE</h3>
+                    <div class="price" style="color: #10b981;">{{ positive_crypto|length }}</div>
+                </div>
+                <div class="crypto-card">
+                    <h3 style="font-size: 1em; margin-bottom: 10px; opacity: 0.9;">CRYPTO NË RËNIE</h3>
+                    <div class="price" style="color: #ef4444;">{{ negative_crypto|length }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-refresh çdo 30 sekonda
+        setTimeout(function() {
+            location.reload();
+        }, 30000);
+    </script>
+</body>
+</html>

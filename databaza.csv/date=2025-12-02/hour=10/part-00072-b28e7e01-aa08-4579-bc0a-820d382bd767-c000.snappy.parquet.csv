@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.18052,"mantle-staked-ether",670245777,"Mantle Staked Ether",3027.03,122,"coingecko","METH","2025-12-02T10:31:39.589419",2361977,"2025-12-02",10
+-0.00874,"bridged-usdc-polygon-pos-bridge",645804050,"Polygon Bridged USDC (Polygon PoS)",0.999613,123,"coingecko","USDC.E","2025-12-02T10:31:39.589426",26027068,"2025-12-02",10

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.50318,"ether-fi-staked-eth",404175503,"ether.fi Staked ETH",3143.87,177,"coingecko","EETH","2025-12-04T23:02:18.949521",13023.87,"2025-12-04",23
+-1.31349,"coinbase-wrapped-staked-eth",401772984,"Coinbase Wrapped Staked ETH",3496.2,179,"coingecko","CBETH","2025-12-04T23:02:18.949527",11447703,"2025-12-04",23

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.03441,"dai",4382314189,"Dai",0.999842,36,"coingecko","DAI","2025-12-02T15:36:28.435382",123494580,"2025-12-02",15
+-0.0863,"susds",4185371641,"sUSDS",1.075,37,"coingecko","SUSDS","2025-12-02T15:36:28.435390",47828427,"2025-12-02",15

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.15915,"ibc-bridged-usdc",232067303,"Noble USDC",1,247,"coingecko","USDC.N","2025-12-01T21:25:33.740699",827328,"2025-12-01",21
+-7.8609,"wrapped-ether-mantle-bridge",230392072,"Mantle Bridged WETH (Mantle)",2780.77,248,"coingecko","WETH","2025-12-01T21:25:33.740705",5210577,"2025-12-01",21

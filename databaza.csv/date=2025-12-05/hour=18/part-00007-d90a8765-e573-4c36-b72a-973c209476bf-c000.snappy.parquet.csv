@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-4.25165,"wrapped-steth",1.2285745998e+10,"Wrapped stETH",3689.7,14,"coingecko","WSTETH","2025-12-05T18:43:31.354253",41120693,"2025-12-05",18
+-1.19319,"bitcoin-cash",1.1339618371e+10,"Bitcoin Cash",567.55,15,"coingecko","BCH","2025-12-05T18:43:31.354260",320353150,"2025-12-05",18

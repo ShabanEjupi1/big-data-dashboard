@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+12.23643,"ultima",526414670,"Ultima",5248.51,150,"coingecko","ULTIMA","2025-12-04T07:23:49.015710",19229001,"2025-12-04",7
+-1.07402,"the-graph",522484653,"The Graph",0.04921567,151,"coingecko","GRT","2025-12-04T07:23:49.015716",25172993,"2025-12-04",7

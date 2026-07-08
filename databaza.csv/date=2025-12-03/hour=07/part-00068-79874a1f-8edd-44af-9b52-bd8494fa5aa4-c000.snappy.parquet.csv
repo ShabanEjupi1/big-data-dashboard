@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+15.21556,"virtual-protocol",629908205,"Virtuals Protocol",0.958364,128,"coingecko","VIRTUAL","2025-12-03T07:44:57.789319",150538496,"2025-12-03",7
+-0.00364,"polygon-pos-bridged-dai-polygon-pos",629173476,"Polygon PoS Bridged DAI (Polygon POS)",0.99964,130,"coingecko","DAI","2025-12-03T07:44:57.789339",11628184,"2025-12-03",7

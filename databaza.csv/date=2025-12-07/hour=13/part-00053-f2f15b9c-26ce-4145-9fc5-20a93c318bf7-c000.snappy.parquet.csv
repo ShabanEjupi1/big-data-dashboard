@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.10042,"liquid-staked-ethereum",1009231028,"Liquid Staked ETH",3250.9,101,"coingecko","LSETH","2025-12-07T13:43:28.831048",61462,"2025-12-07",13
+-1.37727,"lombard-staked-btc",1001305009,"Lombard Staked BTC",88688,102,"coingecko","LBTC","2025-12-07T13:43:28.831055",3785904,"2025-12-07",13

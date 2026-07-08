@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-3.96651,"polygon-pos-bridged-weth-polygon-pos",283065663,"Polygon PoS Bridged WETH (Polygon POS)",3025.34,226,"coingecko","WETH","2025-12-06T00:45:12.208068",12061796,"2025-12-06",0
+-0.0355,"frax",281950970,"Legacy Frax Dollar",0.993801,227,"coingecko","FRAX","2025-12-06T00:45:12.208075",1631921,"2025-12-06",0

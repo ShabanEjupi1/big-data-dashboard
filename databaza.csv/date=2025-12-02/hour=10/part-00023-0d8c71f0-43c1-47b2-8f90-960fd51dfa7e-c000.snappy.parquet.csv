@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.01868,"paypal-usd",3855546679,"PayPal USD",0.999626,39,"coingecko","PYUSD","2025-12-02T10:53:44.728934",182308791,"2025-12-02",10
+0.01135,"ethena-staked-usde",3810503015,"Ethena Staked USDe",1.21,40,"coingecko","SUSDE","2025-12-02T10:53:44.728941",66946760,"2025-12-02",10

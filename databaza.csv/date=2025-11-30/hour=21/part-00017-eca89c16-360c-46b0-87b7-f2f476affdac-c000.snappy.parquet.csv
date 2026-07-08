@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.69439,"coinbase-wrapped-btc",6540104817,"Coinbase Wrapped BTC",91185,29,"coingecko","CBBTC","2025-11-30T21:17:25.842412",203903769,"2025-11-30",21
+-0.27594,"litecoin",6416191792,"Litecoin",83.77,30,"coingecko","LTC","2025-11-30T21:17:25.842419",349503529,"2025-11-30",21

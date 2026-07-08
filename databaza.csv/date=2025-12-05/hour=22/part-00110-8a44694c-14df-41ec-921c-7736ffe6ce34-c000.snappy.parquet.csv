@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.28207,"binance-peg-busd",313141673,"Binance-Peg BUSD",1.002,209,"coingecko","BUSD","2025-12-05T22:22:16.211083",3766150,"2025-12-05",22
+-7.38625,"compound-governance-token",302828019,"Compound",31.34,210,"coingecko","COMP","2025-12-05T22:22:16.211090",45867114,"2025-12-05",22

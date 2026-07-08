@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.20786,"ibc-bridged-usdc",235334288,"Noble USDC",0.999011,248,"coingecko","USDC.N","2025-12-05T10:03:38.734605",842578,"2025-12-05",10
+-5.20037,"drift-staked-sol",234523675,"Drift Staked SOL",158.22,250,"coingecko","DSOL","2025-12-05T10:03:38.734612",54580,"2025-12-05",10

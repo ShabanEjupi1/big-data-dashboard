@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.82768,"tron",2.7110403599e+10,"TRON",0.286342,8,"coingecko","TRX","2025-12-05T20:25:27.629755",797856929,"2025-12-05",20
+-2.35881,"staked-ether",2.6321264494e+10,"Lido Staked Ether",3043.35,9,"coingecko","STETH","2025-12-05T20:25:27.629762",59047034,"2025-12-05",20

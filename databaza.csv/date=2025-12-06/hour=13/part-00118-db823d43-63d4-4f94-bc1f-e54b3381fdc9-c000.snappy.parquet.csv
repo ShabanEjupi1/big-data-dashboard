@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.22905,"cap-usd",287760359,"Cap USD",1.001,223,"coingecko","CUSD","2025-12-06T13:38:25.213658",23498,"2025-12-06",13
+-2.56925,"polygon-pos-bridged-weth-polygon-pos",283949722,"Polygon PoS Bridged WETH (Polygon POS)",3034.61,225,"coingecko","WETH","2025-12-06T13:38:25.213665",10405229,"2025-12-06",13

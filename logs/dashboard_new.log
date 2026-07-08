@@ -1,0 +1,2250 @@
+nohup: ignoring input
+================================================================================
+ 🚀 BIG DATA DASHBOARD - REAL-TIME PARQUET READER
+================================================================================
+
+📊 Dashboard i disponueshëm në:
+   - http://localhost:5000
+   - http://10.0.0.8:5000
+
+📄 Faqet:
+   / ................ Ballina (Overview)
+   /reddit .......... Analiza e Reddit
+   /stocks .......... Analiza e Aksioneve (REAL-TIME)
+   /crypto .......... Analiza e Kriptovalutave (REAL-TIME)
+   /api/data ........ JSON API (REAL-TIME)
+   /api/refresh ..... Refresh Status
+
+🔄 Data Source: Live Parquet files from 10 VMs
+   - Auto-refreshes every request
+   - Shows ALL collected data from VMs
+
+⚠️  Shtyp CTRL+C për të ndaluar serverin
+================================================================================
+
+🔍 Testing data loading...
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7273 parquet files for crypto (today)
+✓ Loaded 10236 crypto records from parquet files
+📁 Found 349 parquet files for stocks (today)
+✓ Loaded 325 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10236
+  - Crypto (unique latest): 345
+  - Stock records (all): 325
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Data loaded successfully:
+  - Stocks: 15
+  - Cryptos: 345
+  - Total records: 10561
+
+ * Serving Flask app 'dashboard'
+ * Debug mode: off
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.8:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 17:55:00] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 17:55:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 17:58:52] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 17:59:27] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 18:00:02] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 18:00:36] "GET /recommendations HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 18:01:09] "GET /portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 21:58:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 21:58:59] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:00:14] "GET /stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:02:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:03:22] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:04:02] "GET /stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:04:43] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:10:43] "GET / HTTP/1.1" 200 -
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7285 parquet files for crypto (today)
+✓ Loaded 10252 crypto records from parquet files
+📁 Found 350 parquet files for stocks (today)
+✓ Loaded 326 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10252
+  - Crypto (unique latest): 345
+  - Stock records (all): 326
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7289 parquet files for crypto (today)
+✓ Loaded 10256 crypto records from parquet files
+📁 Found 350 parquet files for stocks (today)
+✓ Loaded 326 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10256
+  - Crypto (unique latest): 345
+  - Stock records (all): 326
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7313 parquet files for crypto (today)
+✓ Loaded 10290 crypto records from parquet files
+📁 Found 350 parquet files for stocks (today)
+✓ Loaded 326 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10290
+  - Crypto (unique latest): 345
+  - Stock records (all): 326
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7321 parquet files for crypto (today)
+✓ Loaded 10300 crypto records from parquet files
+📁 Found 351 parquet files for stocks (today)
+✓ Loaded 326 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10300
+  - Crypto (unique latest): 345
+  - Stock records (all): 326
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7329 parquet files for crypto (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 351 parquet files for stocks (today)
+✓ Loaded 326 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 345
+  - Stock records (all): 326
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7329 parquet files for crypto (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 351 parquet files for stocks (today)
+✓ Loaded 326 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 345
+  - Stock records (all): 326
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8934 parquet files for crypto (today)
+✓ Loaded 12658 crypto records from parquet files
+📁 Found 427 parquet files for stocks (today)
+✓ Loaded 396 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12658
+  - Crypto (unique latest): 346
+  - Stock records (all): 396
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8950 parquet files for crypto (today)
+✓ Loaded 12682 crypto records from parquet files
+📁 Found 428 parquet files for stocks (today)
+✓ Loaded 396 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12682
+  - Crypto (unique latest): 346
+  - Stock records (all): 396
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8954 parquet files for crypto (today)
+✓ Loaded 12690 crypto records from parquet files
+📁 Found 429 parquet files for stocks (today)
+✓ Loaded 397 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12690
+  - Crypto (unique latest): 346
+  - Stock records (all): 397
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8966 parquet files for crypto (today)
+✓ Loaded 12708 crypto records from parquet files
+📁 Found 431 parquet files for stocks (today)
+✓ Loaded 399 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12708
+  - Crypto (unique latest): 346
+  - Stock records (all): 399
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8974 parquet files for crypto (today)
+✓ Loaded 12720 crypto records from parquet files
+📁 Found 432 parquet files for stocks (today)
+✓ Loaded 400 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12720
+  - Crypto (unique latest): 346
+  - Stock records (all): 400
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8982 parquet files for crypto (today)
+✓ Loaded 12732 crypto records from parquet files
+📁 Found 432 parquet files for stocks (today)
+✓ Loaded 400 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12732
+  - Crypto (unique latest): 346
+  - Stock records (all): 400
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 8982 parquet files for crypto (today)
+✓ Loaded 12732 crypto records from parquet files
+📁 Found 432 parquet files for stocks (today)
+✓ Loaded 400 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12732
+  - Crypto (unique latest): 346
+  - Stock records (all): 400
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9018 parquet files for crypto (today)
+✓ Loaded 12790 crypto records from parquet files
+📁 Found 434 parquet files for stocks (today)
+✓ Loaded 402 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12790
+  - Crypto (unique latest): 346
+  - Stock records (all): 402
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:11:31] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:12:49] "GET /stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:16:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:17:33] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:18:15] "GET /stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:18:57] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 22:46:53] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:18:39] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:18:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:18:40] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:18:50] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:19:01] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:19:12] "GET /api/cluster_status HTTP/1.1" 200 -
+============================================================
+📁 Found 9026 parquet files for crypto (today)
+✓ Loaded 12802 crypto records from parquet files
+📁 Found 434 parquet files for stocks (today)
+✓ Loaded 402 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12802
+  - Crypto (unique latest): 346
+  - Stock records (all): 402
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9030 parquet files for crypto (today)
+✓ Loaded 12810 crypto records from parquet files
+📁 Found 434 parquet files for stocks (today)
+✓ Loaded 402 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12810
+  - Crypto (unique latest): 346
+  - Stock records (all): 402
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9062 parquet files for crypto (today)
+✓ Loaded 12856 crypto records from parquet files
+📁 Found 435 parquet files for stocks (today)
+✓ Loaded 403 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12856
+  - Crypto (unique latest): 346
+  - Stock records (all): 403
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9070 parquet files for crypto (today)
+✓ Loaded 12868 crypto records from parquet files
+📁 Found 435 parquet files for stocks (today)
+✓ Loaded 403 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12868
+  - Crypto (unique latest): 346
+  - Stock records (all): 403
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9070 parquet files for crypto (today)
+✓ Loaded 12868 crypto records from parquet files
+📁 Found 437 parquet files for stocks (today)
+✓ Loaded 405 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12868
+  - Crypto (unique latest): 346
+  - Stock records (all): 405
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9082 parquet files for crypto (today)
+✓ Loaded 12886 crypto records from parquet files
+📁 Found 437 parquet files for stocks (today)
+✓ Loaded 405 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 12886
+  - Crypto (unique latest): 346
+  - Stock records (all): 405
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 9287 parquet files for crypto (today)
+✓ Loaded 13192 crypto records from parquet files
+📁 Found 451 parquet files for stocks (today)
+✓ Loaded 419 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 13192
+  - Crypto (unique latest): 346
+  - Stock records (all): 419
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6899 parquet files for crypto (today)
+✓ Loaded 10302 crypto records from parquet files
+📁 Found 381 parquet files for stocks (today)
+✓ Loaded 348 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10302
+  - Crypto (unique latest): 341
+  - Stock records (all): 348
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:19:26] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:19:37] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:19:48] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:28:50] "GET /recommendations HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:33:46] "GET /recommendations HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:35:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:09] "GET / HTTP/1.1" 200 -
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6903 parquet files for crypto (today)
+📁 Found 6903 parquet files for crypto (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 383 parquet files for stocks (today)
+✓ Loaded 350 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 350
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6991 parquet files for crypto (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 384 parquet files for stocks (today)
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7011 parquet files for crypto (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 352 stocks records from parquet files
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:18] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:27] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:36] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:36] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:48] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:49] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:36:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:38:14] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:38:32] "GET / HTTP/1.1" 200 -
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10310 crypto records from parquet files
+📁 Found 385 parquet files for stocks (today)
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+📁 Found 7023 parquet files for crypto (today)
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10310
+  - Crypto (unique latest): 341
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7023 parquet files for crypto (today)
+✓ Loaded 10438 crypto records from parquet files
+📁 Found 386 parquet files for stocks (today)
+✓ Loaded 353 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10438
+  - Crypto (unique latest): 341
+  - Stock records (all): 353
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10470 crypto records from parquet files
+📁 Found 386 parquet files for stocks (today)
+✓ Loaded 353 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10470
+  - Crypto (unique latest): 341
+  - Stock records (all): 353
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10490 crypto records from parquet files
+📁 Found 386 parquet files for stocks (today)
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:38:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:38:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:42:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:43:10] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:43:27] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:43:27] "GET /api/collection_stats HTTP/1.1" 200 -
+ERROR:dashboard:Exception on /api/export/json [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 337, in export_json
+    @app.route('/api/collection_stats')
+  File "/usr/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.9/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:44:22] "[35m[1mGET /api/export/json HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:44:59] "GET /api/export/crypto/csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:45:05] "GET /api/export/stocks/csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 16:54:57] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Dec/2025 17:00:02] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:44:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:47:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:47:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:47:18] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:47:28] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:48:07] "GET /predictions HTTP/1.1" 200 -
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/12/04 15:48:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/04 15:48:15 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+INFO:root:✓ ML Prediction Engine connected to 10 VM Spark cluster
+INFO:root:✓ ML Prediction Engine connected to 10 VM Spark cluster
+INFO:root:✓ Loaded 57270 historical crypto records
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 15:51:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:51:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:51:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:52:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 15:52:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:52:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:52:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:53:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:53:20] "GET / HTTP/1.1" 200 -
+25/12/04 15:53:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:53:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:53:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:54:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]✓ Loaded 353 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10490
+  - Crypto (unique latest): 341
+  - Stock records (all): 353
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10490 crypto records from parquet files
+📁 Found 386 parquet files for stocks (today)
+✓ Loaded 353 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10490
+  - Crypto (unique latest): 341
+  - Stock records (all): 353
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7063 parquet files for crypto (today)
+✓ Loaded 10550 crypto records from parquet files
+📁 Found 387 parquet files for stocks (today)
+✓ Loaded 354 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10550
+  - Crypto (unique latest): 341
+  - Stock records (all): 354
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7071 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7071 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7071 parquet files for crypto (today)
+✓ Loaded 10562 crypto records from parquet files
+📁 Found 388 parquet files for stocks (today)
+✓ Loaded 355 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10562
+  - Crypto (unique latest): 341
+  - Stock records (all): 355
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10562 crypto records from parquet files
+📁 Found 388 parquet files for stocks (today)
+✓ Loaded 355 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10562
+  - Crypto (unique latest): 341
+  - Stock records (all): 355
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10562 crypto records from parquet files
+📁 Found 388 parquet files for stocks (today)
+✓ Loaded 355 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10562
+  - Crypto (unique latest): 341
+  - Stock records (all): 355
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6727 parquet files for crypto (today)
+✓ Loaded 10064 crypto records from parquet files
+📁 Found 361 parquet files for stocks (today)
+✓ Loaded 341 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10064
+  - Crypto (unique latest): 342
+  - Stock records (all): 341
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6743 parquet files for crypto (today)
+✓ Loaded 10086 crypto records from parquet files
+📁 Found 363 parquet files for stocks (today)
+✓ Loaded 342 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10086
+  - Crypto (unique latest): 342
+  - Stock records (all): 342
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6751 parquet files for crypto (today)
+✓ Loaded 10098 crypto records from parquet files
+📁 Found 364 parquet files for stocks (today)
+✓ Loaded 343 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10098
+  - Crypto (unique latest): 342
+  - Stock records (all): 343
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6771 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6771 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6771 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6771 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6787 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6787 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6787 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6795 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6795 parquet files for crypto (today)
+📁 Found 6795 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6795 parquet files for crypto (today)
+✓ Loaded 10130 crypto records from parquet files
+📁 Found 365 parquet files for stocks (today)
+✓ Loaded 344 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10130
+  - Crypto (unique latest): 342
+  - Stock records (all): 344
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6795 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6795 parquet files for crypto (today)
+✓ Loaded 10130 crypto records from parquet files
+📁 Found 365 parquet files for stocks (today)
+✓ Loaded 10130 crypto records from parquet files
+📁 Found 365 parquet files for stocks (today)
+✓ Loaded 344 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10130
+  - Crypto (unique latest): 342
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:54:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:54:22] "GET / HTTP/1.1" 200 -
+25/12/04 15:54:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:root:✓ ML Prediction Engine connected to 10 VM Spark cluster
+25/12/04 15:54:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:54:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:55:09] "GET / HTTP/1.1" 200 -
+25/12/04 15:55:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 15:55:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:55:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:55:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:root:✓ ML Prediction Engine connected to 10 VM Spark cluster
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:56:09] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 15:56:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 15:56:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:56:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:56:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:57:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 15:57:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:57:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:57:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:58:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 15:58:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:58:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:58:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 15:59:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:21] "[33mGET /cryptos HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:24] "GET /predictions HTTP/1.1" 200 -
+25/12/04 15:59:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:39] "GET / HTTP/1.1" 200 -
+25/12/04 15:59:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 15:59:47] "GET / HTTP/1.1" 200 -
+25/12/04 15:59:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:00:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:00:20] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:00:25] "GET /stocks HTTP/1.1" 200 -
+25/12/04 16:00:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:00:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:00:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:01:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                                                          (0 + 0) / 2]25/12/04 16:01:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:root:✓ Loaded 57282 historical crypto records
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:01:33] "GET / HTTP/1.1" 200 -
+25/12/04 16:01:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:01:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:02:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:02:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:02:28] "GET / HTTP/1.1" 200 -
+25/12/04 16:02:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:02:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:03:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:03:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:03:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:03:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:04:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:04:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:04:40] "GET /predictions HTTP/1.1" 200 -
+25/12/04 16:04:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:04:48] "GET /crypto HTTP/1.1" 200 -
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:04:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:05:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:05:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:05:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:05:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:06:05] "GET /crypto HTTP/1.1" 200 -
+25/12/04 16:06:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:06:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:06:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+  - Stock records (all): 344
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 344 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10130
+  - Crypto (unique latest): 342
+  - Stock records (all): 344
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10130 crypto records from parquet files
+📁 Found 365 parquet files for stocks (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6803 parquet files for crypto (today)
+✓ Loaded 344 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10130
+  - Crypto (unique latest): 342
+  - Stock records (all): 344
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6815 parquet files for crypto (today)
+✓ Loaded 10154 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6831 parquet files for crypto (today)
+✓ Loaded 10154 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 10154 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 10166 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 10166 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 346 stocks records from parquet files
+✓ Loaded 10166 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 10166 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+
+📈 Data Summary:
+  - Crypto records (all): 10154
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6831 parquet files for crypto (today)
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10154
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10154
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 346 stocks records from parquet files
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10166
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10166
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10166
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10166
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10166 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 10166 crypto records from parquet files
+📁 Found 367 parquet files for stocks (today)
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10166
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 346 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10166
+  - Crypto (unique latest): 342
+  - Stock records (all): 346
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6851 parquet files for crypto (today)
+✓ Loaded 10178 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10178
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6851 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6851 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6855 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6855 parquet files for crypto (today)
+✓ Loaded 10198 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10198
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6868 parquet files for crypto (today)
+✓ Loaded 10220 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 10220 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10220
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10220
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10250 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10250
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10250 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 10250 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10250
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:06:43] "GET /portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:06:45] "GET /recommendations HTTP/1.1" 200 -
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:06:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:06:59] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:07:01] "GET /stocks HTTP/1.1" 200 -
+25/12/04 16:07:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:07:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:07:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:07:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:08:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:08:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+ERROR:dashboard:Exception on /api/export/json [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 337, in export_json
+    # Check if Spark processes are running
+  File "/usr/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.9/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.9/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Timestamp is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:08:38] "[35m[1mGET /api/export/json HTTP/1.1[0m" 500 -
+25/12/04 16:08:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:08:44] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:08:46] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:08:54] "GET /api/cluster_status HTTP/1.1" 200 -
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:08:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:09:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:09:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:09:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:09:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:10:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:10:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:10:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:10:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:11:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:11:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:11:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>                  (0 + 0) / 2][Stage 1:>                  (0 + 0) / 2]25/12/04 16:11:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:12:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:root:✓ Loaded 57342 historical crypto records
+25/12/04 16:12:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:12:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:12:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:13:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:13:09] "GET /predictions HTTP/1.1" 200 -
+25/12/04 16:13:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:13:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:13:31] "GET /portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:13:33] "GET /recommendations HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:13:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:13:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:14:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:root:✓ Loaded 57362 historical crypto records
+25/12/04 16:14:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:14:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:14:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:15:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:15:13] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:15:16] "GET /stocks HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:15:16] "GET /crypto HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:15:19] "GET /stocks HTTP/1.1" 200 -
+25/12/04 16:15:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:15:33] "GET / HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:15:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:15:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:16:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:16:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:16:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:16:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:17:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:17:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:17:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:17:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:18:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:18:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:18:33] "GET /predictions HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:18:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:18:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:19:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:19:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:19:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:19:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:20:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:20:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:31] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:31] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:31] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:31] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:32] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:32] "GET /api/cluster_status HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:40] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:40] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:20:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:41] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:41] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:41] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ ML Prediction Engine connected to 10 VM Spark cluster
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:42] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:52] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:52] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:53] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:54] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:20:54] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:20:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:01] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:02] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:02] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:03] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:04] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:10] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:10] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:21:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:11] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:12] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:22] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:21:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:27] "GET /api/cluster_status HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:38] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:21:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:44] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:46] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57478 records for analysis
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:52] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:55] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:21:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:21:57] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57478 records for analysis
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:22:02] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:22:04] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:22:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:22:18] "GET /api/investment/recommendations?risk_profile=balanced HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:22:25] "GET /api/portfolio/optimize?amount=10000&risk_profile=balanced HTTP/1.1" 200 -
+25/12/04 16:22:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:22:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:22:44] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:22:52] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:22:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:23:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:23:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:23:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:23:45] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:23:52] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:23:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:24:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:24:22] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:24:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:24:29] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:24:35] "GET /api/cluster_status HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:24:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:24:42] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:24:51] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:24:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:24:56] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:25:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:25:13] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:25:19] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:25:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:25:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:25:42] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:25:48] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57546 records for analysis
+25/12/04 16:25:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:25:56] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57546 records for analysis
+25/12/04 16:26:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:26:13] "GET /api/portfolio/optimize?amount=10000&risk_profile=balanced HTTP/1.1" 200 -
+25/12/04 16:26:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:26:26] "GET /api/portfolio/optimize?amount=10000&risk_profile=balanced HTTP/1.1" 200 -
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:26:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:26:43] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:26:47] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:26:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:27:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:27:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]25/12/04 16:27:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:27:56 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:28:11 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/12/04 16:28:26 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[Stage 0:>    (0 + 0) / 2][Stage 1:>    (0 + 0) / 2][Stage 2:>    (0 + 0) / 2]INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:38] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:28:41 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:44] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:28:51 ERROR StandaloneSchedulerBackend: Application has been killed. Reason: Master removed our application: KILLED
+25/12/04 16:28:51 ERROR Utils: Uncaught exception in thread stop-spark-context
+org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.deploy.client.StandaloneAppClient.stop(StandaloneAppClient.scala:288)
+	at org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend.org$apache$spark$scheduler$cluster$StandaloneSchedulerBackend$$stop(StandaloneSchedulerBackend.scala:275)
+	at org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend.stop(StandaloneSchedulerBackend.scala:142)
+	at org.apache.spark.scheduler.SchedulerBackend.stop(SchedulerBackend.scala:33)
+	at org.apache.spark.scheduler.SchedulerBackend.stop$(SchedulerBackend.scala:33)
+	at org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend.stop(CoarseGrainedSchedulerBackend.scala:54)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.$anonfun$stop$2(TaskSchedulerImpl.scala:992)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.stop(TaskSchedulerImpl.scala:992)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$stop$4(DAGScheduler.scala:2976)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:2976)
+	at org.apache.spark.SparkContext.$anonfun$stop$12(SparkContext.scala:2263)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2263)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.SparkContext$$anon$3.run(SparkContext.scala:2203)
+Caused by: org.apache.spark.SparkException: Could not find AppClient.
+	at org.apache.spark.rpc.netty.Dispatcher.postMessage(Dispatcher.scala:178)
+	at org.apache.spark.rpc.netty.Dispatcher.postLocalMessage(Dispatcher.scala:144)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.askAbortable(NettyRpcEnv.scala:242)
+	at org.apache.spark.rpc.netty.NettyRpcEndpointRef.askAbortable(NettyRpcEnv.scala:554)
+	at org.apache.spark.rpc.netty.NettyRpcEndpointRef.ask(NettyRpcEnv.scala:558)
+	at org.apache.spark.rpc.RpcEndpointRef.ask(RpcEndpointRef.scala:72)
+	... 17 more
+ERROR:root:Error getting ML predictions: An error occurred while calling o162.collectToPython.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Master removed our application: KILLED
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+
+ERROR:root:Error getting ML predictions: An error occurred while calling o76.collectToPython.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Master removed our application: KILLED
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:52] "[35m[1mGET /api/ml/predictions HTTP/1.1[0m" 500 -
+INFO:py4j.clientserver:Closing down clientserver connection
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:52] "[35m[1mGET /api/ml/predictions HTTP/1.1[0m" 500 -
+ERROR:root:Error getting ML predictions: An error occurred while calling o203.collectToPython.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Master removed our application: KILLED
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:52] "[35m[1mGET /api/ml/predictions HTTP/1.1[0m" 500 -
+ERROR:root:Error getting ML predictions: An error occurred while calling o121.collectToPython.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Master removed our application: KILLED
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:52] "[35m[1mGET /api/ml/predictions HTTP/1.1[0m" 500 -
+INFO:py4j.clientserver:Closing down clientserver connection
+INFO:py4j.clientserver:Closing down clientserver connection
+INFO:py4j.clientserver:Closing down clientserver connection
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:28:57] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:07] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:13] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:22] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:26] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:29] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:35] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:39] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57592 records for analysis
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:49] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:29:53] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:03] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:03] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:04] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57592 records for analysis
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:16] "GET /api/portfolio/optimize?amount=10000&risk_profile=balanced HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:37] "GET /api/portfolio/optimize?amount=10000&risk_profile=balanced HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:41] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:30:45] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:31:53] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:32:00] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:root:✓ Loaded 57612 records for analysis
+INFO:root:✓ Loaded 57612 historical crypto records
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:32:24] "GET /api/portfolio/optimize?amount=10000&risk_profile=balanced HTTP/1.1" 200 -
+ERROR:root:Error loading historical data: An error occurred while calling o218.defaultParallelism.
+: java.lang.IllegalStateException: Cannot call methods on a stopped SparkContext.
+This stopped SparkContext was created at:
+
+org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+py4j.Gateway.invoke(Gateway.java:238)
+py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+java.base/java.lang.Thread.run(Thread.java:829)
+
+The currently active SparkContext was created at:
+
+(No active SparkContext.)
+         
+	at org.apache.spark.SparkContext.assertNotStopped(SparkContext.scala:122)
+	at org.apache.spark.SparkContext.defaultParallelism(SparkContext.scala:2707)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:32:33] "GET /api/ml/predictions HTTP/1.1" 200 -
+INFO:py4j.clientserver:Closing down clientserver connection
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:32:56] "GET /predictions HTTP/1.1" 200 -
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+✓ Loaded 347 stocks records from parquet files
+📁 Found 6884 parquet files for crypto (today)
+
+📈 Data Summary:
+  - Crypto records (all): 10250
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+✓ Loaded 10258 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+📁 Found 6884 parquet files for crypto (today)
+✓ Loaded 10258 crypto records from parquet files
+📁 Found 368 parquet files for stocks (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10258
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6884 parquet files for crypto (today)
+✓ Loaded 347 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10258
+  - Crypto (unique latest): 342
+  - Stock records (all): 347
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6884 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6892 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6892 parquet files for crypto (today)
+✓ Loaded 10278 crypto records from parquet files
+📁 Found 370 parquet files for stocks (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6892 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6892 parquet files for crypto (today)
+✓ Loaded 349 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10278
+  - Crypto (unique latest): 342
+  - Stock records (all): 349
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6892 parquet files for crypto (today)
+✓ Loaded 10300 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 10300 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10300
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10300
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10300 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 10300 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10300
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10300
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10314 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 10314 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 10314 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 10314 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10314
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 351 stocks records from parquet files
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10314
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+
+📈 Data Summary:
+  - Crypto records (all): 10314
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 6937 parquet files for crypto (today)
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10314
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10314 crypto records from parquet files
+📁 Found 373 parquet files for stocks (today)
+✓ Loaded 351 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10314
+  - Crypto (unique latest): 342
+  - Stock records (all): 351
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 10382 crypto records from parquet files
+📁 Found 374 parquet files for stocks (today)
+✓ Loaded 352 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10382
+  - Crypto (unique latest): 342
+  - Stock records (all): 352
+  - Stocks (unique latest): 15
+============================================================
+
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7046 parquet files for crypto (today)
+
+============================================================
+ 📊 LOADING REAL-TIME DATA FROM PARQUET FILES
+============================================================
+📁 Found 7046 parquet files for crypto (today)
+✓ Loaded 10532 crypto records from parquet files
+📁 Found 379 parquet files for stocks (today)
+✓ Loaded 10532 crypto records from parquet files
+📁 Found 379 parquet files for stocks (today)
+✓ Loaded 356 stocks records from parquet files
+
+📈 Data Summary:
+  - Crypto records (all): 10532
+  - Crypto (unique latest): 342
+  - Stock records (all): 356
+  - Stocks (unique latest): 15
+============================================================
+
+✓ Loaded 356 stocks records from parquet files
+
+📈 Data Summary:
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:32:58] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:27] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:30] "GET /predictions HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:30] "GET /api/cluster_status HTTP/1.1" 200 -
+25/12/04 16:38:31 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+INFO:root:✓ ML Prediction Engine connected to 10 VM Spark cluster
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:33] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:40] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:40] "GET /recommendations HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:41] "GET /api/investment/recommendations?risk_profile=balanced HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:43] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:43] "GET /portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:49] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:52] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:38:59] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:39:03] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:39:11] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:39:15] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:39:21] "GET /api/cluster_status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2025 16:39:25] "GET /api/cluster_status HTTP/1.1" 200 -

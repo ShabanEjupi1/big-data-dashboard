@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.81804,"binance-peg-weth",1696802497,"Binance-Peg WETH",2800.45,66,"coingecko","WETH","2025-12-02T07:17:56.650691",72612605,"2025-12-02",7
+0.41081,"jupiter-perpetuals-liquidity-provider-token",1643947510,"Jupiter Perpetuals Liquidity Provider Token",4.51,67,"coingecko","JLP","2025-12-02T07:17:56.650698",37601196,"2025-12-02",7

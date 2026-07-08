@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.67496,"clbtc",669884683,"clBTC",86736,122,"coingecko","CLBTC","2025-12-01T09:29:59.313692",4.06,"2025-12-01",9
+0.00202,"bridged-usdc-polygon-pos-bridge",638240114,"Polygon Bridged USDC (Polygon PoS)",0.9997,123,"coingecko","USDC.E","2025-12-01T09:29:59.313699",9488901,"2025-12-01",9

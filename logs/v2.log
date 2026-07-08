@@ -1,0 +1,19 @@
+INFO:     Started server process [1601959]
+INFO:     Waiting for application startup.
+2026-01-07 18:59:29,199 - main - INFO - ================================================================================
+2026-01-07 18:59:29,200 - main - INFO -  🚀 V2 ADVANCED FINANCIAL ANALYTICS PLATFORM (2030)
+2026-01-07 18:59:29,200 - main - INFO -  🎓 University of Prishtina - FSHMN
+2026-01-07 18:59:29,200 - main - INFO -  👨‍💻 Shaban Ejupi & Majlinda Bajraktari
+2026-01-07 18:59:29,200 - main - INFO - ================================================================================
+2026-01-07 18:59:29,203 - main - INFO - ✓ Connected to Redis cache
+2026-01-07 18:59:29,203 - main - INFO - ✓ Application started successfully
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52804 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58648 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "GET / HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-01-07 19:00:01,257 - main - INFO - ✓ Application shutdown complete
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1601959]

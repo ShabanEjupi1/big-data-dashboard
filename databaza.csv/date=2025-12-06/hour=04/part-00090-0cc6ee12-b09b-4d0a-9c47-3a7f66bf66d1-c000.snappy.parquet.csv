@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.61661,"usdb",408005219,"USDB",1.005,171,"coingecko","USDB","2025-12-06T04:46:50.045500",433734,"2025-12-06",4
+-1.43225,"bitcoin-cash-sv",407342207,"Bitcoin SV",20.41,172,"coingecko","BSV","2025-12-06T04:46:50.045507",11155366,"2025-12-06",4

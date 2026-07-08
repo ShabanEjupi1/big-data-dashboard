@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.11915,"ethena",1779615670,"Ethena",0.239784,63,"coingecko","ENA","2025-12-02T08:02:40.887800",207563267,"2025-12-02",8
+-1.26564,"binance-peg-weth",1696198742,"Binance-Peg WETH",2803.64,64,"coingecko","WETH","2025-12-02T08:02:40.887807",73327199,"2025-12-02",8

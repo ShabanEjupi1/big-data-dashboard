@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.94679,"sui",6250017222,"Sui",1.67,31,"coingecko","SUI","2025-12-04T03:56:02.056604",1559788048,"2025-12-04",3
+-1.95296,"hedera-hashgraph",6116515925,"Hedera",0.144003,32,"coingecko","HBAR","2025-12-04T03:56:02.056611",245119195,"2025-12-04",3

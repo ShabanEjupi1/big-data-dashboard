@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.10279,"cap-usd",277572056,"Cap USD",1.002,227,"coingecko","CUSD","2025-12-01T13:12:54.762122",24683,"2025-12-01",13
+-6.20953,"frax-ether",275905156,"Frax Ether",2786.92,228,"coingecko","FRXETH","2025-12-01T13:12:54.762129",7615694,"2025-12-01",13

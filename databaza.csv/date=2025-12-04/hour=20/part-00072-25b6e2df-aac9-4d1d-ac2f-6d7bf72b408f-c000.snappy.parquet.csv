@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.36782,"l2-standard-bridged-weth-base",594839025,"L2 Standard Bridged WETH (Base)",3118.88,137,"coingecko","WETH","2025-12-04T20:16:05.831510",837785985,"2025-12-04",20
+2.67973,"curve-dao-token",590473852,"Curve DAO",0.412042,138,"coingecko","CRV","2025-12-04T20:16:05.831520",122217327,"2025-12-04",20

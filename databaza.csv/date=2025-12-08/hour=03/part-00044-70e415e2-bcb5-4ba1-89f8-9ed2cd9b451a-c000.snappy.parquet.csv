@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.02168,"ripple-usd",1292266630,"Ripple USD",0.999811,84,"coingecko","RLUSD","2025-12-08T03:13:32.712936",42232259,"2025-12-08",3
+0.00207,"binance-bridged-usdc-bnb-smart-chain",1288781413,"Binance Bridged USDC (BNB Smart Chain)",0.999756,85,"coingecko","USDC","2025-12-08T03:13:32.712943",221513620,"2025-12-08",3

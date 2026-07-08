@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+9.35829,"rocket-pool-eth",1292904518,"Rocket Pool ETH",3515.88,82,"coingecko","RETH","2025-12-03T10:02:30.638231",7461652,"2025-12-03",10
+-0.01662,"binance-bridged-usdc-bnb-smart-chain",1288674771,"Binance Bridged USDC (BNB Smart Chain)",0.999651,83,"coingecko","USDC","2025-12-03T10:02:30.638238",205610181,"2025-12-03",10

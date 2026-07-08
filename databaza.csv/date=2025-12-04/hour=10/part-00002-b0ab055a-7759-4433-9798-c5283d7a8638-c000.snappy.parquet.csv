@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.4172,"ripple",1.3109426592e+11,"XRP",2.17,4,"coingecko","XRP","2025-12-04T10:01:32.883361",3313101379,"2025-12-04",10
+1.33411,"binancecoin",1.25505826351e+11,"BNB",911.17,5,"coingecko","BNB","2025-12-04T10:01:32.883369",1963429578,"2025-12-04",10

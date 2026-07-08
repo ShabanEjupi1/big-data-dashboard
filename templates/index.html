@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Data Dashboard - Universiteti i Prishtinës</title>
+    <!-- Zhvilluar nga: Shaban Ejupi & Majlinda Bajraktari -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --accent-color: #244AA5;
+            --accent-secondary: #D32F2F;
+            --kosovo-blue: #244AA5;
+            --kosovo-red: #D32F2F;
+            --kosovo-gold: #FFD700;
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --accent-color: #818cf8;
+            --accent-secondary: #8b5cf6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--kosovo-blue) 0%, var(--kosovo-red) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s;
+        }
+        
+        /* Header Universitar - Stili Kosovar */
+        .university-header {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            text-align: center;
+            border-top: 4px solid var(--kosovo-blue);
+            border-bottom: 4px solid var(--kosovo-red);
+        }
+        
+        .university-header h3 {
+            color: var(--kosovo-blue);
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .university-header p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            margin: 3px 0;
+        }
+        
+        /* Footer me emrat e studentëve */
+        .student-footer {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-top: 3px solid var(--kosovo-gold);
+        }
+        
+        .student-footer h4 {
+            color: var(--kosovo-blue);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .student-footer p {
+            color: var(--text-secondary);
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .header-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .btn-theme {
+            background: var(--accent-color);
+        }
+        
+        .btn-theme:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-export {
+            background: #10b981;
+        }
+        
+        .btn-export:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .btn-presentation {
+            background: #f59e0b;
+            font-weight: bold;
+        }
+        
+        .btn-presentation:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        .btn-presentation.active {
+            background: #dc2626;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .presentation-mode-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 2000;
+            display: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .presentation-mode-banner.active {
+            display: block;
+        }
+        
+        .header h1 {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .stat-card:hover::before {
+            left: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .stat-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .stat-card h3 {
+            color: var(--text-primary);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .number {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-card .change {
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .change-positive {
+            color: #10b981;
+        }
+        
+        .change-negative {
+            color: #ef4444;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-card {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .nav-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .nav-card .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .nav-card h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .nav-card p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+        
+        .footer {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            color: var(--text-secondary);
+        }
+        
+        .timestamp {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .badge-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .auto-refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .loading-skeleton {
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-primary) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-card {
+                padding: 30px;
+            }
+            
+            .header-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="presentation-mode-banner" id="presentationBanner">
+        🎤 PRESENTATION MODE ACTIVE - All Live Updates Frozen 🎤
+    </div>
+    
+    <div class="container">
+        <!-- Header Universitar Kosovar -->
+        <div class="university-header">
+            <h3>🎓 UNIVERSITETI I PRISHTINËS | FSHMN</h3>
+            <p>FSHMN</p>
+            <p><strong>Departamenti i Matematikës</strong></p>
+        </div>
+        
+        <div class="auto-refresh-indicator" id="refreshIndicator">🔄 Auto-refresh: 30s</div>
+        
+        <div class="timestamp">
+            📅 Përditësuar: {{ data.timestamp[:19].replace('T', ' ') }}
+        </div>
+        
+        <div class="header">
+            <h1>🚀 Big Data Dashboard</h1>
+            <p>Analiza e të Dhënave me Apache Spark & Machine Learning</p>
+            <div class="badge badge-success">✓ Universiteti i Prishtinës - KREN Server</div>
+            <div class="header-controls">
+                <button class="btn btn-presentation" id="presentationBtn" onclick="togglePresentationMode()">
+                    🎤 Presentation Mode
+                </button>
+                <button class="btn btn-theme" onclick="toggleTheme()">🌓 Dark Mode</button>
+                <button class="btn btn-export" onclick="exportData()">📥 Export Data</button>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon">📰</div>
+                <h3>Postime Reddit</h3>
+                <div class="number">{{ data.summary.reddit_posts }}</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="icon">📈</div>
+                <h3>Aksione</h3>
+                <div class="number">{{ data.summary.stocks }}</div>
+                <div style="font-size: 0.75em; color: var(--text-secondary); margin-top: 5px;">
+                    {{ data.summary.stock_total_records }} total records
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="icon">₿</div>
+                <h3>Kriptovaluta</h3>
+                <div class="number">{{ data.summary.cryptos }}</div>
+                <div style="font-size: 0.75em; color: var(--text-secondary); margin-top: 5px;">
+                    {{ data.summary.crypto_total_records }} total records
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="icon">💾</div>
+                <h3>Total Records</h3>
+                <div class="number">{{ data.summary.total_records }}</div>
+                <div style="font-size: 0.75em; color: var(--text-secondary); margin-top: 5px;">
+                    {{ data.summary.total_assets }} unique assets
+                </div>
+            </div>
+            
+            <div class="stat-card" id="clusterStatusCard">
+                <div class="icon">⚙️</div>
+                <h3>Cluster Status</h3>
+                <div class="number" id="clusterStatus" style="font-size: 0.8em;">Loading...</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="icon">🔄</div>
+                <h3>Live Updates</h3>
+                <div class="number" style="font-size: 0.9em; color: #10b981;">ACTIVE</div>
+            </div>
+        </div>
+        
+        <div class="nav-grid">
+            <a href="/predictions" class="nav-card" style="grid-column: span 1;">
+                <div class="icon">🤖</div>
+                <h2>ML Predictions</h2>
+                <p>AI-powered price predictions & technical analysis</p>
+            </a>
+            
+            <a href="/recommendations" class="nav-card" style="grid-column: span 1;">
+                <div class="icon">💼</div>
+                <h2>Investment Recommendations</h2>
+                <p>Smart investment advice based on stability & risk analysis</p>
+            </a>
+            
+            <a href="/portfolio" class="nav-card" style="grid-column: span 1;">
+                <div class="icon">📊</div>
+                <h2>Portfolio Optimizer</h2>
+                <p>Optimized asset allocation strategies</p>
+            </a>
+            
+            <a href="/reddit" class="nav-card">
+                <div class="icon">📰</div>
+                <h2>Reddit Analytics</h2>
+                <p>Top posts from technology, science & worldnews</p>
+            </a>
+            
+            <a href="/stocks" class="nav-card">
+                <div class="icon">📈</div>
+                <h2>Stocks Dashboard</h2>
+                <p>Real-time stock prices & market analysis</p>
+            </a>
+            
+            <a href="/crypto" class="nav-card">
+                <div class="icon">💰</div>
+                <h2>Crypto Dashboard</h2>
+                <p>Top 250 cryptocurrencies with 24h changes</p>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p><strong>🎓 Projekti i Big Data</strong></p>
+            <p>Universiteti i Prishtinës - Fakulteti i Shkencave Matematike dhe Natyrore</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                🔧 Teknologjitë: Apache Spark 3.5.1 | HBase | Flask | K-Means Clustering
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Presentation Mode State
+        let presentationMode = false;
+        let refreshInterval = null;
+        let countdownInterval = null;
+        let refreshCountdown = 30;
+        
+        // Toggle Presentation Mode
+        function togglePresentationMode() {
+            presentationMode = !presentationMode;
+            const btn = document.getElementById('presentationBtn');
+            const banner = document.getElementById('presentationBanner');
+            const indicator = document.getElementById('refreshIndicator');
+            
+            if (presentationMode) {
+                // Enable presentation mode - freeze all updates
+                btn.classList.add('active');
+                btn.innerHTML = '⏸️ Stop Presentation Mode';
+                banner.classList.add('active');
+                indicator.style.display = 'none';
+                
+                // Clear all intervals
+                if (countdownInterval) clearInterval(countdownInterval);
+                if (refreshInterval) clearInterval(refreshInterval);
+                
+                console.log('✓ Presentation Mode: ACTIVE - All updates frozen');
+            } else {
+                // Disable presentation mode - resume updates
+                btn.classList.remove('active');
+                btn.innerHTML = '🎤 Presentation Mode';
+                banner.classList.remove('active');
+                indicator.style.display = 'block';
+                
+                // Restart countdown
+                startAutoRefresh();
+                
+                console.log('✓ Presentation Mode: INACTIVE - Updates resumed');
+            }
+            
+            // Save state
+            localStorage.setItem('presentationMode', presentationMode);
+        }
+        
+        // Start auto-refresh countdown
+        function startAutoRefresh() {
+            refreshCountdown = 30;
+            
+            countdownInterval = setInterval(() => {
+                if (!presentationMode) {
+                    refreshCountdown--;
+                    document.getElementById('refreshIndicator').textContent = `🔄 Auto-refresh: ${refreshCountdown}s`;
+                    
+                    if (refreshCountdown <= 0) {
+                        location.reload();
+                    }
+                }
+            }, 1000);
+        }
+        
+        // Dark mode toggle
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        
+        // Load presentation mode state
+        const savedPresentationMode = localStorage.getItem('presentationMode') === 'true';
+        if (savedPresentationMode) {
+            togglePresentationMode();
+        } else {
+            startAutoRefresh();
+        }
+        
+        // Export data function
+        function exportData() {
+            window.location.href = '/api/export/json';
+        }
+        
+        // Fetch and update cluster status
+        function updateClusterStatus() {
+            if (presentationMode) return; // Don't update in presentation mode
+            
+            fetch('/api/cluster_status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const statusEl = document.getElementById('clusterStatus');
+                        if (data.cluster_active) {
+                            statusEl.innerHTML = `<span style="color: #10b981;">✓ ${data.workers} Workers</span>`;
+                        } else {
+                            statusEl.innerHTML = '<span style="color: #ef4444;">⚠ Inactive</span>';
+                        }
+                    }
+                })
+                .catch(err => console.log('Cluster status fetch failed:', err));
+        }
+        
+        // Update cluster status on load and every 10 seconds (if not in presentation mode)
+        updateClusterStatus();
+        setInterval(() => {
+            if (!presentationMode) {
+                updateClusterStatus();
+            }
+        }, 10000);
+        
+        // Add loading animations on page transitions
+        document.querySelectorAll('.nav-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.ctrlKey && !e.metaKey) {
+                    card.style.opacity = '0.5';
+                }
+            });
+        });
+    </script>
+    
+    <!-- Footer me Emrat e Studentëve -->
+    <div class="student-footer">
+        <h4>📚 Projekti i Zhvilluar nga:</h4>
+        <p><strong>Shaban Ejupi</strong> & <strong>Majlinda Bajraktari</strong></p>
+        <p>Shkenca kompjuterike - Universiteti i Prishtinës</p>
+        <p style="font-size: 0.85em; color: var(--text-secondary); margin-top: 10px;">
+            © 2025 | Big Data Analytics me Apache Spark
+        </p>
+    </div>
+</body>
+</html>

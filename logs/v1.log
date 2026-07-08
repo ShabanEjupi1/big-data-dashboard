@@ -1,0 +1,41 @@
+================================================================================
+ 🚀 BIG DATA DASHBOARD - REAL-TIME PARQUET READER
+================================================================================
+
+📊 Dashboard i disponueshëm në:
+   - http://localhost:5000
+   - http://10.0.0.8:5000
+
+📄 Faqet:
+   / ................ Ballina (Overview)
+   /reddit .......... Analiza e Reddit
+   /stocks .......... Analiza e Aksioneve (REAL-TIME)
+   /crypto .......... Analiza e Kriptovalutave (REAL-TIME)
+   /api/data ........ JSON API (REAL-TIME)
+   /api/refresh ..... Refresh Status
+
+🔄 Data Source: Live Parquet files from 10 VMs
+   - Auto-refreshes every request
+   - Shows ALL collected data from VMs
+
+⚠️  Shtyp CTRL+C për të ndaluar serverin
+================================================================================
+
+🚀 Server starting... Data will load on first request.
+
+ * Serving Flask app 'dashboard'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://10.0.0.8:5003
+Press CTRL+C to quit
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/01/07 19:00:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:========>                                               (32 + 9) / 200][Stage 0:=====================>                                  (77 + 9) / 200][Stage 0:================================>                      (119 + 8) / 200][Stage 0:============================================>         (163 + 10) / 200]                                                                                [Stage 2:>                                                          (0 + 1) / 1]                                                                                127.0.0.1 - - [07/Jan/2026 19:00:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jan/2026 19:00:57] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jan/2026 19:00:58] "GET /api/cluster_status HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jan/2026 19:01:08] "GET /api/cluster_status HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jan/2026 19:01:18] "GET /api/cluster_status HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jan/2026 19:01:28] "GET /api/cluster_status HTTP/1.1" 200 -

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.38322,"wrapped-ether-mantle-bridge",265145663,"Mantle Bridged WETH (Mantle)",3167.74,239,"coingecko","WETH","2025-12-05T06:39:09.648964",3164253,"2025-12-05",6
+0,"fidelity-digital-interest-token",264067137,"Fidelity Digital Interest Token",1,240,"coingecko","FDIT","2025-12-05T06:39:09.648971",0,"2025-12-05",6

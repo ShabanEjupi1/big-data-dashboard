@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+5.87478,"binance-peg-weth",1785084117,"Binance-Peg WETH",2963.37,66,"coingecko","WETH","2025-12-02T15:25:42.566484",82172951,"2025-12-02",15
+8.43679,"wrapped-solana",1746539171,"Wrapped SOL",135.9,67,"coingecko","SOL","2025-12-02T15:25:42.566491",737823302,"2025-12-02",15

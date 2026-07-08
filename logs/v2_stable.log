@@ -1,0 +1,11 @@
+INFO:     Started server process [1651671]
+INFO:     Waiting for application startup.
+2026-01-08 16:46:55,570 - main - INFO - ================================================================================
+2026-01-08 16:46:55,570 - main - INFO -  🚀 V2 ADVANCED FINANCIAL ANALYTICS PLATFORM (2030)
+2026-01-08 16:46:55,570 - main - INFO -  🎓 University of Prishtina - FSHMN
+2026-01-08 16:46:55,570 - main - INFO -  👨‍💻 Shaban Ejupi & Majlinda Bajraktari
+2026-01-08 16:46:55,570 - main - INFO - ================================================================================
+2026-01-08 16:46:55,574 - main - INFO - ✓ Connected to Redis cache
+2026-01-08 16:46:55,574 - main - INFO - ✓ Application started successfully
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)

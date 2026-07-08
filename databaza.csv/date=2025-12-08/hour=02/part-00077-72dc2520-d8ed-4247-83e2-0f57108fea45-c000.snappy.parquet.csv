@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-10.15442,"sad-coin",527877402,"Sad Coin",0.53229,146,"coingecko","SAD","2025-12-08T02:29:35.273914",2345678,"2025-12-08",2
+1.81519,"arbitrum-bridged-weth-arbitrum-one",521848253,"Arbitrum Bridged WETH (Arbitrum One)",3102.64,147,"coingecko","WETH","2025-12-08T02:29:35.273921",452485759,"2025-12-08",2

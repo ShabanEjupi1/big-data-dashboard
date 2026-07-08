@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.15809,"crvusd",261095772,"crvUSD",1.002,237,"coingecko","CRVUSD","2025-12-07T17:35:36.475227",28668324,"2025-12-07",17
+1.79355,"wrapped-ether-mantle-bridge",260380922,"Mantle Bridged WETH (Mantle)",3111.76,239,"coingecko","WETH","2025-12-07T17:35:36.475234",3634918,"2025-12-07",17

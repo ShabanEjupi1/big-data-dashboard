@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.52669,"arbitrum-bridged-wbtc-arbitrum-one",721981816,"Arbitrum Bridged WBTC (Arbitrum One)",89368,118,"coingecko","WBTC","2025-12-06T21:55:21.825025",61765982,"2025-12-06",21
+-0.02276,"jupiter-exchange-solana",716852491,"Jupiter",0.228548,119,"coingecko","JUP","2025-12-06T21:55:21.825032",15426579,"2025-12-06",21

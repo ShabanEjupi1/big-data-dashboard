@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.89651,"astherus-staked-bnb",284338399,"Aster Staked BNB",946.37,226,"coingecko","ASBNB","2025-12-07T07:29:40.376310",59869,"2025-12-07",7
+-0.04227,"polygon-pos-bridged-weth-polygon-pos",284145337,"Polygon PoS Bridged WETH (Polygon POS)",3038.75,227,"coingecko","WETH","2025-12-07T07:29:40.376316",4816825,"2025-12-07",7

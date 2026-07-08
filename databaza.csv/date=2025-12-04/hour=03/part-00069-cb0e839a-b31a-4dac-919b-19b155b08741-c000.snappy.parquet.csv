@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+126.97878,"fasttoken",630428709,"Fasttoken",1.45,131,"coingecko","FTN","2025-12-04T03:11:03.292432",19322516,"2025-12-04",3
+-0.01165,"polygon-pos-bridged-dai-polygon-pos",629436835,"Polygon PoS Bridged DAI (Polygon POS)",0.999878,132,"coingecko","DAI","2025-12-04T03:11:03.292439",51968382,"2025-12-04",3

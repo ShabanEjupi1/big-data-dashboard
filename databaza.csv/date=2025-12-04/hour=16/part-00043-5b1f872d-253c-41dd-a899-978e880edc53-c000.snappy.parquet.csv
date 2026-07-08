@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+5.06799,"sky",1308740465,"Sky",0.056948,82,"coingecko","SKY","2025-12-04T16:28:29.226087",20677649,"2025-12-04",16
+-0.00315,"binance-bridged-usdc-bnb-smart-chain",1288482700,"Binance Bridged USDC (BNB Smart Chain)",0.999803,83,"coingecko","USDC","2025-12-04T16:28:29.226093",130160320,"2025-12-04",16

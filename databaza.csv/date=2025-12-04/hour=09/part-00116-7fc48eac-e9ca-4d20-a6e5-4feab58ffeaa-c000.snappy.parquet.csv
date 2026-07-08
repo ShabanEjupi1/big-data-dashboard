@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.1481,"crvusd",305426720,"crvUSD",1,220,"coingecko","CRVUSD","2025-12-04T09:11:04.193522",10456874,"2025-12-04",9
+0.727,"unit-bitcoin",305419387,"Unit Bitcoin",93363,221,"coingecko","UBTC","2025-12-04T09:11:04.193529",65199761,"2025-12-04",9

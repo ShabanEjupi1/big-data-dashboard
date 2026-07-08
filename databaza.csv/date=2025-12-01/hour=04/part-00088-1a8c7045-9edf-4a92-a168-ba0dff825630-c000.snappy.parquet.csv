@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-6.07119,"arbitrum-bridged-weth-arbitrum-one",493882556,"Arbitrum Bridged WETH (Arbitrum One)",2817.75,149,"coingecko","WETH","2025-12-01T04:22:09.305634",276502638,"2025-12-01",4
+-0.02827,"true-usd",492524203,"TrueUSD",0.996101,150,"coingecko","TUSD","2025-12-01T04:22:09.305642",8338896,"2025-12-01",4

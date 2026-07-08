@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+3.18305,"ethereum",3.75565828171e+11,"Ethereum",3117.88,2,"coingecko","ETH","2025-12-03T19:03:50.671222",2.7382139426e+10,"2025-12-03",19
+-0.00327,"tether",1.84734488189e+11,"Tether",1,3,"coingecko","USDT","2025-12-03T19:03:50.671230",1.01713241033e+11,"2025-12-03",19

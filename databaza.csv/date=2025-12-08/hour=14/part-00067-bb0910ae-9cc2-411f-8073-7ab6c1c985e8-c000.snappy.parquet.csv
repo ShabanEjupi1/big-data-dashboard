@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.04917,"usdai",636761828,"USDai",1,127,"coingecko","USDAI","2025-12-08T14:57:30.950113",2703388,"2025-12-08",14
+0.02344,"polygon-pos-bridged-dai-polygon-pos",634295144,"Polygon PoS Bridged DAI (Polygon POS)",1,128,"coingecko","DAI","2025-12-08T14:57:30.950120",53626715,"2025-12-08",14

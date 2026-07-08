@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+-2.870012207031266,-0.6671809301046716,433.659912109375,425.29998779296875,1.421122469888e+12,430.17,427.29998779296875,"yfinance_lib","TSLA","2025-12-01T19:17:43.704113",41596787,"2025-12-01",19

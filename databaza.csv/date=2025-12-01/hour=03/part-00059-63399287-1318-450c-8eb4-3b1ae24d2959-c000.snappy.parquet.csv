@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.0001,"syrupusdt",995374000,"syrupUSDT",1.11,100,"coingecko","SYRUPUSDT","2025-12-01T03:01:23.097530",403651,"2025-12-01",3
+-4.49819,"lombard-staked-btc",983074456,"Lombard Staked BTC",86712,101,"coingecko","LBTC","2025-12-01T03:01:23.097537",4270219,"2025-12-01",3

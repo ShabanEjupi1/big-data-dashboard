@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.375,"apenft",386601290,"AINFT",3.90141e-7,188,"coingecko","NFT","2025-11-30T20:53:16.496398",28834376,"2025-11-30",20
+0.75011,"binance-peg-dogecoin",382996314,"Binance-Peg Dogecoin",0.149518,189,"coingecko","DOGE","2025-11-30T20:53:16.496405",2265512,"2025-11-30",20

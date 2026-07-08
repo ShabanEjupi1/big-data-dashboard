@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.30781,"usdb",410737143,"USDB",1.013,169,"coingecko","USDB","2025-12-01T21:36:21.060394",418252,"2025-12-01",21
+-6.89005,"ether-fi-liquid-eth",408056427,"Ether.Fi Liquid ETH",2965.39,172,"coingecko","LIQUIDETH","2025-12-01T21:36:21.060401",16318.77,"2025-12-01",21

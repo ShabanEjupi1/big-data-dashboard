@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.0431,"uniswap",3869981498,"Uniswap",6.14,41,"coingecko","UNI","2025-11-30T21:05:51.217348",253923773,"2025-11-30",21
+-0.00083,"paypal-usd",3866545640,"PayPal USD",0.9995,42,"coingecko","PYUSD","2025-11-30T21:05:51.217356",31603500,"2025-11-30",21

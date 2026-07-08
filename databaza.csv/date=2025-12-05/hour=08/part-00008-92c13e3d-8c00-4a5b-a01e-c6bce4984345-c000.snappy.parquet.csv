@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-3.06468,"bitcoin-cash",1.1450886867e+10,"Bitcoin Cash",573.65,16,"coingecko","BCH","2025-12-05T08:27:10.332516",303514169,"2025-12-05",8
+-0.61284,"wrapped-beacon-eth",1.1189849358e+10,"Wrapped Beacon ETH",3430.99,17,"coingecko","WBETH","2025-12-05T08:27:10.332524",18677390,"2025-12-05",8

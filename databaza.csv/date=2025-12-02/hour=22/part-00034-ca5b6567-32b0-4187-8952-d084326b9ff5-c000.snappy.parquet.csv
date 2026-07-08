@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.3214,"rain",1907217954,"Rain",0.00801241,65,"coingecko","RAIN","2025-12-02T22:53:33.961760",23879789,"2025-12-02",22
+7.4476,"binance-peg-weth",1823238972,"Binance-Peg WETH",3014.04,66,"coingecko","WETH","2025-12-02T22:53:33.961767",80832868,"2025-12-02",22

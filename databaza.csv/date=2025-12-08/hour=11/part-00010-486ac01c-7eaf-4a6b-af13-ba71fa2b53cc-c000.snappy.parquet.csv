@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.06194,"usds",9504826110,"USDS",0.999024,19,"coingecko","USDS","2025-12-08T11:18:18.705759",36603386,"2025-12-08",11
+-0.05639,"binance-bridged-usdt-bnb-smart-chain",8986724724,"Binance Bridged USDT (BNB Smart Chain)",0.999669,20,"coingecko","BSC-USD","2025-12-08T11:18:18.705767",1205475619,"2025-12-08",11

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.02444,"frax",281575813,"Legacy Frax Dollar",0.993181,225,"coingecko","FRAX","2025-12-02T10:27:45.307408",1183538,"2025-12-02",10
+0.00997,"cap-usd",279426003,"Cap USD",0.999845,226,"coingecko","CUSD","2025-12-02T10:27:45.307415",104458,"2025-12-02",10

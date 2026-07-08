@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+9.50753,"l2-standard-bridged-weth-base",587904450,"L2 Standard Bridged WETH (Base)",3074.08,139,"coingecko","WETH","2025-12-03T06:45:53.743568",807854588,"2025-12-03",6
+9.47096,"arbitrum-bridged-weth-arbitrum-one",584792904,"Arbitrum Bridged WETH (Arbitrum One)",3079.01,140,"coingecko","WETH","2025-12-03T06:45:53.743574",442055755,"2025-12-03",6

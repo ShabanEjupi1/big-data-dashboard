@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-3.29348,"wrapped-ether-mantle-bridge",254099951,"Mantle Bridged WETH (Mantle)",3035.65,239,"coingecko","WETH","2025-12-06T11:22:24.606916",4446592,"2025-12-06",11
+-5.26616,"wrapped-avax",250972155,"Wrapped AVAX",13.22,240,"coingecko","WAVAX","2025-12-06T11:22:24.606923",97825155,"2025-12-06",11

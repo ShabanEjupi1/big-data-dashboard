@@ -1,0 +1,650 @@
+================================================================================
+ 🚀 BIG DATA DASHBOARD - Duke nisur serverin...
+================================================================================
+
+📊 Dashboard i disponueshëm në:
+   - http://localhost:5000
+   - http://10.0.0.8:5000
+
+📄 Faqet:
+   / ................ Ballina
+   /reddit .......... Analiza e Reddit
+   /stocks .......... Analiza e Aksioneve
+   /crypto .......... Analiza e Kriptovalutave
+   /api/data ........ JSON API
+
+⚠️  Shtyp CTRL+C për të ndaluar serverin
+================================================================================
+
+✓ Të dhënat u ngarkuan: dashboard_20251127_174456.json
+
+ * Serving Flask app 'dashboard'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.8:5000
+Press CTRL+C to quit
+127.0.0.1 - - [30/Nov/2025 19:13:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:14:10] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:14:19] "GET /crypto HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:14:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:14:34] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:14:58] "GET /api/data HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:15:05] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:15:37] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:16:09] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:16:40] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:17:12] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:17:44] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:18:16] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:18:47] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:19:00] "GET /reddit HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:19:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:19:25] "GET /api/data HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:19:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:20:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:20:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:21:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:21:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:22:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:22:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:23:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:23:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:24:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:24:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:24:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:25:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:25:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:26:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:27:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:27:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:28:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:28:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:29:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:29:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:30:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:30:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:31:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:31:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:32:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:33:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:33:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:34:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:34:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:35:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:35:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:36:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:36:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:37:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:37:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:38:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:38:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:39:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:39:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:40:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:40:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:41:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:41:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:42:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:42:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:43:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:44:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:44:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:45:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:45:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:46:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:46:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:47:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:47:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:48:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:48:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:49:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:49:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:50:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:50:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:51:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:51:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:52:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:52:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:53:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:53:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:54:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:54:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:55:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:56:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:56:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:57:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:57:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:58:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:58:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:59:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 19:59:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:00:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:00:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:01:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:01:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:02:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:02:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:03:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:03:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:04:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:04:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:05:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:05:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:06:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:06:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:07:00] "GET / HTTP/1.1" 200 -
+[2025-11-30 20:07:04,784] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:07:04] "GET /crypto HTTP/1.1" 500 -
+[2025-11-30 20:10:37,824] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:10:37] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:10:42] "GET / HTTP/1.1" 200 -
+[2025-11-30 20:11:00,575] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:11:00] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:11:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:11:14] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:11:19] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:11:50] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:12:20] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:12:51] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:13:21] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:13:52] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:14:23] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:14:53] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:15:24] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:15:35] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:15:37] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:15:42] "GET / HTTP/1.1" 200 -
+[2025-11-30 20:15:50,358] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:15:50] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:15:54] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:16:01] "GET /reddit HTTP/1.1" 200 -
+[2025-11-30 20:16:07,423] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:16:07] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:16:18] "GET /api/data HTTP/1.1" 200 -
+[2025-11-30 20:16:34,587] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:16:34] "GET /crypto HTTP/1.1" 500 -
+[2025-11-30 20:16:36,775] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:16:36] "GET /crypto HTTP/1.1" 500 -
+[2025-11-30 20:17:03,645] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:17:03] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:17:03] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [30/Nov/2025 20:17:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:17:34] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:17:51] "GET /api/data HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:18:04] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:18:34] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:19:05] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:19:36] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:20:06] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:20:36] "GET /stocks HTTP/1.1" 200 -
+[2025-11-30 20:21:00,815] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    return render_template('crypto.html', data=data)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    <div><strong>Market Cap:</strong> ${{ "%.2f"|format(crypto.market_cap / 1e9) }}B</div>
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:21:00] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:46:47] "GET / HTTP/1.1" 200 -
+[2025-11-30 20:47:03,281] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    }
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:47:03] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:47:08] "GET /stocks HTTP/1.1" 200 -
+[2025-11-30 20:47:18,572] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    }
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:47:18] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:47:23] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:47:53] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:48:24] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:48:55] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:49:26] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:49:57] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:50:28] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:50:59] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:51:30] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:52:01] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:52:32] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:53:03] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:53:24] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:53:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:53:27] "GET / HTTP/1.1" 200 -
+[2025-11-30 20:53:31,641] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    }
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:53:31] "GET /crypto HTTP/1.1" 500 -
+[2025-11-30 20:56:17,204] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+    }
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 20:56:17] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 20:56:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:56:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:57:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:57:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:58:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:58:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:59:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 20:59:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:00:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:00:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:01:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:01:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:02:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:03:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:03:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:04:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:04:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:05:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:05:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:06:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:06:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:07:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:07:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:08:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:08:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:09:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:09:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:10:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:10:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:10:49] "GET / HTTP/1.1" 200 -
+[2025-11-30 21:11:14,198] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 21:11:14] "GET /crypto HTTP/1.1" 500 -
+[2025-11-30 21:11:17,072] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 21:11:17] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 21:11:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:11:26] "GET / HTTP/1.1" 200 -
+[2025-11-30 21:11:37,826] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 21:11:37] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 21:11:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:12:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:12:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:13:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:13:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:14:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2025 21:14:55] "GET / HTTP/1.1" 200 -
+[2025-11-30 21:15:17,067] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 21:15:17] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 21:15:20] "GET / HTTP/1.1" 200 -
+[2025-11-30 21:15:25,166] ERROR in app: Exception on /crypto [GET]
+Traceback (most recent call last):
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/krenuser/big-data-dashboard/dashboard.py", line 83, in crypto
+    if not data:
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/flask/templating.py", line 133, in _render
+    rv = template.render(context)
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/krenuser/.local/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/krenuser/big-data-dashboard/templates/crypto.html", line 270, in top-level template code
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'market_cap'
+127.0.0.1 - - [30/Nov/2025 21:15:25] "GET /crypto HTTP/1.1" 500 -
+127.0.0.1 - - [30/Nov/2025 21:15:26] "GET / HTTP/1.1" 200 -

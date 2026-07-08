@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-9.84176,"binance-peg-dogecoin",346840269,"Binance-Peg Dogecoin",0.135247,193,"coingecko","DOGE","2025-12-01T14:31:08.578533",4943457,"2025-12-01",14
+-7.33713,"ether-fi-staked-eth",345172328,"ether.fi Staked ETH",2817.19,194,"coingecko","EETH","2025-12-01T14:31:08.578540",12809.29,"2025-12-01",14

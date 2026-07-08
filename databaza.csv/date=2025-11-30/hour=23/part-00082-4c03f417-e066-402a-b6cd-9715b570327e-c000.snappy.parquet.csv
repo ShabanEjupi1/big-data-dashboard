@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.91009,"l2-standard-bridged-weth-base",572422193,"L2 Standard Bridged WETH (Base)",3018.63,139,"coingecko","WETH","2025-11-30T23:24:11.640676",338639905,"2025-11-30",23
+-7.32547,"starknet",570444579,"Starknet",0.125036,140,"coingecko","STRK","2025-11-30T23:24:11.640683",86427302,"2025-11-30",23

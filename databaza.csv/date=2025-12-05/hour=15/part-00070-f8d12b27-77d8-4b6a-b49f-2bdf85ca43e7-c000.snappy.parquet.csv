@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.96764,"l2-standard-bridged-weth-base",607286394,"L2 Standard Bridged WETH (Base)",3144.5,133,"coingecko","WETH","2025-12-05T15:41:30.474793",678512216,"2025-12-05",15
+-3.13967,"optimism",600190086,"Optimism",0.316665,134,"coingecko","OP","2025-12-05T15:41:30.474799",62049115,"2025-12-05",15

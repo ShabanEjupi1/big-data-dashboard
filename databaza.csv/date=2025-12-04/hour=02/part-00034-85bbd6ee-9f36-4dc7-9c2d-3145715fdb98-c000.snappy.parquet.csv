@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+5.59804,"binance-peg-weth",1940028411,"Binance-Peg WETH",3202.74,65,"coingecko","WETH","2025-12-04T02:04:26.073873",90705196,"2025-12-04",2
+-2.03476,"pump-fun",1896961163,"Pump.fun",0.00321744,66,"coingecko","PUMP","2025-12-04T02:04:26.073881",157496121,"2025-12-04",2

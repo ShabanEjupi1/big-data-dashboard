@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.12334,"pyth-network",402872073,"Pyth Network",0.070055,175,"coingecko","PYTH","2025-12-07T03:06:59.868934",13577741,"2025-12-07",3
+-0.52668,"pendle",396614773,"Pendle",2.42,176,"coingecko","PENDLE","2025-12-07T03:06:59.868941",23964208,"2025-12-07",3

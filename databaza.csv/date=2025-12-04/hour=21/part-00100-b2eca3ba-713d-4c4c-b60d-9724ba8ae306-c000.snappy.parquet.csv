@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+12.82045,"decred",379420261,"Decred",22.17,190,"coingecko","DCR","2025-12-04T21:42:52.595177",16282667,"2025-12-04",21
+-2.19145,"binance-peg-dogecoin",379350222,"Binance-Peg Dogecoin",0.148102,191,"coingecko","DOGE","2025-12-04T21:42:52.595184",3954924,"2025-12-04",21

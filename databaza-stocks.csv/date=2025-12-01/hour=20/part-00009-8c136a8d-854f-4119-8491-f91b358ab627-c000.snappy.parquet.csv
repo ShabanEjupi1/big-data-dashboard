@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+2.9799865722656023,1.06867009943181,281.9700012207031,276.1400146484375,4.182615261184e+12,278.85,281.8299865722656,"yfinance_lib","AAPL","2025-12-01T20:31:49.718654",24689135,"2025-12-01",20

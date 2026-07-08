@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.3124,"mantle-restaked-eth",292765653,"Mantle Restaked ETH",3290.59,218,"coingecko","CMETH","2025-12-07T10:23:23.755230",1944208,"2025-12-07",10
+-0.43203,"unit-bitcoin",291602683,"Unit Bitcoin",89194,219,"coingecko","UBTC","2025-12-07T10:23:23.755237",27568826,"2025-12-07",10

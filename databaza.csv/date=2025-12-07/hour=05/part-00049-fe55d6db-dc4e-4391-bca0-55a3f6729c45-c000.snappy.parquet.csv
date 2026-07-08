@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.31138,"binance-staked-sol",1139562872,"Binance Staked SOL",144.32,93,"coingecko","BNSOL","2025-12-07T05:55:10.337109",1268466,"2025-12-07",5
+0.32832,"kelp-dao-restaked-eth",1096299244,"Kelp DAO Restaked ETH",3227.49,94,"coingecko","RSETH","2025-12-07T05:55:10.337124",102110,"2025-12-07",5

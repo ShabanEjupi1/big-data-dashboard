@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.11318,"jupiter-staked-sol",673737719,"Jupiter Staked SOL",161.33,124,"coingecko","JUPSOL","2025-12-04T19:57:36.503944",2564418,"2025-12-04",19
+-0.00894,"bridged-usdc-polygon-pos-bridge",658998865,"Polygon Bridged USDC (Polygon PoS)",0.999714,125,"coingecko","USDC.E","2025-12-04T19:57:36.503951",34570007,"2025-12-04",19

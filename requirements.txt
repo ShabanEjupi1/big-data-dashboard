@@ -1,0 +1,63 @@
+# Big Data Dashboard - Industrial Grade Collector
+# Universiteti i Prishtinës - KREN Server - 10 VM Cluster
+# Python 3.x required
+
+# ========== CORE DEPENDENCIES ==========
+# Apache Spark (duhet të jetë i instaluar në /opt/spark/)
+pyspark==3.5.1
+
+# Web Framework
+flask==3.0.0
+
+# HTTP Requests për Web Mining & APIs
+requests==2.31.0
+
+# ========== DATA PROCESSING ==========
+pandas==2.1.4
+numpy==1.26.2
+
+# ========== MACHINE LEARNING ==========
+scikit-learn==1.3.2
+
+# Time series analysis for predictions
+statsmodels==0.14.1
+
+# Deep learning for LSTM models (optional, heavy dependency)
+# tensorflow==2.15.0  # Uncomment if needed
+
+# ========== PORTFOLIO OPTIMIZATION ==========
+# Scientific computing
+scipy==1.11.4
+
+# Financial calculations
+# yfinance==0.2.33  # Already using direct API
+
+# ========== VISUALIZATION ==========
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.18.0
+
+# ========== DATA STORAGE ==========
+# HBase connector (if needed)
+# happybase==1.2.0  # Uncomment if using HBase
+
+# Parquet support (already in pyspark)
+pyarrow==14.0.2
+fastparquet==2024.2.0
+
+# ========== UTILITIES ==========
+# Better datetime handling
+python-dateutil==2.8.2
+
+# Progress bars
+tqdm==4.66.1
+
+# Environment variables
+python-dotenv==1.0.0
+
+# ========== DEPLOYMENT ==========
+# Production WSGI server
+gunicorn==21.2.0
+
+# Process management
+psutil==5.9.6

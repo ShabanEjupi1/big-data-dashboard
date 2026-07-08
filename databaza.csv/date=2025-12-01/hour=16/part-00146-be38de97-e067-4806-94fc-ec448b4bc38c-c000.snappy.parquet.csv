@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-8.68727,"ecash",228494405,"eCash",0.00001151,247,"coingecko","XEC","2025-12-01T16:42:05.539191",5192153,"2025-12-01",16
+-10.29245,"wrapped-ether-mantle-bridge",228382555,"Mantle Bridged WETH (Mantle)",2731.2,248,"coingecko","WETH","2025-12-01T16:42:05.539198",4491068,"2025-12-01",16

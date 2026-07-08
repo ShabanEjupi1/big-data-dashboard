@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.06844,"frax",281777413,"Legacy Frax Dollar",0.993507,223,"coingecko","FRAX","2025-12-01T09:11:29.749028",2036217,"2025-12-01",9
+-5.36882,"mantle-restaked-eth",281000392,"Mantle Restaked ETH",3071.16,224,"coingecko","CMETH","2025-12-01T09:11:29.749035",5501713,"2025-12-01",9

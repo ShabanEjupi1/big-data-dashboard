@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.48095,"wrapped-ether-mantle-bridge",252375987,"Mantle Bridged WETH (Mantle)",3020.08,245,"coingecko","WETH","2025-11-30T23:09:26.768829",974140,"2025-11-30",23
+-2.37352,"golem",251572368,"Golem",0.25106,246,"coingecko","GLM","2025-11-30T23:09:26.768835",14579524,"2025-11-30",23

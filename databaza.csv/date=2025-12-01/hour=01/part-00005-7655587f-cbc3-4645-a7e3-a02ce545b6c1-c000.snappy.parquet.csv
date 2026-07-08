@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-5.30576,"staked-ether",2.4570808817e+10,"Lido Staked Ether",2849.38,9,"coingecko","STETH","2025-12-01T01:36:33.209137",19165076,"2025-12-01",1
+-6.23914,"dogecoin",2.1210038061e+10,"Dogecoin",0.13962,10,"coingecko","DOGE","2025-12-01T01:36:33.209145",1071690864,"2025-12-01",1

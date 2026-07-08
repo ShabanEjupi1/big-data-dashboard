@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-6.34213,"hedera-hashgraph",5678892740,"Hedera",0.133874,31,"coingecko","HBAR","2025-12-01T05:49:35.114818",181824671,"2025-12-01",5
+-8.09456,"avalanche-2",5538719578,"Avalanche",12.91,32,"coingecko","AVAX","2025-12-01T05:49:35.114825",437999953,"2025-12-01",5

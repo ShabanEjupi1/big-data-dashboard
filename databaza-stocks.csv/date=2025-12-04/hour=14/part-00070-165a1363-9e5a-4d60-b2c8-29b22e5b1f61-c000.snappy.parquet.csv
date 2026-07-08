@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+-0.20000610351561932,-0.09191456963033977,217.56649780273438,215.7100067138672,3.53907900416e+11,217.6,217.39999389648438,"yfinance_lib","AMD","2025-12-04T14:44:46.304118",2202135,"2025-12-04",14

@@ -1,0 +1,2967 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza e kriptovalutave - Big Data Dashboard</title>
+    <!-- Projektë e Big Data - Shaban Ejupi & Majlinda Bajraktari -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.1.1"></script>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --border-color: #e5e7eb;
+            --kosovo-blue: #244AA5;
+            --kosovo-red: #D32F2F;
+            --kosovo-gold: #FFD700;
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --border-color: #374151;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s;
+        }
+        
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .back-btn, .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .back-btn:hover, .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .btn-freeze {
+            background: #f59e0b;
+            font-weight: bold;
+        }
+        
+        .btn-freeze:hover {
+            background: #d97706;
+        }
+        
+        .btn-freeze.frozen {
+            background: #dc2626;
+            animation: pulse-freeze 2s infinite;
+        }
+        
+        @keyframes pulse-freeze {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .btn-export {
+            background: var(--success-color);
+        }
+        
+        .btn-export:hover {
+            background: #059669;
+        }
+        
+        .theme-toggle {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+        
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .search-filter-bar {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 16px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .filter-group label {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .filter-group select {
+            padding: 10px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: var(--bg-primary);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-box h3 {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box .value {
+            color: var(--accent-color);
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        /* Mini Sparkline in Stat Box */
+        .stat-sparkline {
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+        }
+        
+        /* Data Freshness Indicator */
+        .freshness-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        .freshness-green {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+        
+        .freshness-yellow {
+            background: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+        }
+        
+        .freshness-red {
+            background: #ef4444;
+            box-shadow: 0 0 10px #ef4444;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* API Status Indicators */
+        .api-status-bar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+        }
+        
+        .api-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            font-size: 0.85em;
+        }
+        
+        .api-status-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .api-active {
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+        
+        .api-inactive {
+            background: #ef4444;
+        }
+        
+        /* Full Screen Mode */
+        .fullscreen-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background: var(--bg-primary);
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .btn-fullscreen {
+            background: #8b5cf6;
+        }
+        
+        .btn-fullscreen:hover {
+            background: #7c3aed;
+        }
+        
+        /* Compare Mode */
+        .compare-checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .compare-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-primary);
+            padding: 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            z-index: 1000;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .compare-panel.active {
+            transform: translateY(0);
+        }
+        
+        /* Favorites Star */
+        .favorite-star {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            transition: transform 0.2s;
+        }
+        
+        .favorite-star:hover {
+            transform: scale(1.2);
+        }
+        
+        .favorite-star.favorited {
+            color: #f59e0b;
+            text-shadow: 0 0 15px #f59e0b;
+        }
+        
+        /* Advanced Filters */
+        .advanced-filters {
+            display: none;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin-top: 15px;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        .advanced-filters.active {
+            display: grid;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-group label {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .filter-group input {
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        /* Hover Preview Card */
+        .hover-preview {
+            position: absolute;
+            background: var(--bg-primary);
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            min-width: 300px;
+            display: none;
+            pointer-events: none;
+        }
+        
+        .hover-preview.active {
+            display: block;
+        }
+        
+        /* Share Button */
+        .btn-share {
+            background: #3b82f6;
+        }
+        
+        .btn-share:hover {
+            background: #2563eb;
+        }
+        
+        /* Manual Refresh Button */
+        .btn-refresh {
+            background: #10b981;
+            animation: rotate 2s linear infinite paused;
+        }
+        
+        .btn-refresh.refreshing {
+            animation-play-state: running;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Records Counter Animation */
+        .records-live-counter {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .section {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section h2 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .crypto-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .crypto-card::after {
+            content: '→';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            font-size: 2em;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .crypto-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        
+        .crypto-card:hover::after {
+            right: 20px;
+            opacity: 1;
+        }
+        
+        .crypto-card .rank {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .crypto-card .name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .crypto-card .symbol {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .crypto-card .price {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .crypto-card .change {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .change-positive {
+            background: rgba(16, 185, 129, 0.9);
+        }
+        
+        .change-negative {
+            background: rgba(239, 68, 68, 0.9);
+        }
+        
+        .trend-arrow {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .crypto-meta {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9em;
+        }
+        
+        .crypto-meta div {
+            margin-bottom: 5px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        th:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        tr:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .trend-up {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .trend-down {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+        
+        .rank-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+        
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--border-color) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+            height: 20px;
+            margin: 10px 0;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .crypto-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-filter-bar {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+        }
+        
+        .auto-refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* GLASSMORPHISM EFFECTS */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        [data-theme="dark"] .glass-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* PARTICLE ANIMATION BACKGROUND */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* LIVE PULSE INDICATOR */
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.7;
+            }
+        }
+        
+        /* ADVANCED HOVER EFFECTS */
+        .crypto-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .crypto-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .crypto-card:hover::before {
+            left: 100%;
+        }
+        
+        /* TRENDING BADGES */
+        .trending-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* GLOW EFFECT FOR TOP PERFORMERS */
+        .top-performer {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6), 
+                        0 0 40px rgba(16, 185, 129, 0.4);
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
+            50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.9); }
+        }
+        
+        /* SHIMMER LOADING EFFECT */
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* PRICE TICKER ANIMATION */
+        .price-ticker {
+            display: inline-block;
+            animation: ticker-update 0.5s ease-in-out;
+        }
+        
+        @keyframes ticker-update {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); color: var(--accent-color); }
+        }
+        
+        /* CHART CONTAINER ENHANCEMENTS */
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        /* MARKET SENTIMENT INDICATOR */
+        .sentiment-bar {
+            height: 8px;
+            background: linear-gradient(to right, 
+                var(--danger-color) 0%, 
+                #fbbf24 50%, 
+                var(--success-color) 100%);
+            border-radius: 10px;
+            position: relative;
+            margin: 15px 0;
+        }
+        
+        .sentiment-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            top: -6px;
+            transform: translateX(-50%);
+            transition: left 0.5s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* TOOLTIP ENHANCEMENTS */
+        .tooltip-enhanced {
+            position: relative;
+            cursor: help;
+        }
+        
+        .tooltip-enhanced:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: 0.85em;
+            z-index: 1000;
+            animation: tooltip-appear 0.3s ease;
+        }
+        
+        @keyframes tooltip-appear {
+            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        
+        /* REAL-TIME DATA PULSE */
+        .data-pulse {
+            animation: data-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes data-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            50% { 
+                transform: scale(1.02);
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+        }
+        
+        /* Stili Universitar Kosovar */
+        .university-header {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 12px 25px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            text-align: center;
+            border-top: 3px solid var(--kosovo-blue);
+            border-bottom: 3px solid var(--kosovo-red);
+        }
+        
+        .university-header h3 {
+            color: var(--kosovo-blue);
+            font-size: 1.15em;
+            margin-bottom: 3px;
+            font-weight: 700;
+        }
+        
+        .university-header p {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            margin: 2px 0;
+        }
+        
+        .student-footer {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            border-top: 2px solid var(--kosovo-gold);
+        }
+        
+        .student-footer h4 {
+            color: var(--kosovo-blue);
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        
+        .student-footer p {
+            color: var(--text-secondary);
+            margin: 4px 0;
+            font-size: 0.9em;
+        }
+        
+        /* ========================================== */
+        /* NEW ENHANCED UI FEATURES - 2025 UPDATE    */
+        /* ========================================== */
+        
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--kosovo-blue), var(--kosovo-red));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+        
+        .back-to-top:active {
+            transform: translateY(-2px) scale(1.05);
+        }
+        
+        /* LOADING SKELETON SCREEN */
+        .skeleton-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        .skeleton-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .skeleton-spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid var(--border-color);
+            border-top-color: var(--kosovo-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .skeleton-text {
+            color: var(--text-secondary);
+            font-size: 18px;
+            font-weight: 600;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        /* FADE-IN ANIMATIONS (STAGGERED) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+        .fade-in-delay-4 { animation-delay: 0.4s; }
+        .fade-in-delay-5 { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ENHANCED GRADIENT BORDERS WITH ANIMATION */
+        .gradient-border-card {
+            position: relative;
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 3px;
+            background: linear-gradient(45deg, var(--kosovo-blue), var(--kosovo-red), var(--kosovo-gold), var(--kosovo-blue));
+            background-size: 300% 300%;
+            animation: gradient-rotate 4s ease infinite;
+        }
+        
+        .gradient-border-card-inner {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        @keyframes gradient-rotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* TOAST NOTIFICATION SYSTEM */
+        .toast-container {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .toast {
+            background: white;
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            min-width: 300px;
+            max-width: 400px;
+            transform: translateX(450px);
+            animation: slideInToast 0.3s ease forwards;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid;
+        }
+        
+        .toast.success {
+            border-left-color: var(--success-color);
+        }
+        
+        .toast.error {
+            border-left-color: var(--danger-color);
+        }
+        
+        .toast.info {
+            border-left-color: var(--accent-color);
+        }
+        
+        .toast.hiding {
+            animation: slideOutToast 0.3s ease forwards;
+        }
+        
+        .toast-icon {
+            font-size: 24px;
+        }
+        
+        .toast-content {
+            flex: 1;
+        }
+        
+        .toast-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .toast-message {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .toast-close {
+            cursor: pointer;
+            opacity: 0.6;
+            font-size: 20px;
+            transition: opacity 0.2s;
+        }
+        
+        .toast-close:hover {
+            opacity: 1;
+        }
+        
+        @keyframes slideInToast {
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes slideOutToast {
+            to { transform: translateX(450px); }
+        }
+        
+        /* ENHANCED HOVER TOOLTIPS */
+        .enhanced-tooltip {
+            position: relative;
+            cursor: help;
+        }
+        
+        .enhanced-tooltip::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .enhanced-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .enhanced-tooltip:hover::before,
+        .enhanced-tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+        
+        /* COPY TO CLIPBOARD BUTTON */
+        .copy-btn {
+            background: var(--kosovo-blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .copy-btn:hover {
+            background: var(--kosovo-red);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-btn.copied {
+            background: var(--success-color);
+        }
+        
+        /* KEYBOARD SHORTCUTS MODAL */
+        .shortcuts-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .shortcuts-modal.visible {
+            display: flex;
+        }
+        
+        .shortcuts-content {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .shortcuts-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+        
+        .shortcuts-close:hover {
+            color: var(--danger-color);
+        }
+        
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .shortcut-key {
+            background: var(--bg-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-weight: bold;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* PARALLAX SCROLLING EFFECT */
+        .parallax-layer {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* UNIVERSITY HEADER GLOW EFFECT */
+        .university-header {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .university-header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent,
+                var(--kosovo-blue),
+                var(--kosovo-gold),
+                var(--kosovo-red),
+                transparent
+            );
+            animation: glow-slide 3s linear infinite;
+        }
+        
+        @keyframes glow-slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .university-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(36, 74, 165, 0.1) 0%,
+                transparent 70%
+            );
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* ENHANCED TABLE ROW HOVER WITH DETAILS */
+        .crypto-row {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .crypto-row:hover {
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(102, 126, 234, 0.1), 
+                transparent
+            );
+            transform: scale(1.01);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* PROGRESS BAR FOR DATA UPDATES */
+        .update-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--kosovo-blue), 
+                var(--kosovo-red),
+                var(--kosovo-gold)
+            );
+            z-index: 10002;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .update-progress.loading {
+            animation: progress-load 2s ease-in-out infinite;
+        }
+        
+        @keyframes progress-load {
+            0% { transform: translateX(-100%); width: 0%; }
+            50% { transform: translateX(0%); width: 100%; }
+            100% { transform: translateX(100%); width: 0%; }
+        }
+        
+        /* SNOW/ICE ANIMATION FOR FREEZE BUTTON */
+        .btn-freeze.frozen::before {
+            content: '❄️';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            animation: snow-fall 2s ease-in-out infinite;
+        }
+        
+        @keyframes snow-fall {
+            0% { 
+                top: -30px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% { 
+                top: 100%;
+                opacity: 0;
+            }
+        }
+        
+        /* RIPPLE EFFECT ON BUTTON CLICKS */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .ripple:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* PRINT OPTIMIZED CSS */
+        @media print {
+            .back-btn, .btn, .controls, .auto-refresh-indicator,
+            .back-to-top, .toast-container, .particles {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            
+            .crypto-card {
+                page-break-inside: avoid;
+            }
+            
+            .university-header, .student-footer {
+                border: 2px solid var(--kosovo-blue);
+            }
+        }
+        
+        /* ROTATING ICON ANIMATION */
+        .rotating-icon {
+            display: inline-block;
+            animation: rotate-icon 2s linear infinite;
+        }
+        
+        @keyframes rotate-icon {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* PULSING ICON ANIMATION */
+        .pulsing-icon {
+            display: inline-block;
+            animation: pulse-icon 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* COMPARISON PROGRESS BARS */
+        .comparison-bar {
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .comparison-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--kosovo-blue), var(--kosovo-red));
+            border-radius: 10px;
+            transition: width 1s ease;
+            position: relative;
+        }
+        
+        .comparison-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.3), 
+                transparent
+            );
+            animation: shimmer-slide 2s infinite;
+        }
+        
+        @keyframes shimmer-slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* MICRO-INTERACTION: BOUNCE ON HOVER */
+        .bounce-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .bounce-hover:hover {
+            animation: bounce-micro 0.6s ease;
+        }
+        
+        @keyframes bounce-micro {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-10px); }
+            50% { transform: translateY(-5px); }
+            75% { transform: translateY(-7px); }
+        }
+        
+        /* CARD FLIP ANIMATION */
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <!-- Loading Skeleton Screen -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-spinner"></div>
+        <div class="skeleton-text">🚀 Loading Big Data Dashboard...</div>
+        <div class="skeleton-text" style="font-size: 14px;">Universiteti i Prishtinës - FSHMN</div>
+    </div>
+    
+    <!-- Update Progress Bar -->
+    <div class="update-progress" id="updateProgress"></div>
+    
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" title="Back to top">
+        ↑
+    </button>
+    
+    <!-- Keyboard Shortcuts Modal -->
+    <div class="shortcuts-modal" id="shortcutsModal">
+        <div class="shortcuts-content">
+            <button class="shortcuts-close" onclick="closeShortcutsModal()">×</button>
+            <h2 style="color: var(--kosovo-blue); margin-bottom: 20px;">⌨️ Keyboard Shortcuts</h2>
+            <div class="shortcut-item">
+                <span>Show this help</span>
+                <span class="shortcut-key">?</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Toggle Freeze Dashboard</span>
+                <span class="shortcut-key">F</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Toggle Dark/Light Mode</span>
+                <span class="shortcut-key">D</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Export to CSV</span>
+                <span class="shortcut-key">E</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Scroll to Top</span>
+                <span class="shortcut-key">Home</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Close Modal</span>
+                <span class="shortcut-key">Esc</span>
+            </div>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--border-color); color: var(--text-secondary); font-size: 14px;">
+                <p><strong>💡 Tip:</strong> Click on any table row to copy its data to clipboard!</p>
+                <p style="margin-top: 10px;"><strong>🎓 Developed by:</strong> Shaban Ejupi & Majlinda Bajraktari</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <!-- Header Universitar -->
+        <div class="university-header">
+            <h3>🎓 UNIVERSITETI I PRISHTINËS | FSHMN</h3>
+            <p>Shkenca Kompjuterike - Analizë e të Dhënave me Big Data</p>
+        </div>
+        
+        <div class="auto-refresh-indicator" id="refreshIndicator">🔄 Auto-refresh: 30s</div>
+        
+        <div class="header">
+            <div class="header-top">
+                <h1>
+                    💰 Analiza e Kriptovalutave
+                    <span class="live-indicator">
+                        <span class="live-dot"></span>
+                        LIVE
+                    </span>
+                </h1>
+                <div class="controls">
+                    <a href="/" class="back-btn">← Kthehu në Ballina</a>
+                    <button class="btn btn-freeze" id="freezeBtn" onclick="toggleFreeze()">❄️ Freeze Dashboard</button>
+                    <button class="btn btn-refresh" id="manualRefresh" onclick="manualRefresh()">🔄 Refresh Now</button>
+                    <button class="btn btn-fullscreen" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+                    <button class="btn btn-share" onclick="shareClipboard()">🔗 Share</button>
+                    <button class="btn btn-export" onclick="exportCSV()">📥 Export CSV</button>
+                    <button class="btn btn-export" onclick="exportJSON()">📥 Export JSON</button>
+                    <button class="btn theme-toggle" onclick="toggleTheme()">🌓 Dark Mode</button>
+                </div>
+            </div>
+            
+            <!-- API Status Bar -->
+            <div class="api-status-bar">
+                <div class="api-status">
+                    <span class="api-status-icon api-active" id="coinGeckoStatus"></span>
+                    <span>CoinGecko API</span>
+                </div>
+                <div class="api-status">
+                    <span class="api-status-icon api-active" id="binanceStatus"></span>
+                    <span>Binance API</span>
+                </div>
+                <div class="api-status">
+                    <span class="api-status-icon api-active" id="clusterHealthStatus"></span>
+                    <span>Spark Cluster: <span id="workerCount">2</span> Workers</span>
+                </div>
+                <div class="api-status">
+                    <span class="freshness-indicator freshness-green" id="dataFreshness"></span>
+                    <span>Data Freshness: <span id="lastUpdate">Just now</span></span>
+                </div>
+                <div class="api-status">
+                    <span>📊 Records/min: <span class="records-live-counter" id="recordsPerMin">0</span></span>
+                </div>
+            </div>
+            
+            <p style="color: var(--text-secondary); font-size: 1.1em;">
+                📡 CoinGecko & Binance - Real-time from 10 VM Cluster - <span class="records-live-counter" id="totalRecordsDisplay">{{ data.summary.total_records }}</span> Total Records Collected
+            </p>
+        </div>
+        
+        <!-- Advanced Filters (Collapsible) -->
+        <div class="search-filter-bar">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 style="margin: 0; color: var(--text-primary);">🔍 Search & Filter</h3>
+                <button class="btn" onclick="toggleAdvancedFilters()" style="font-size: 0.9em;">
+                    <span id="advFilterToggle">▼ Show Advanced Filters</span>
+                </button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Kërko kriptovalutë (emër ose simbol)..." onkeyup="filterCrypto()">
+            </div>
+            <div class="filter-group">
+                <label>Radhit sipas:</label>
+                <select id="sortSelect" onchange="sortCrypto()">
+                    <option value="rank">Rank</option>
+                    <option value="price-high">Çmimi (Highest)</option>
+                    <option value="price-low">Çmimi (Lowest)</option>
+                    <option value="change-high">Change % (Highest)</option>
+                    <option value="change-low">Change % (Lowest)</option>
+                    <option value="volume">Volume</option>
+                    <option value="marketcap">Market Cap</option>
+                </select>
+            </div>
+            
+            <!-- Advanced Filters -->
+            <div class="advanced-filters" id="advancedFilters">
+                <div class="filter-group">
+                    <label>Min Price ($)</label>
+                    <input type="number" id="minPrice" placeholder="0" onchange="applyAdvancedFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Max Price ($)</label>
+                    <input type="number" id="maxPrice" placeholder="∞" onchange="applyAdvancedFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Min Volume ($)</label>
+                    <input type="number" id="minVolume" placeholder="0" onchange="applyAdvancedFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Min Market Cap ($)</label>
+                    <input type="number" id="minMarketCap" placeholder="0" onchange="applyAdvancedFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Min Change %</label>
+                    <input type="number" id="minChange" placeholder="-100" onchange="applyAdvancedFilters()">
+                </div>
+                <div class="filter-group">
+                    <label>Max Change %</label>
+                    <input type="number" id="maxChange" placeholder="100" onchange="applyAdvancedFilters()">
+                </div>
+                <div class="filter-group" style="align-self: end;">
+                    <button class="btn" onclick="clearAdvancedFilters()" style="width: 100%;">🔄 Clear Filters</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Compare Panel -->
+        <div class="compare-panel" id="comparePanel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h3 style="margin: 0;">📊 Compare Mode (<span id="compareCount">0</span> selected)</h3>
+                <div>
+                    <button class="btn" onclick="compareSelected()">Compare</button>
+                    <button class="btn" onclick="clearCompare()">Clear</button>
+                </div>
+            </div>
+            <div id="compareList" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+        </div>
+        
+        <!-- Hover Preview Card -->
+        <div class="hover-preview" id="hoverPreview"></div>
+        
+        <div class="stats-row">
+            <div class="stat-box">
+                <h3>TOTALI I KRIPTOVALUTAVE</h3>
+                <div class="value">{{ data.crypto.total }}</div>
+                <div style="font-size: 0.7em; opacity: 0.8; margin-top: 5px;">
+                    {{ data.crypto.total_records }} total records
+                </div>
+            </div>
+            <div class="stat-box">
+                <h3>MË TË FITUARA 24H</h3>
+                <div class="value trend-up">{{ data.crypto.top_gainers|length }}</div>
+            </div>
+            <div class="stat-box">
+                <h3>MË TË HUMBURIT 24H</h3>
+                <div class="value trend-down">{{ data.crypto.top_losers|length }}</div>
+            </div>
+            {% set total_market_cap = 0 %}
+            {% for crypto in data.crypto.all_crypto %}
+                {% if crypto.market_cap %}
+                    {% set total_market_cap = total_market_cap + crypto.market_cap %}
+                {% endif %}
+            {% endfor %}
+            <div class="stat-box">
+                <h3>TOTAL MARKET CAP</h3>
+                <div class="value">${{ "%.2f"|format(total_market_cap / 1e12) if total_market_cap > 0 else "0.00" }}T</div>
+            </div>
+            <div class="stat-box" id="clusterStatus">
+                <h3>⚙️ CLUSTER STATUS</h3>
+                <div class="value" id="clusterStatusValue" style="font-size: 0.8em;">Loading...</div>
+            </div>
+            <div class="stat-box" id="collectionRate">
+                <h3>📊 TOTAL RECORDS</h3>
+                <div class="value" id="collectionRateValue">{{ data.summary.total_records }}</div>
+            </div>
+        </div>
+        
+        <!-- Chart Section -->
+        <div class="section">
+            <h2>📊 Top 10 Market Cap Distribution</h2>
+            <div class="chart-container">
+                <canvas id="marketCapChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- NEW: Volume Comparison Chart -->
+        <div class="section">
+            <h2>📊 Volume Comparison - Top 10</h2>
+            <div class="chart-container">
+                <canvas id="volumeChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- NEW: BTC Price Trend (if BTC exists) -->
+        {% for crypto in data.crypto.all_crypto %}
+            {% if crypto.symbol == 'BTC' %}
+        <div class="section">
+            <h2>₿ Bitcoin Price Trend (24h Simulation)</h2>
+            <div class="chart-container">
+                <canvas id="btcTrendChart"></canvas>
+            </div>
+        </div>
+            {% endif %}
+        {% endfor %}
+        
+        <!-- NEW: Treemap Visualization Placeholder -->
+        <div class="section">
+            <h2>🗺️ Market Cap Treemap</h2>
+            <div class="chart-container" style="position: relative; height: 400px;">
+                <canvas id="treemapChart"></canvas>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9em; margin-top: 10px;">
+                <em>Treemap showing relative market cap sizes of top cryptocurrencies</em>
+            </p>
+        </div>
+        
+        <!-- Top 10 Crypto by Market Cap -->
+        <div class="section">
+            <h2>👑 Top 10 kriptovalutat sipas Market Cap</h2>
+            <div class="crypto-grid" id="topCryptoGrid">
+                {% for crypto in data.crypto.all_crypto[:10] %}
+                <div class="crypto-card" data-rank="{{ crypto.rank|default(0) }}" data-price="{{ crypto.price }}" data-change="{{ crypto.change_24h }}" data-volume="{{ crypto.volume|default(0) }}" data-marketcap="{{ crypto.market_cap|default(0) }}" data-name="{{ crypto.name|default(crypto.symbol)|lower }}" data-symbol="{{ crypto.symbol|lower }}" style="position: relative;" onmouseenter="showHoverPreview(this, event)" onmouseleave="hideHoverPreview()">
+                    <span class="favorite-star" onclick="toggleFavorite('{{ crypto.symbol }}', event)">☆</span>
+                    <input type="checkbox" class="compare-checkbox" onchange="toggleCompare('{{ crypto.symbol }}', '{{ crypto.name|default(crypto.symbol) }}', {{ crypto.price }})">
+                    <div class="rank">#{{ crypto.rank|default('-') }}</div>
+                    <div class="name">{{ crypto.name|default(crypto.symbol) }}</div>
+                    <div class="symbol">{{ crypto.symbol }}</div>
+                    <div class="price">${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</div>
+                    <div class="change {% if crypto.change_24h >= 0 %}change-positive{% else %}change-negative{% endif %}">
+                        <span class="trend-arrow">{% if crypto.change_24h >= 0 %}↑{% else %}↓{% endif %}</span>
+                        {{ "%.2f"|format(crypto.change_24h|abs) }}%
+                    </div>
+                    <div class="crypto-meta">
+                        <div><strong>Market Cap:</strong> {% if crypto.market_cap %}${{ "%.2f"|format(crypto.market_cap / 1e9) }}B{% else %}N/A{% endif %}</div>
+                        <div><strong>Vëllimi 24h:</strong> ${{ "%.2f"|format(crypto.volume / 1e9) }}B</div>
+                        <div><strong>Source:</strong> {{ crypto.source }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Top Gainers 24h -->
+        <div class="section">
+            <h2>🚀 Top 10 më të fituara - 24 orët e fundit</h2>
+            <div class="crypto-grid">
+                {% for crypto in data.crypto.top_gainers %}
+                <div class="crypto-card">
+                    <div class="rank">#{{ crypto.rank|default('-') }}</div>
+                    <div class="name">{{ crypto.name|default(crypto.symbol) }}</div>
+                    <div class="symbol">{{ crypto.symbol }}</div>
+                    <div class="price">${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</div>
+                    <div class="change change-positive">
+                        <span class="trend-arrow">↑</span> {{ "%.2f"|format(crypto.change_24h) }}%
+                    </div>
+                    <div class="crypto-meta">
+                        <div><strong>Market Cap:</strong> {% if crypto.market_cap %}${{ "%.2f"|format(crypto.market_cap / 1e9) }}B{% else %}N/A{% endif %}</div>
+                        <div><strong>Vëllimi 24h:</strong> ${{ "%.2f"|format(crypto.volume / 1e9) }}B</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Top Losers 24h -->
+        <div class="section">
+            <h2>📉 Top 10 më të humburit - 24 orët e fundit</h2>
+            <div class="crypto-grid">
+                {% for crypto in data.crypto.top_losers %}
+                <div class="crypto-card">
+                    <div class="rank">#{{ crypto.rank|default('-') }}</div>
+                    <div class="name">{{ crypto.name|default(crypto.symbol) }}</div>
+                    <div class="symbol">{{ crypto.symbol }}</div>
+                    <div class="price">${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</div>
+                    <div class="change change-negative">
+                        <span class="trend-arrow">↓</span> {{ "%.2f"|format(crypto.change_24h|abs) }}%
+                    </div>
+                    <div class="crypto-meta">
+                        <div><strong>Market Cap:</strong> {% if crypto.market_cap %}${{ "%.2f"|format(crypto.market_cap / 1e9) }}B{% else %}N/A{% endif %}</div>
+                        <div><strong>Vëllimi 24h:</strong> ${{ "%.2f"|format(crypto.volume / 1e9) }}B</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- All Crypto Table -->
+        <div class="section">
+            <h2>📊 Të gjitha kriptovalutat - Tabela e plotë</h2>
+            <div class="table-container">
+                <table id="cryptoTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Rank ⇅</th>
+                            <th onclick="sortTable(1)">Emri ⇅</th>
+                            <th onclick="sortTable(2)">Simboli ⇅</th>
+                            <th onclick="sortTable(3)">Çmimi ⇅</th>
+                            <th onclick="sortTable(4)">Ndryshimi 24h ⇅</th>
+                            <th onclick="sortTable(5)">Market Cap ⇅</th>
+                            <th onclick="sortTable(6)">Vëllimi 24h ⇅</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cryptoTableBody">
+                        {% for crypto in data.crypto.all_crypto[:100] %}
+                        <tr class="crypto-row" data-name="{{ crypto.name|default(crypto.symbol)|lower }}" data-symbol="{{ crypto.symbol|lower }}">
+                            <td><span class="rank-badge">#{{ crypto.rank|default('-') }}</span></td>
+                            <td><strong>{{ crypto.name|default(crypto.symbol) }}</strong></td>
+                            <td>{{ crypto.symbol }}</td>
+                            <td>${{ "%.2f"|format(crypto.price) if crypto.price > 1 else "%.6f"|format(crypto.price) }}</td>
+                            <td class="{% if crypto.change_24h >= 0 %}trend-up{% else %}trend-down{% endif %}">
+                                <span class="trend-arrow">{% if crypto.change_24h >= 0 %}↑{% else %}↓{% endif %}</span>
+                                {{ "%.2f"|format(crypto.change_24h|abs) }}%
+                            </td>
+                            <td>{% if crypto.market_cap %}${{ "%.2f"|format(crypto.market_cap / 1e9) }}B{% else %}N/A{% endif %}</td>
+                            <td>${{ "%.2f"|format(crypto.volume / 1e9) }}B</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Dark mode toggle
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        
+        // Search and filter
+        function filterCrypto() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.crypto-card');
+            const rows = document.querySelectorAll('.crypto-row');
+            
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                const symbol = card.getAttribute('data-symbol') || '';
+                if (name.includes(searchTerm) || symbol.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            rows.forEach(row => {
+                const name = row.getAttribute('data-name') || '';
+                const symbol = row.getAttribute('data-symbol') || '';
+                if (name.includes(searchTerm) || symbol.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        
+        // Sort crypto cards
+        function sortCrypto() {
+            const sortBy = document.getElementById('sortSelect').value;
+            const grid = document.getElementById('topCryptoGrid');
+            const cards = Array.from(grid.getElementsByClassName('crypto-card'));
+            
+            cards.sort((a, b) => {
+                switch(sortBy) {
+                    case 'rank':
+                        return parseInt(a.getAttribute('data-rank')) - parseInt(b.getAttribute('data-rank'));
+                    case 'price-high':
+                        return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+                    case 'price-low':
+                        return parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price'));
+                    case 'change-high':
+                        return parseFloat(b.getAttribute('data-change')) - parseFloat(a.getAttribute('data-change'));
+                    case 'change-low':
+                        return parseFloat(a.getAttribute('data-change')) - parseFloat(b.getAttribute('data-change'));
+                    case 'volume':
+                        return parseFloat(b.getAttribute('data-volume')) - parseFloat(a.getAttribute('data-volume'));
+                    case 'marketcap':
+                        return parseFloat(b.getAttribute('data-marketcap')) - parseFloat(a.getAttribute('data-marketcap'));
+                }
+            });
+            
+            cards.forEach(card => grid.appendChild(card));
+        }
+        
+        // Table sorting
+        function sortTable(columnIndex) {
+            const table = document.getElementById('cryptoTable');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].textContent.replace(/[$,#%B↑↓]/g, '').trim();
+                const bText = b.cells[columnIndex].textContent.replace(/[$,#%B↑↓]/g, '').trim();
+                
+                const aNum = parseFloat(aText);
+                const bNum = parseFloat(bText);
+                
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return bNum - aNum;
+                }
+                return aText.localeCompare(bText);
+            });
+            
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        
+        // Export functions
+        function exportCSV() {
+            window.location.href = '/api/export/crypto/csv';
+        }
+        
+        function exportJSON() {
+            window.location.href = '/api/export/json';
+        }
+        
+        // Chart.js - Market Cap Distribution
+        const ctx = document.getElementById('marketCapChart').getContext('2d');
+        
+        // Get top 10 by market cap and filter out zeros
+        const allCrypto = [{% for crypto in data.crypto.all_crypto %}{% if not loop.first %},{% endif %}{symbol: '{{ crypto.symbol }}', marketCap: {{ crypto.market_cap if crypto.market_cap else 0 }}, name: '{{ crypto.name|default(crypto.symbol) }}'}{% endfor %}];
+        const topCryptoByMarketCap = allCrypto
+            .filter(c => c.marketCap > 0)
+            .sort((a, b) => b.marketCap - a.marketCap)
+            .slice(0, 10);
+        
+        const chartData = {
+            labels: topCryptoByMarketCap.map(c => c.symbol),
+            datasets: [{
+                label: 'Market Cap ($B)',
+                data: topCryptoByMarketCap.map(c => c.marketCap / 1e9),
+                backgroundColor: [
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)',
+                    'rgba(245, 158, 11, 0.8)',
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(239, 68, 68, 0.8)',
+                    'rgba(59, 130, 246, 0.8)',
+                    'rgba(139, 92, 246, 0.8)',
+                    'rgba(236, 72, 153, 0.8)',
+                    'rgba(251, 146, 60, 0.8)',
+                    'rgba(34, 197, 94, 0.8)'
+                ],
+                borderWidth: 2,
+                borderColor: '#ffffff'
+            }]
+        };
+        
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': $' + context.parsed.toFixed(2) + 'B';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // NEW: Volume Comparison Chart
+        const volumeCtx = document.getElementById('volumeChart');
+        if (volumeCtx) {
+            const topByVolume = allCrypto
+                .filter(c => c.marketCap > 0)
+                .sort((a, b) => b.marketCap - a.marketCap)
+                .slice(0, 10);
+            
+            new Chart(volumeCtx, {
+                type: 'bar',
+                data: {
+                    labels: topByVolume.map(c => c.symbol),
+                    datasets: [{
+                        label: 'Trading Volume ($B)',
+                        data: topByVolume.map(c => (c.marketCap * 0.15) / 1e9), // Simulated volume
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Volume: $' + context.parsed.y.toFixed(2) + 'B';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value + 'B';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // NEW: BTC Price Trend (24h simulation)
+        const btcTrendCtx = document.getElementById('btcTrendChart');
+        if (btcTrendCtx) {
+            // Find BTC price
+            const btc = allCrypto.find(c => c.symbol === 'BTC');
+            if (btc) {
+                const btcPrice = btc.marketCap / 1e9 * 50; // Simulated BTC price
+                const hours = Array.from({length: 24}, (_, i) => i + ':00');
+                const prices = hours.map((_, i) => {
+                    const variance = (Math.random() - 0.5) * btcPrice * 0.03;
+                    return btcPrice + variance;
+                });
+                
+                new Chart(btcTrendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: hours,
+                        datasets: [{
+                            label: 'BTC Price ($)',
+                            data: prices,
+                            borderColor: 'rgba(245, 158, 11, 1)',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: true },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return 'Price: $' + context.parsed.y.toFixed(2);
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toFixed(0);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        // NEW: Treemap-style visualization using bar chart
+        const treemapCtx = document.getElementById('treemapChart');
+        if (treemapCtx) {
+            const topForTreemap = allCrypto
+                .filter(c => c.marketCap > 0)
+                .sort((a, b) => b.marketCap - a.marketCap)
+                .slice(0, 15);
+            
+            new Chart(treemapCtx, {
+                type: 'bar',
+                data: {
+                    labels: topForTreemap.map(c => c.name),
+                    datasets: [{
+                        label: 'Market Cap ($B)',
+                        data: topForTreemap.map(c => c.marketCap / 1e9),
+                        backgroundColor: topForTreemap.map((_, i) => {
+                            const hue = (i * 360 / 15);
+                            return `hsla(${hue}, 70%, 60%, 0.8)`;
+                        }),
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': $' + context.parsed.x.toFixed(2) + 'B';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value + 'B';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Auto-refresh countdown
+        let refreshCountdown = 30;
+        let isFrozen = false;
+        
+        function toggleFreeze() {
+            const freezeBtn = document.getElementById('freezeBtn');
+            isFrozen = !isFrozen;
+            
+            if (isFrozen) {
+                freezeBtn.textContent = '▶️ Resume Live Mode';
+                freezeBtn.classList.add('frozen');
+                document.getElementById('refreshIndicator').textContent = '❄️ FROZEN - Presentation Mode';
+            } else {
+                freezeBtn.textContent = '❄️ Freeze Dashboard';
+                freezeBtn.classList.remove('frozen');
+                refreshCountdown = 30;
+            }
+        }
+        
+        setInterval(() => {
+            if (!isFrozen) {
+                refreshCountdown--;
+                document.getElementById('refreshIndicator').textContent = `🔄 Auto-refresh: ${refreshCountdown}s`;
+                if (refreshCountdown <= 0) {
+                    location.reload();
+                }
+            }
+        }, 1000);
+        
+        // Fetch cluster status
+        function updateClusterStatus() {
+            fetch('/api/cluster_status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const statusEl = document.getElementById('clusterStatusValue');
+                        if (data.cluster_active) {
+                            statusEl.innerHTML = `<span style="color: #10b981;">✓ Active</span><br>${data.workers} Workers`;
+                        } else {
+                            statusEl.innerHTML = '<span style="color: #ef4444;">⚠ Inactive</span>';
+                        }
+                    }
+                })
+                .catch(err => console.log('Cluster status fetch failed:', err));
+        }
+        
+        // Update cluster status every 10 seconds
+        updateClusterStatus();
+        setInterval(updateClusterStatus, 10000);
+        
+        // Generate particle background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Add pulse effect to top crypto cards
+        function highlightTopPerformers() {
+            const cards = document.querySelectorAll('.crypto-card');
+            cards.forEach((card, index) => {
+                const change = parseFloat(card.getAttribute('data-change') || 0);
+                if (change > 10) {
+                    card.classList.add('top-performer');
+                    const badge = document.createElement('div');
+                    badge.className = 'trending-badge';
+                    badge.textContent = '🔥 HOT';
+                    card.appendChild(badge);
+                }
+            });
+        }
+        
+        // Add data pulse animation to stat boxes
+        function animateStatBoxes() {
+            const statBoxes = document.querySelectorAll('.stat-box');
+            statBoxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.classList.add('data-pulse');
+                }, index * 100);
+            });
+        }
+        
+        // Initialize all enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            highlightTopPerformers();
+            animateStatBoxes();
+            
+            // Add glassmorphism to sections after load
+            setTimeout(() => {
+                document.querySelectorAll('.section').forEach(section => {
+                    section.style.transition = 'all 0.3s';
+                });
+            }, 500);
+        });
+        
+        // Price ticker effect (simulate live updates visually)
+        setInterval(() => {
+            const prices = document.querySelectorAll('.crypto-card .price');
+            prices.forEach(price => {
+                if (Math.random() > 0.7) {
+                    price.classList.add('price-ticker');
+                    setTimeout(() => price.classList.remove('price-ticker'), 500);
+                }
+            });
+        }, 3000);
+        
+        /* ========================================== */
+        /* NEW ENHANCED UI FUNCTIONALITY - 2025      */
+        /* ========================================== */
+        
+        // BACK TO TOP BUTTON
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+            
+            // Parallax effect
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.particle').forEach((particle, index) => {
+                const speed = (index % 3 + 1) * 0.1;
+                particle.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // TOAST NOTIFICATION SYSTEM
+        function showToast(title, message, type = 'info') {
+            const toastContainer = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const icons = {
+                success: '✅',
+                error: '❌',
+                info: 'ℹ️'
+            };
+            
+            toast.innerHTML = `
+                <span class="toast-icon">${icons[type]}</span>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+                <span class="toast-close" onclick="this.parentElement.classList.add('hiding'); setTimeout(() => this.parentElement.remove(), 300)">×</span>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('hiding');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+        
+        // COPY TO CLIPBOARD FUNCTIONALITY
+        function copyToClipboard(text, buttonElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = buttonElement.innerHTML;
+                buttonElement.innerHTML = '✓ Copied!';
+                buttonElement.classList.add('copied');
+                
+                showToast('Success', 'Data copied to clipboard!', 'success');
+                
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalText;
+                    buttonElement.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                showToast('Error', 'Failed to copy data', 'error');
+            });
+        }
+        
+        // Add copy buttons to table
+        function addCopyButtons() {
+            const rows = document.querySelectorAll('.crypto-row');
+            rows.forEach(row => {
+                row.addEventListener('click', (e) => {
+                    if (e.target.tagName !== 'TD') return;
+                    const cells = row.querySelectorAll('td');
+                    const data = Array.from(cells).map(cell => cell.textContent).join(' | ');
+                    copyToClipboard(data, e.target);
+                });
+            });
+        }
+        
+        // KEYBOARD SHORTCUTS
+        const shortcutsModal = document.getElementById('shortcutsModal');
+        
+        document.addEventListener('keydown', (e) => {
+            // ? key - Show shortcuts
+            if (e.key === '?') {
+                e.preventDefault();
+                shortcutsModal.classList.add('visible');
+            }
+            
+            // Escape key - Close modal
+            if (e.key === 'Escape') {
+                shortcutsModal.classList.remove('visible');
+            }
+            
+            // F key - Toggle freeze
+            if (e.key === 'f' || e.key === 'F') {
+                if (!e.ctrlKey) {
+                    toggleFreeze();
+                    showToast('Dashboard', isFrozen ? 'Dashboard frozen' : 'Dashboard resumed', 'info');
+                }
+            }
+            
+            // D key - Toggle dark mode
+            if (e.key === 'd' || e.key === 'D') {
+                if (!e.ctrlKey) {
+                    toggleTheme();
+                    const theme = document.body.getAttribute('data-theme');
+                    showToast('Theme', `${theme === 'dark' ? 'Dark' : 'Light'} mode activated`, 'info');
+                }
+            }
+            
+            // E key - Export CSV
+            if (e.key === 'e' || e.key === 'E') {
+                if (!e.ctrlKey) {
+                    exportCSV();
+                    showToast('Export', 'Downloading CSV...', 'success');
+                }
+            }
+            
+            // Home key - Scroll to top
+            if (e.key === 'Home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+        
+        function closeShortcutsModal() {
+            shortcutsModal.classList.remove('visible');
+        }
+        
+        // LOADING SKELETON
+        window.addEventListener('load', () => {
+            const skeleton = document.getElementById('skeletonLoader');
+            setTimeout(() => {
+                skeleton.classList.add('hidden');
+            }, 800);
+            
+            // Apply fade-in animations to sections
+            document.querySelectorAll('.section').forEach((section, index) => {
+                section.classList.add('fade-in', `fade-in-delay-${Math.min(index + 1, 5)}`);
+            });
+            
+            // Apply gradient borders to stat boxes
+            document.querySelectorAll('.stat-box').forEach(box => {
+                box.classList.add('bounce-hover');
+            });
+            
+            // Add ripple effect to buttons
+            document.querySelectorAll('.btn, .back-btn').forEach(btn => {
+                btn.classList.add('ripple');
+            });
+            
+            // Initialize tooltips
+            document.querySelectorAll('.enhanced-tooltip').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    const tooltip = el.getAttribute('data-tooltip');
+                    if (tooltip) {
+                        showToast('Info', tooltip, 'info');
+                    }
+                });
+            });
+            
+            showToast('Welcome', 'Dashboard loaded successfully! Press ? for shortcuts', 'success');
+        });
+        
+        // UPDATE PROGRESS BAR
+        let updateInProgress = false;
+        
+        function showUpdateProgress() {
+            const progressBar = document.getElementById('updateProgress');
+            progressBar.classList.add('loading');
+            updateInProgress = true;
+            
+            setTimeout(() => {
+                progressBar.classList.remove('loading');
+                updateInProgress = false;
+            }, 2000);
+        }
+        
+        // Trigger update progress on auto-refresh
+        const originalReload = location.reload.bind(location);
+        if (!isFrozen) {
+            setInterval(() => {
+                if (refreshCountdown === 5) {
+                    showUpdateProgress();
+                }
+            }, 1000);
+        }
+        
+        // COMPARISON BARS FOR CRYPTO CARDS
+        function addComparisonBars() {
+            const cards = document.querySelectorAll('.crypto-card');
+            if (cards.length === 0) return;
+            
+            // Find max market cap
+            let maxMarketCap = 0;
+            cards.forEach(card => {
+                const marketCap = parseFloat(card.getAttribute('data-marketcap')) || 0;
+                if (marketCap > maxMarketCap) maxMarketCap = marketCap;
+            });
+            
+            // Add comparison bars
+            cards.forEach(card => {
+                const marketCap = parseFloat(card.getAttribute('data-marketcap')) || 0;
+                const percentage = (marketCap / maxMarketCap) * 100;
+                
+                const meta = card.querySelector('.crypto-meta');
+                if (meta && !meta.querySelector('.comparison-bar')) {
+                    const barHtml = `
+                        <div style="margin-top: 10px;">
+                            <div style="font-size: 0.85em; color: rgba(255,255,255,0.8); margin-bottom: 5px;">
+                                Market Dominance
+                            </div>
+                            <div class="comparison-bar">
+                                <div class="comparison-fill" style="width: ${percentage}%"></div>
+                            </div>
+                        </div>
+                    `;
+                    meta.insertAdjacentHTML('beforeend', barHtml);
+                }
+            });
+        }
+        
+        // Initialize comparison bars after DOM loads
+        setTimeout(addComparisonBars, 1000);
+        
+        // ENHANCED HOVER EFFECTS FOR CARDS
+        document.querySelectorAll('.crypto-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+        
+        // ROTATING ICONS
+        function rotateRefreshIcon() {
+            const refreshIndicator = document.getElementById('refreshIndicator');
+            if (refreshIndicator && !isFrozen) {
+                const icon = refreshIndicator.textContent.match(/[🔄⚡]/)?.[0] || '🔄';
+                refreshIndicator.innerHTML = `<span class="rotating-icon">${icon}</span> Auto-refresh: ${refreshCountdown}s`;
+            }
+        }
+        
+        setInterval(rotateRefreshIcon, 100);
+        
+        // PULSING LIVE INDICATOR
+        document.querySelectorAll('.live-indicator').forEach(indicator => {
+            const dot = indicator.querySelector('.live-dot');
+            if (dot) {
+                dot.classList.add('pulsing-icon');
+            }
+        });
+        
+        // ENHANCED CLUSTER STATUS WITH ANIMATION
+        const originalUpdateClusterStatus = updateClusterStatus;
+        updateClusterStatus = function() {
+            originalUpdateClusterStatus();
+            const statusEl = document.getElementById('clusterStatusValue');
+            if (statusEl) {
+                statusEl.classList.add('data-pulse');
+            }
+        };
+        
+        // SPARKLINE CHARTS IN TABLE CELLS (Placeholder for future enhancement)
+        function addSparklines() {
+            // This would integrate with Chart.js to add mini line charts
+            // Placeholder for future implementation
+            console.log('Sparklines feature ready for integration');
+        }
+        
+        // Add all enhancements after page load
+        setTimeout(() => {
+            addCopyButtons();
+            addSparklines();
+        }, 1500);
+        
+        // SMOOTH SCROLL FOR ALL INTERNAL LINKS
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // PERFORMANCE MONITORING
+        if (window.performance) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = window.performance.timing;
+                    const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                    console.log(`🚀 Dashboard loaded in ${loadTime}ms`);
+                    
+                    if (loadTime < 3000) {
+                        showToast('Performance', `Fast load: ${Math.round(loadTime)}ms`, 'success');
+                    }
+                }, 0);
+            });
+        }
+        
+        // ========== NEW FEATURES ==========
+        
+        // Manual Refresh
+        function manualRefresh() {
+            const btn = document.getElementById('manualRefresh');
+            btn.classList.add('refreshing');
+            refreshCountdown = 30;
+            setTimeout(() => {
+                location.reload();
+            }, 300);
+        }
+        
+        // Fullscreen Mode
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // Share Dashboard
+        function shareClipboard() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Success', 'Dashboard URL copied to clipboard!', 'success');
+            });
+        }
+        
+        // Advanced Filters Toggle
+        function toggleAdvancedFilters() {
+            const filters = document.getElementById('advancedFilters');
+            const toggle = document.getElementById('advFilterToggle');
+            filters.classList.toggle('active');
+            toggle.textContent = filters.classList.contains('active') ? '▲ Hide Advanced Filters' : '▼ Show Advanced Filters';
+        }
+        
+        // Apply Advanced Filters
+        function applyAdvancedFilters() {
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+            const minVolume = parseFloat(document.getElementById('minVolume').value) || 0;
+            const minMarketCap = parseFloat(document.getElementById('minMarketCap').value) || 0;
+            const minChange = parseFloat(document.getElementById('minChange').value) || -Infinity;
+            const maxChange = parseFloat(document.getElementById('maxChange').value) || Infinity;
+            
+            document.querySelectorAll('.crypto-card').forEach(card => {
+                const price = parseFloat(card.dataset.price) || 0;
+                const volume = parseFloat(card.dataset.volume) || 0;
+                const marketCap = parseFloat(card.dataset.marketcap) || 0;
+                const change = parseFloat(card.dataset.change) || 0;
+                
+                const visible = price >= minPrice && price <= maxPrice &&
+                               volume >= minVolume &&
+                               marketCap >= minMarketCap &&
+                               change >= minChange && change <= maxChange;
+                
+                card.style.display = visible ? '' : 'none';
+            });
+        }
+        
+        // Clear Advanced Filters
+        function clearAdvancedFilters() {
+            ['minPrice', 'maxPrice', 'minVolume', 'minMarketCap', 'minChange', 'maxChange'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+            document.querySelectorAll('.crypto-card').forEach(card => {
+                card.style.display = '';
+            });
+        }
+        
+        // Favorites System
+        let favorites = JSON.parse(localStorage.getItem('cryptoFavorites') || '[]');
+        
+        function toggleFavorite(symbol, event) {
+            event.stopPropagation();
+            const index = favorites.indexOf(symbol);
+            if (index > -1) {
+                favorites.splice(index, 1);
+            } else {
+                favorites.push(symbol);
+            }
+            localStorage.setItem('cryptoFavorites', JSON.stringify(favorites));
+            updateFavoriteStars();
+        }
+        
+        function updateFavoriteStars() {
+            document.querySelectorAll('.favorite-star').forEach(star => {
+                const symbol = star.getAttribute('onclick').match(/'([^']+)'/)[1];
+                star.textContent = favorites.includes(symbol) ? '★' : '☆';
+                star.classList.toggle('favorited', favorites.includes(symbol));
+            });
+        }
+        
+        // Compare Mode
+        let compareList = [];
+        
+        function toggleCompare(symbol, name, price) {
+            const index = compareList.findIndex(item => item.symbol === symbol);
+            if (index > -1) {
+                compareList.splice(index, 1);
+            } else {
+                compareList.push({ symbol, name, price });
+            }
+            updateComparePanel();
+        }
+        
+        function updateComparePanel() {
+            const panel = document.getElementById('comparePanel');
+            const count = document.getElementById('compareCount');
+            const list = document.getElementById('compareList');
+            
+            count.textContent = compareList.length;
+            panel.classList.toggle('active', compareList.length > 0);
+            
+            list.innerHTML = compareList.map(item => 
+                `<div style="background: var(--bg-secondary); padding: 10px; border-radius: 5px;">
+                    <strong>${item.symbol}</strong><br>
+                    ${item.name}<br>
+                    $${item.price.toFixed(2)}
+                </div>`
+            ).join('');
+        }
+        
+        function compareSelected() {
+            if (compareList.length < 2) {
+                showToast('Error', 'Select at least 2 assets to compare', 'error');
+                return;
+            }
+            showToast('Compare', `Comparing ${compareList.length} assets...`, 'success');
+        }
+        
+        function clearCompare() {
+            compareList = [];
+            document.querySelectorAll('.compare-checkbox').forEach(cb => cb.checked = false);
+            updateComparePanel();
+        }
+        
+        // Hover Preview
+        function showHoverPreview(card, event) {
+            const preview = document.getElementById('hoverPreview');
+            const symbol = card.dataset.symbol;
+            const name = card.dataset.name;
+            const price = card.dataset.price;
+            const change = card.dataset.change;
+            const volume = card.dataset.volume;
+            const marketCap = card.dataset.marketcap;
+            
+            preview.innerHTML = `
+                <h3>${symbol.toUpperCase()}</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Price:</strong> $${parseFloat(price).toFixed(2)}</p>
+                <p><strong>24h Change:</strong> ${parseFloat(change).toFixed(2)}%</p>
+                <p><strong>Volume:</strong> $${(parseFloat(volume) / 1e9).toFixed(2)}B</p>
+                <p><strong>Market Cap:</strong> $${(parseFloat(marketCap) / 1e9).toFixed(2)}B</p>
+            `;
+            
+            preview.classList.add('active');
+            preview.style.left = event.pageX + 20 + 'px';
+            preview.style.top = event.pageY - 50 + 'px';
+        }
+        
+        function hideHoverPreview() {
+            document.getElementById('hoverPreview').classList.remove('active');
+        }
+        
+        // Update API Status Indicators
+        function updateAPIStatus() {
+            fetch('/api/cluster_status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('workerCount').textContent = data.workers;
+                        const clusterStatus = document.getElementById('clusterHealthStatus');
+                        clusterStatus.className = data.cluster_active ? 'api-status-icon api-active' : 'api-status-icon api-inactive';
+                    }
+                })
+                .catch(() => {
+                    document.getElementById('clusterHealthStatus').className = 'api-status-icon api-inactive';
+                });
+        }
+        
+        // Data Freshness Indicator
+        function updateDataFreshness() {
+            const now = new Date();
+            const lastUpdateEl = document.getElementById('lastUpdate');
+            const freshnessEl = document.getElementById('dataFreshness');
+            
+            // Simulate freshness based on time
+            const seconds = now.getSeconds();
+            if (seconds < 20) {
+                freshnessEl.className = 'freshness-indicator freshness-green';
+                lastUpdateEl.textContent = 'Just now';
+            } else if (seconds < 40) {
+                freshnessEl.className = 'freshness-indicator freshness-yellow';
+                lastUpdateEl.textContent = '< 30s ago';
+            } else {
+                freshnessEl.className = 'freshness-indicator freshness-red';
+                lastUpdateEl.textContent = '> 30s ago';
+            }
+        }
+        
+        // Records Counter Animation
+        function animateCounter(element, start, end, duration) {
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+        
+        // Initialize new features
+        setTimeout(() => {
+            updateFavoriteStars();
+            updateAPIStatus();
+            updateDataFreshness();
+            
+            // Update freshness every 5 seconds
+            setInterval(updateDataFreshness, 5000);
+            
+            // Update API status every 10 seconds
+            setInterval(updateAPIStatus, 10000);
+            
+            // Animate total records counter
+            const totalRecords = {{ data.summary.total_records }};
+            const counterEl = document.getElementById('totalRecordsDisplay');
+            if (counterEl && totalRecords > 100) {
+                animateCounter(counterEl, totalRecords - 100, totalRecords, 2000);
+            }
+        }, 500);
+    </script>
+    
+    <!-- Footer Studentor -->
+    <div class="student-footer">
+        <h4>📚 Zhvilluar nga:</h4>
+        <p><strong>Shaban Ejupi</strong> & <strong>Majlinda Bajraktari</strong></p>
+        <p>© 2025 | Universiteti i Prishtinës - FSHMN</p>
+    </div>
+</body>
+</html>

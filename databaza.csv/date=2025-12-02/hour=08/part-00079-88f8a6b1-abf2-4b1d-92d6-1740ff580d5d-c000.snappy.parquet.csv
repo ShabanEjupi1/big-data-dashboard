@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-3.50408,"starknet",557901933,"Starknet",0.114445,134,"coingecko","STRK","2025-12-02T08:22:16.273032",88669932,"2025-12-02",8
+-1.52121,"arbitrum-bridged-weth-arbitrum-one",550887506,"Arbitrum Bridged WETH (Arbitrum One)",2792.86,135,"coingecko","WETH","2025-12-02T08:22:16.273039",345784964,"2025-12-02",8

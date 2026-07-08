@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.2433,"arweave",261704422,"Arweave",4,235,"coingecko","AR","2025-12-08T02:51:46.594383",23327919,"2025-12-08",2
+1.6576,"wrapped-ether-mantle-bridge",260246200,"Mantle Bridged WETH (Mantle)",3104.1,236,"coingecko","WETH","2025-12-08T02:51:46.594390",5713768,"2025-12-08",2

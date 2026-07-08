@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.01818,"steakhouse-usdc-morpho-vault",418715402,"Steakhouse USDC Morpho Vault",1.11,172,"coingecko","STEAKUSDC","2025-12-04T16:24:27.139576",0,"2025-12-04",16
+4.42099,"coinbase-wrapped-staked-eth",409346633,"Coinbase Wrapped Staked ETH",3565.36,178,"coingecko","CBETH","2025-12-04T16:24:27.139583",12345470,"2025-12-04",16

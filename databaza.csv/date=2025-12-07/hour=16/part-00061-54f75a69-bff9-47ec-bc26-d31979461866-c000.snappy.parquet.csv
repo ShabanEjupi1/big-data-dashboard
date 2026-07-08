@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.35538,"arbitrum-bridged-wbtc-arbitrum-one",721333532,"Arbitrum Bridged WBTC (Arbitrum One)",89433,116,"coingecko","WBTC","2025-12-07T16:44:51.136877",107759465,"2025-12-07",16
+-1.00335,"mantle-staked-ether",719006050,"Mantle Staked Ether",3266.65,117,"coingecko","METH","2025-12-07T16:44:51.136883",1681501,"2025-12-07",16

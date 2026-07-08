@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+5.19638,"spx6900",587721199,"SPX6900",0.631687,132,"coingecko","SPX","2025-12-02T06:54:11.780667",35182968,"2025-12-02",6
+-0.57009,"stakewise-v3-oseth",567577787,"StakeWise Staked ETH",2908.47,133,"coingecko","OSETH","2025-12-02T06:54:11.780675",123411,"2025-12-02",6

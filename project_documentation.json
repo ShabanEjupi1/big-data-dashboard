@@ -1,0 +1,766 @@
+{
+  "project_info": {
+    "title": "Big Data Financial Analytics Dashboard",
+    "title_albanian": "Dashboard për Analitikë Financiare me Big Data",
+    "authors": [
+      "Shaban Ejupi",
+      "Majlinda Bajraktari"
+    ],
+    "university": "Universiteti i Prishtinës - FSHMN",
+    "department": "Departamenti i Matematikës",
+    "development_period": "Nëntor-Dhjetor 2025",
+    "version": "2.1",
+    "last_updated": "2025-12-08"
+  },
+  
+  "project_purpose": {
+    "main_goal": "Krijimi i një sistemi Big Data për analizën në kohë reale të të dhënave financiare duke përdorur Apache Spark në një klaster me 10 makina virtuale (VM)",
+    "main_goal_english": "Creation of a Big Data system for real-time financial data analysis using Apache Spark on a 10 VM cluster",
+    "objectives": [
+      "Mbledhja e vazhdueshme e të dhënave financiare nga burime të shumëfishta (API-të e CoinGecko, Binance, Yahoo Finance)",
+      "Procesimi i shpërndarë i të dhënave duke përdorur Apache Spark në 10 VM",
+      "Parashikimi i çmimeve duke përdorur algoritme të Machine Learning (Linear Regression + Moving Averages)",
+      "Rekomandime investimi të bazuara në analizë të rrezikut dhe stabilitetit (Multi-Factor Scoring)",
+      "Optimizimi i portofolit bazuar në teorinë moderne të portofolit (Modern Portfolio Theory - Markowitz)",
+      "Vizualizimi i të dhënave në një dashboard interaktiv real-time"
+    ],
+    "problem_solved": "Investitorët kanë nevojë për analiza të shpejta dhe të sakta të tregut të kriptovalutave. Sistemi ynë proceson dhjetra mijëra regjistrime çdo orë nga 350+ kriptovaluta për të ofruar parashikime dhe rekomandime të bazuara në të dhëna reale të mbledhura gjatë 8 ditëve."
+  },
+  
+  "data_sources": {
+    "summary": {
+      "total_parquet_files": 83703,
+      "crypto_files": 79666,
+      "stock_files": 4037,
+      "collection_period_days": 8,
+      "collection_start": "2025-11-30",
+      "collection_end": "2025-12-08",
+      "unique_cryptocurrencies": 350,
+      "unique_stocks": 20
+    },
+    "cryptocurrency": {
+      "coingecko": {
+        "api_name": "CoinGecko API v3",
+        "api_url": "https://api.coingecko.com/api/v3/coins/markets",
+        "api_type": "Free Public API (no API key required)",
+        "rate_limit": "50 requests per minute",
+        "data_collected": [
+          {"field": "id", "description": "Identifikuesi unik i kriptovalutës (e.g., 'bitcoin')"},
+          {"field": "symbol", "description": "Simboli i shkurtër (e.g., 'BTC', 'ETH')"},
+          {"field": "name", "description": "Emri i plotë i kriptovalutës (e.g., 'Bitcoin')"},
+          {"field": "price", "description": "Çmimi aktual në USD"},
+          {"field": "market_cap", "description": "Kapitalizimi total i tregut në USD"},
+          {"field": "volume", "description": "Volumi i tregtimit në 24 orët e fundit"},
+          {"field": "change_24h", "description": "Ndryshimi përqindor i çmimit në 24 orë"},
+          {"field": "rank", "description": "Renditja sipas market cap (1=më i madhi)"}
+        ],
+        "collection_frequency": "Çdo 5 sekonda",
+        "records_per_call": "250 kriptovaluta të renditura sipas market cap",
+        "why_this_source": "CoinGecko ofron të dhëna të plota dhe të besueshme për 350+ kriptovaluta pa nevojë për API key"
+      },
+      "binance": {
+        "api_name": "Binance Public API v3",
+        "api_url": "https://api.binance.com/api/v3/ticker/24hr",
+        "api_type": "Free Public API (no API key required)",
+        "rate_limit": "1200 requests per minute",
+        "data_collected": [
+          {"field": "symbol", "description": "Çifti i tregtimit (e.g., 'BTCUSDT')"},
+          {"field": "price", "description": "Çmimi i fundit i tregtuar"},
+          {"field": "volume", "description": "Volumi 24 orësh në monedhen bazë"},
+          {"field": "change_24h", "description": "Ndryshimi përqindor 24h"},
+          {"field": "high_24h", "description": "Çmimi më i lartë në 24 orë"},
+          {"field": "low_24h", "description": "Çmimi më i ulët në 24 orë"}
+        ],
+        "collection_frequency": "Çdo 5 sekonda",
+        "records_per_call": "~100 çifte USDT (filtruar për USDT pairs)",
+        "why_this_source": "Binance është shkëmbimi më i madh i kriptovalutave dhe ofron të dhëna real-time me latencë të ulët"
+      }
+    },
+    "stocks": {
+      "yahoo_finance": {
+        "api_name": "Yahoo Finance Unofficial API",
+        "api_url": "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+        "api_type": "Free Public API (no API key required)",
+        "rate_limit": "~2000 requests per day (rate limiting after excessive use)",
+        "data_collected": [
+          {"field": "symbol", "description": "Simboli i aksionit (e.g., 'AAPL', 'MSFT')"},
+          {"field": "price", "description": "Çmimi aktual i aksionit"},
+          {"field": "previous_close", "description": "Çmimi i mbylljes së sesionit paraprak"},
+          {"field": "change", "description": "Ndryshimi absolut i çmimit"},
+          {"field": "change_percent", "description": "Ndryshimi përqindor"},
+          {"field": "volume", "description": "Volumi i tregtimit"},
+          {"field": "market_cap", "description": "Kapitalizimi i tregut"}
+        ],
+        "symbols_tracked": [
+          "AAPL (Apple)", "MSFT (Microsoft)", "GOOGL (Google)", "AMZN (Amazon)", 
+          "TSLA (Tesla)", "META (Meta/Facebook)", "NVDA (NVIDIA)", "JPM (JPMorgan)",
+          "V (Visa)", "JNJ (Johnson & Johnson)", "XOM (ExxonMobil)", "WMT (Walmart)",
+          "PG (Procter & Gamble)", "MA (Mastercard)", "CVX (Chevron)", "HD (Home Depot)",
+          "LLY (Eli Lilly)", "ABBV (AbbVie)", "KO (Coca-Cola)", "PFE (Pfizer)"
+        ],
+        "collection_frequency": "Çdo 25 sekonda (për të shmangur rate limiting)",
+        "why_this_source": "Yahoo Finance ofron të dhëna të plota për aksionet e S&P 500 pa nevojë për API key të paguar"
+      }
+    }
+  },
+  
+  "spark_cluster_architecture": {
+    "overview": {
+      "description": "Apache Spark cluster në Standalone Mode me 10 VM të lidhura në rrjet intern",
+      "total_vms": 10,
+      "master_vm": "VM5 (10.0.0.8)",
+      "worker_vms": 9,
+      "architecture": "Master-Worker (Standalone Mode)",
+      "network": "Internal network 10.0.0.0/24"
+    },
+    "vm_details": {
+      "master": {
+        "vm_name": "VM5",
+        "ip_address": "10.0.0.8",
+        "role": "Spark Master + Dashboard Host",
+        "ports": {
+          "spark_master": {"port": 7077, "description": "Port për komunikim me Workers"},
+          "web_ui": {"port": 8080, "description": "Spark Master Web UI për monitorim"},
+          "dashboard": {"port": 5003, "description": "Flask Dashboard për vizualizim"}
+        },
+        "responsibilities": [
+          "Koordinimi i punëtorëve (workers) - shpërndan detyrat",
+          "Shpërndarja e detyrave (task scheduling) - cakton punën për çdo executor",
+          "Monitorimi i statusit të klasterit - mban gjurmë të shëndetit të workers",
+          "Ekzekutimi i Driver Program (data_collector.py, dashboard.py)",
+          "Hostimi i Flask Dashboard në port 5003"
+        ]
+      },
+      "workers": [
+        {"vm": "VM1", "ip": "10.0.0.4", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM2", "ip": "10.0.0.5", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM3", "ip": "10.0.0.6", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM4", "ip": "10.0.0.7", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM6", "ip": "10.0.0.9", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM7", "ip": "10.0.0.10", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM8", "ip": "10.0.0.11", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM9", "ip": "10.0.0.12", "role": "Spark Worker", "cores": 4, "memory": "8GB"},
+        {"vm": "VM10", "ip": "10.0.0.13", "role": "Spark Worker", "cores": 4, "memory": "8GB"}
+      ],
+      "security_note": "Kredencialet e VM-ve nuk shfaqen në dashboard për arsye sigurie. Kredencialet ruhen në mënyrë të sigurt në cluster_manager.py dhe përdoren vetëm për SSH brenda klasterit."
+    },
+    "cluster_configuration": {
+      "spark_executor_instances": 9,
+      "spark_executor_cores": 4,
+      "spark_executor_memory": "8GB",
+      "spark_driver_memory": "8GB",
+      "total_cluster_cores": 36,
+      "total_cluster_memory": "72GB",
+      "spark_streaming_backpressure": true,
+      "spark_version": "3.x",
+      "configuration_explanation": {
+        "executor_instances": "9 Workers, secili me 1 Executor",
+        "executor_cores": "4 threads paralele për çdo Executor",
+        "executor_memory": "8GB RAM për çdo Executor për të procesuar particionet",
+        "driver_memory": "8GB RAM për Driver program (data collector)",
+        "backpressure": "Kontrollon ritmin e të dhënave për të shmangur mbingarkesën"
+      }
+    },
+    "how_vms_are_used": {
+      "step_by_step_process": [
+        {
+          "step": 1,
+          "action": "Driver Program starts on Master",
+          "description": "data_collector.py niset në VM5 (Master) dhe krijon SparkSession",
+          "code_snippet": "self.spark = SparkSession.builder.master('spark://10.0.0.8:7077').getOrCreate()"
+        },
+        {
+          "step": 2,
+          "action": "Master distributes tasks",
+          "description": "Spark Master shpërndan particionet e të dhënave në 9 Workers"
+        },
+        {
+          "step": 3,
+          "action": "Workers process data in parallel",
+          "description": "Çdo Worker proceson pjesën e vet të të dhënave paralelisht"
+        },
+        {
+          "step": 4,
+          "action": "Results are written to Parquet",
+          "description": "Të dhënat e procesuara shkruhen në skedarë Parquet të particionuar"
+        },
+        {
+          "step": 5,
+          "action": "Dashboard reads from shared storage",
+          "description": "Dashboard lexon skedarët Parquet për vizualizim"
+        }
+      ],
+      "data_flow": {
+        "collection": "API → Driver (VM5) → Spark DataFrame → Workers (9 VM) → Parquet files",
+        "visualization": "Parquet files → Dashboard (VM5) → Web Browser"
+      }
+    }
+  },
+  
+  "applications_run_with_spark": {
+    "summary": {
+      "total_runtime": "8 ditë (192 orë) vazhdueshëm",
+      "total_batches_collected": "~138,240 batches",
+      "total_records_collected": "~80,000+ skedarë Parquet",
+      "data_size_estimate": "~15GB të dhëna në format Parquet"
+    },
+    "data_collector": {
+      "file": "data_collector.py / data_collector_v2.py",
+      "app_name": "Continuous_Data_Collector / Enhanced_Crypto_Collector",
+      "duration": "8 ditë vazhdueshëm (30 Nëntor - 8 Dhjetor 2025)",
+      "collection_interval": "5 sekonda",
+      "how_spark_is_used": {
+        "step_1": {
+          "operation": "SparkSession Creation",
+          "code": "SparkSession.builder.master('spark://10.0.0.8:7077').config('spark.executor.instances', '9').getOrCreate()",
+          "explanation": "Krijon lidhjen me klasterin dhe konfiguron 9 executors"
+        },
+        "step_2": {
+          "operation": "DataFrame Creation",
+          "code": "spark.createDataFrame(crypto_data, schema)",
+          "explanation": "Konverton të dhënat e mbledhura nga API në Spark DataFrame"
+        },
+        "step_3": {
+          "operation": "Parallel Processing",
+          "explanation": "Spark shpërndan të dhënat në Workers për validim dhe transformim paralel"
+        },
+        "step_4": {
+          "operation": "Parquet Write",
+          "code": "df.write.mode('append').partitionBy('date', 'hour').parquet('/data/crypto/')",
+          "explanation": "Shkruan të dhënat në format Parquet të particionuar sipas datës/orës"
+        }
+      },
+      "spark_configuration": {
+        "master": "spark://10.0.0.8:7077",
+        "executor_instances": 9,
+        "executor_cores": 4,
+        "executor_memory": "8g",
+        "driver_memory": "8g",
+        "streaming_backpressure": "true"
+      }
+    },
+    "dashboard_counting": {
+      "file": "dashboard.py",
+      "app_name": "CountRecords",
+      "how_spark_is_used": {
+        "operation": "Fast Record Counting",
+        "code": "spark.read.parquet(crypto_path).count()",
+        "explanation": "Përdor Spark për të numëruar miliona regjistrime shpejt duke shpërndarë numërimin në Workers"
+      },
+      "why_spark_for_counting": "Spark numëron në paralel në të 9 Workers, duke reduktuar kohën nga minuta në sekonda"
+    }
+  },
+  
+  "ml_algorithms": {
+    "overview": {
+      "description": "Sistemi përdor tre algoritme kryesore ML për analiza financiare",
+      "algorithms_used": [
+        "Linear Regression - për parashikimin e çmimeve",
+        "Multi-Factor Scoring - për rekomandimet e investimeve",
+        "Modern Portfolio Theory (Markowitz) - për optimizimin e portofolit"
+      ],
+      "data_basis": "Të gjitha algoritmet bazohen në 80,000+ skedarë Parquet të mbledhur gjatë 8 ditëve nga 350+ kriptovaluta"
+    },
+    
+    "price_prediction": {
+      "algorithm_name": "Linear Regression me Moving Averages",
+      "file": "ml_predictions.py",
+      "class": "MLPredictionEngine",
+      "method": "calculate_simple_prediction()",
+      
+      "detailed_explanation": {
+        "what_it_does": "Parashikon çmimin e ardhshëm të kriptovalutave bazuar në trendin historik dhe mesataret lëvizëse",
+        
+        "step_by_step": [
+          {
+            "step": 1,
+            "name": "Ngarkimi i të dhënave",
+            "code": "load_recent_crypto_data(days_back=8)",
+            "description": "Ngarkon TË GJITHA skedarët Parquet nga 8 ditët e fundit",
+            "data_loaded": "Dhjetra rekorde për çdo kriptovalutë",
+            "why": "Më shumë të dhëna = parashikime më të sakta"
+          },
+          {
+            "step": 2,
+            "name": "Kalkulimi i Moving Averages",
+            "formulas": {
+              "MA_5": {
+                "formula": "np.mean(prices[-5:])",
+                "description": "Mesatarja e 5 çmimeve të fundit",
+                "use": "Tregon trendin afatshkurtër (disa orë)"
+              },
+              "MA_10": {
+                "formula": "np.mean(prices[-10:])",
+                "description": "Mesatarja e 10 çmimeve të fundit",
+                "use": "Tregon trendin afatmesëm (gjysmë dite)"
+              },
+              "MA_20": {
+                "formula": "np.mean(prices[-20:])",
+                "description": "Mesatarja e 20 çmimeve të fundit",
+                "use": "Tregon trendin afatgjatë (1 ditë)"
+              },
+              "MA_50": {
+                "formula": "np.mean(prices[-50:])",
+                "description": "Mesatarja e 50 çmimeve të fundit",
+                "use": "Tregon trendin javor"
+              }
+            },
+            "why_moving_averages": "Moving Averages zbut luhatjet e rastësishme dhe tregojnë drejtimin e vërtetë të çmimit"
+          },
+          {
+            "step": 3,
+            "name": "Linear Regression - Kalkulimi i Trendit",
+            "code": "coeffs = np.polyfit(x, trend_prices, 1); trend = coeffs[0]",
+            "explanation": {
+              "x": "Varg i indekseve kohore [0, 1, 2, ..., n-1]",
+              "y": "Çmimet historike për ato kohë",
+              "polyfit": "Gjen vijën më të mirë që përshtatet me pikat",
+              "coeffs[0]": "Pjerrësia (slope) - sa shpejt ndryshon çmimi",
+              "coeffs[1]": "Intersepti - çmimi bazë (nuk përdoret)"
+            },
+            "interpretation": {
+              "slope_positive": "Çmimi po rritet - Bullish",
+              "slope_negative": "Çmimi po bie - Bearish",
+              "slope_near_zero": "Çmimi stabil - Neutral"
+            },
+            "formula": "y = mx + b ku m = slope (trend), b = intercept"
+          },
+          {
+            "step": 4,
+            "name": "Parashikimi i Çmimit",
+            "formulas": {
+              "prediction_1h": {
+                "formula": "current_price + (adjusted_trend * 1)",
+                "description": "Çmimi i parashikuar për 1 orë",
+                "example": "Nëse BTC = $93,000 dhe trend = +$50/orë, atëherë pred_1h = $93,050"
+              },
+              "prediction_24h": {
+                "formula": "current_price + (adjusted_trend * 24)",
+                "description": "Çmimi i parashikuar për 24 orë",
+                "example": "Nëse trend = +$50/orë, atëherë pred_24h = $93,000 + ($50*24) = $94,200"
+              },
+              "prediction_7d": {
+                "formula": "current_price + (adjusted_trend * 168)",
+                "description": "Çmimi i parashikuar për 7 ditë (168 orë)",
+                "example": "168 orë * $50/orë = $8,400 rritje"
+              }
+            },
+            "adjusted_trend": "Trendi normalizohet sipas numrit të pikave të të dhënave për saktësi më të madhe"
+          },
+          {
+            "step": 5,
+            "name": "Kalkulimi i Volatilitetit",
+            "code": "returns = np.diff(all_prices) / all_prices[:-1]; volatility = np.std(returns) * 100",
+            "explanation": {
+              "returns": "Ndryshimet përqindore ndërmjet çmimeve të njëpasnjëshme",
+              "np.std": "Devijimi standard - sa shumë variojnë returns",
+              "* 100": "Konvertohet në përqindje"
+            },
+            "interpretation": {
+              "low_volatility": "< 5% - Çmim stabil, risk i ulët",
+              "medium_volatility": "5-15% - Luhatje normale",
+              "high_volatility": "> 15% - Shumë i paqëndrueshëm, risk i lartë"
+            }
+          },
+          {
+            "step": 6,
+            "name": "Kalkulimi i Confidence Score",
+            "formula": "confidence = (data_confidence * 0.3) + (volatility_confidence * 0.7)",
+            "components": {
+              "data_confidence": "min(100, n_prices / 10 * 10) - Më shumë të dhëna = më shumë besim",
+              "volatility_confidence": "max(0, 100 - volatility * 10) - Më pak volatilitet = më shumë besim"
+            },
+            "interpretation": {
+              "high_confidence_90_100": "Parashikimi është shumë i besueshëm",
+              "medium_confidence_70_90": "Parashikimi është i arsyeshëm",
+              "low_confidence_below_70": "Parashikimi ka pasiguri të lartë"
+            }
+          }
+        ],
+        
+        "why_linear_regression": [
+          "E THJESHTË: Lehtë për t'u kuptuar dhe implementuar",
+          "E SHPEJTË: Llogarit parashikime për 350+ kripto në sekonda",
+          "E INTERPRETUESHME: Slope tregon drejtpërdrejt trendin",
+          "EFEKTIVE: Për trende afatshkurtra, Linear Regression funksionon mirë",
+          "STANDARDE: Përdoret gjerësisht në analizën teknike financiare"
+        ],
+        
+        "example_output": {
+          "symbol": "BTC",
+          "current_price": 93051.0,
+          "prediction_1h": 93100.0,
+          "prediction_24h": 94200.0,
+          "prediction_7d": 96500.0,
+          "ma_5": 91785.0,
+          "ma_10": 93051.0,
+          "ma_20": 93051.0,
+          "trend": "Neutral",
+          "confidence": 97,
+          "volatility": 2.85,
+          "risk_level": "Low Risk",
+          "data_points": 1500,
+          "interpretation": "BTC ka trend neutral sepse pjerrësia është brenda ±0.1%. Confidence 97% sepse ka shumë të dhëna (1500 pika) dhe volatilitet të ulët (2.85%). Parashikimi tregon stabilitet të çmimit."
+        }
+      }
+    },
+    
+    "investment_recommendations": {
+      "algorithm_name": "Multi-Factor Scoring System",
+      "file": "investment_recommender.py",
+      "class": "InvestmentRecommender",
+      "method": "get_portfolio_recommendations()",
+      
+      "detailed_explanation": {
+        "what_it_does": "Vlerëson çdo kriptovalutë në bazë të tre faktorëve kryesorë dhe rekomandon kategori investimi",
+        
+        "factor_1_stability": {
+          "name": "Stability Score (Pikët e Qëndrueshmërisë)",
+          "range": "0-100 (më lartë = më stabil)",
+          "components": [
+            {
+              "name": "Price Volatility Score",
+              "weight": 0.35,
+              "formula": "max(0, 100 - (price_volatility * 1000))",
+              "calculation": "price_volatility = std(price_changes)",
+              "interpretation": "Volatilitet i ulët i çmimit = pikë të larta"
+            },
+            {
+              "name": "Volume Consistency Score",
+              "weight": 0.25,
+              "formula": "max(0, 100 - (coefficient_of_variation * 50))",
+              "calculation": "CV = std(volume) / mean(volume)",
+              "interpretation": "Volum konsistent = më i besueshëm"
+            },
+            {
+              "name": "Trend Consistency Score",
+              "weight": 0.20,
+              "formula": "max(0, min(100, 100 - std(change_24h) * 2))",
+              "interpretation": "Ndryshime ditore të vogla = trend stabil"
+            },
+            {
+              "name": "Market Cap Score",
+              "weight": 0.20,
+              "formula": "min(100, (market_cap / 1e9) * 10)",
+              "interpretation": "Market cap > $10B = skor 100. Kriptovalutat e mëdha janë më të qëndrueshme"
+            }
+          ],
+          "final_formula": "Stability = (0.35 * volatility_score) + (0.25 * volume_score) + (0.20 * trend_score) + (0.20 * market_cap_score)"
+        },
+        
+        "factor_2_growth": {
+          "name": "Growth Potential (Potenciali i Rritjes)",
+          "range": "0-100 (më lartë = potencial më i madh)",
+          "components": [
+            {
+              "name": "Growth Momentum",
+              "weight": 0.40,
+              "formula": "max(0, min(100, (avg_7day_change + 20) * 2.5))",
+              "interpretation": "Ndryshime pozitive në 7 ditë = momentum i fortë"
+            },
+            {
+              "name": "Volume Trend",
+              "weight": 0.30,
+              "formula": "(volume_last_7days / volume_prev_7days - 1) * 100",
+              "interpretation": "Volum në rritje = interes më i madh nga investitorët"
+            },
+            {
+              "name": "Market Cap Growth",
+              "weight": 0.30,
+              "formula": "(current_mc / past_mc - 1) * 100",
+              "interpretation": "Rritje e market cap = vlera po rritet"
+            }
+          ]
+        },
+        
+        "factor_3_liquidity_risk": {
+          "name": "Liquidity Risk (Risku i Likuiditetit)",
+          "range": "0-100 (më ULËT = më mirë)",
+          "components": [
+            {
+              "name": "Volume Risk",
+              "weight": 0.50,
+              "thresholds": {
+                "high_risk": "Volume < $1M daily → 80 points",
+                "medium_risk": "Volume $1-10M → 50 points",
+                "low_risk": "Volume > $10M → 20 points"
+              },
+              "interpretation": "Volum i lartë = lehtë për të blerë/shitur pa ndikuar çmimin"
+            },
+            {
+              "name": "Volume Variability",
+              "weight": 0.30,
+              "formula": "coefficient_of_variation * 100",
+              "interpretation": "Volum i paqëndrueshëm = risk më i lartë"
+            },
+            {
+              "name": "Slippage Risk",
+              "weight": 0.20,
+              "formula": "min(100, price_volatility * 50)",
+              "interpretation": "Volatilitet i lartë = slippage i lartë kur tregtoni"
+            }
+          ]
+        },
+        
+        "investment_score_calculation": {
+          "description": "Kombinon tre faktorët sipas profilit të riskut",
+          "profiles": {
+            "conservative": {
+              "formula": "stability * 0.6 + growth * 0.2 - liquidity_risk * 0.2",
+              "focus": "Prioritet stabilitetit - për investitorë që duan të ruajnë kapitalin"
+            },
+            "balanced": {
+              "formula": "stability * 0.4 + growth * 0.4 - liquidity_risk * 0.2",
+              "focus": "Balancë ndërmjet stabilitetit dhe rritjes"
+            },
+            "aggressive": {
+              "formula": "stability * 0.2 + growth * 0.6 - liquidity_risk * 0.2",
+              "focus": "Prioritet rritjes - për investitorë me tolerancë të lartë risku"
+            }
+          }
+        },
+        
+        "category_assignment": {
+          "Safe Investment": {
+            "condition": "stability >= 70 AND liquidity_risk <= 30",
+            "advice": "Investim stabil, i përshtatshëm për portofole konservative",
+            "allocation": "15-25% të portofolit"
+          },
+          "Balanced Growth": {
+            "condition": "stability >= 50 AND growth >= 60 AND liquidity_risk <= 50",
+            "advice": "Balancë e mirë ndërmjet stabilitetit dhe potencialit të rritjes",
+            "allocation": "10-20% të portofolit"
+          },
+          "Growth Opportunity": {
+            "condition": "growth >= 70 AND liquidity_risk <= 60",
+            "advice": "Potencial i lartë rritjeje por me risk më të lartë",
+            "allocation": "5-10% të portofolit"
+          },
+          "High Risk - Liquidative": {
+            "condition": "liquidity_risk >= 70",
+            "advice": "⚠️ PARALAJMËRIM: Likuiditet i ulët, vështirë për të dalë nga pozicioni",
+            "allocation": "0-2% ose asnjë"
+          },
+          "Highly Volatile - Risky": {
+            "condition": "stability < 30",
+            "advice": "⚠️ PARALAJMËRIM: Shumë i paqëndrueshëm, vetem për spekulatorë",
+            "allocation": "0-2% ose asnjë"
+          }
+        }
+      },
+      
+      "example_output": {
+        "symbol": "DAI",
+        "name": "Dai Stablecoin",
+        "category": "Safe Investment",
+        "scores": {
+          "stability": 76.3,
+          "growth_potential": 68.2,
+          "liquidity_risk": 29.3,
+          "investment_score": 51.9
+        },
+        "interpretation": "DAI është stablecoin me stabilitet të lartë (76.3 > 70) dhe risk likuiditeti të ulët (29.3 < 30). Kategorizohet si 'Safe Investment' sepse plotëson të dy kushtet. Ideale për investitorë konservativë që duan të ruajnë vlerën."
+      }
+    },
+    
+    "portfolio_optimization": {
+      "algorithm_name": "Modern Portfolio Theory (MPT) - Markowitz",
+      "file": "portfolio_optimizer.py",
+      "class": "PortfolioOptimizer",
+      
+      "theoretical_background": {
+        "inventor": "Harry Markowitz (1952)",
+        "nobel_prize": "Çmimi Nobel në Ekonomi 1990",
+        "core_concept": "Diversifikimi redukton riskun pa zvogëluar kthimin e pritur",
+        "key_insight": "Nuk duhet të shikoni asetet individualisht, por si kombinim"
+      },
+      
+      "detailed_explanation": {
+        "what_it_does": "Ndërton portofol optimal duke balancuar kthimin e pritur dhe riskun",
+        
+        "step_by_step": [
+          {
+            "step": 1,
+            "name": "Kalkulimi i Metrikave për Çdo Asset",
+            "metrics": {
+              "expected_return": {
+                "formula": "mean(daily_returns) * 365",
+                "explanation": "Kthimi mesatar ditor i annualizuar",
+                "example": "Nëse mesatarja ditore = 0.1%, atëherë vjetore = 36.5%"
+              },
+              "volatility": {
+                "formula": "std(daily_returns) * sqrt(365)",
+                "explanation": "Devijimi standard i annualizuar - mat riskun",
+                "example": "Nëse std ditor = 2%, atëherë vjetor = 38.2%"
+              },
+              "sharpe_ratio": {
+                "formula": "(expected_return - risk_free_rate) / volatility",
+                "explanation": "Sa kthim shtesë merrni për çdo njësi risku",
+                "risk_free_rate": "4% (yield i T-Bills amerikane)",
+                "interpretation": {
+                  "above_2": "Shumë i mirë - kthim i lartë për riskun e marrë",
+                  "1_to_2": "I mirë - kthim i arsyeshëm",
+                  "0_to_1": "I dobët - mund të bëni më mirë",
+                  "negative": "Keq - kthim nën normën pa risk"
+                }
+              }
+            }
+          },
+          {
+            "step": 2,
+            "name": "Krijimi i Portofolit Conservative",
+            "method": "Inverse Volatility Weighting",
+            "formula": "weight_i = (1/volatility_i) / sum(1/volatility_j)",
+            "explanation": "Asetet me volatilitet më të ulët marrin peshë më të madhe",
+            "example": {
+              "asset_A": "volatility = 10%, weight = 50%",
+              "asset_B": "volatility = 20%, weight = 25%",
+              "asset_C": "volatility = 40%, weight = 12.5%"
+            },
+            "rationale": "Minimizimi i riskut total të portofolit"
+          },
+          {
+            "step": 3,
+            "name": "Krijimi i Portofolit Balanced",
+            "method": "Sharpe Ratio Ranking",
+            "process": [
+              "1. Rendit asetet sipas Sharpe Ratio (më i larti = më i mirë)",
+              "2. Alokon pesha zbritëse: 15%, 13%, 11%, 10%, 9%, 8%, 7%, 6%, 6%, 5%",
+              "3. Top 10 asetet marrin 100% të alokimit"
+            ],
+            "rationale": "Balancon kthimin e lartë me risk të moderuar"
+          },
+          {
+            "step": 4,
+            "name": "Krijimi i Portofolit Aggressive",
+            "method": "Return-Weighted Allocation",
+            "formula": "weight_i = expected_return_i / sum(expected_return_j)",
+            "explanation": "Asetet me kthim më të lartë marrin peshë më të madhe",
+            "rationale": "Maksimizimi i kthimit të pritur (duke pranuar risk më të lartë)"
+          },
+          {
+            "step": 5,
+            "name": "Kalkulimi i Performancës së Portofolit",
+            "formulas": {
+              "portfolio_return": "sum(weight_i * expected_return_i)",
+              "portfolio_volatility": "Mesatarja e ponderuar e volatiliteteve (thjeshtuar)"
+            },
+            "note": "Për MPT të plotë, do të duhej matrica e kovariancës, por kjo është thjeshtuar"
+          }
+        ],
+        
+        "portfolio_types": {
+          "conservative": {
+            "name": "Conservative Portfolio",
+            "risk_level": "Low",
+            "target_investor": "Investitorë afatgjatë, ruajtje kapitali",
+            "timeframe": "5+ years",
+            "characteristics": "Volatilitet i ulët, kthim i moderuar"
+          },
+          "balanced": {
+            "name": "Balanced Portfolio",
+            "risk_level": "Medium",
+            "target_investor": "Shumica e investitorëve",
+            "timeframe": "3-5 years",
+            "characteristics": "Balancë ndërmjet rritjes dhe stabilitetit"
+          },
+          "aggressive": {
+            "name": "Aggressive Portfolio",
+            "risk_level": "High",
+            "target_investor": "Investitorë me tolerancë të lartë risku",
+            "timeframe": "1-3 years",
+            "characteristics": "Kthim i lartë potencial, volatilitet i lartë"
+          }
+        }
+      },
+      
+      "example_output": {
+        "portfolio_type": "Balanced",
+        "allocations": [
+          {"symbol": "WBT", "name": "WBT", "allocation": 52.63, "expected_return": 1079.33, "risk": 60.71},
+          {"symbol": "SOL", "name": "SOL", "allocation": 47.37, "expected_return": 474.53, "risk": 134.76}
+        ],
+        "portfolio_return": 792.84,
+        "portfolio_volatility": 97.74,
+        "interpretation": "Portofoli balanced alokon 52.63% në WBT (kthim i lartë 1079%, risk 60.71%) dhe 47.37% në SOL (kthim 474%, risk 134%). Kthimi total i pritur është 792.84% me volatilitet 97.74%. WBT ka Sharpe Ratio më të mirë prandaj merr peshë më të madhe."
+      }
+    }
+  },
+  
+  "data_storage": {
+    "format": "Apache Parquet",
+    "why_parquet": [
+      "Format kolonar - lexim i shpejtë për analiza",
+      "Kompresim eficient - kursen hapësirë",
+      "Mbështetje native nga Spark",
+      "Skema të rreptë - integritet i të dhënave"
+    ],
+    "partitioning": {
+      "scheme": "date={YYYY-MM-DD}/hour={HH}/",
+      "why": "Mundëson query të shpejta për periudha specifike kohore",
+      "example_path": "/data/crypto/date=2025-12-08/hour=15/"
+    },
+    "total_data_collected": {
+      "crypto_parquet_files": 79666,
+      "stocks_parquet_files": 4037,
+      "total_parquet_files": 83703,
+      "collection_period": "8 ditë (30 Nëntor - 8 Dhjetor 2025)"
+    }
+  },
+  
+  "dashboard_features": {
+    "main_pages": {
+      "index": "Përmbledhje e përgjithshme e tregut",
+      "crypto": "Analiza detajuar e kriptovalutave",
+      "stocks": "Analiza e aksioneve S&P 500",
+      "predictions": "Parashikimet ML të çmimeve",
+      "recommendations": "Rekomandimet e investimeve",
+      "portfolio": "Optimizuesi i portofolit"
+    },
+    "api_endpoints": {
+      "/api/data": "JSON me të gjitha të dhënat",
+      "/api/ml/predictions": "Parashikimet ML",
+      "/api/investment/recommendations": "Rekomandimet",
+      "/api/portfolio/optimize": "Optimizimi i portofolit",
+      "/api/export/json": "Eksporti në JSON",
+      "/api/export/crypto/csv": "Eksporti i crypto në CSV"
+    },
+    "real_time_features": {
+      "auto_refresh": "Të dhënat rifreskohen çdo 60 sekonda",
+      "freeze_mode": "Mundësia për të ngrirë dashboard-in për analizë",
+      "live_data": "Leximi direkt nga skedarët Parquet të prodhuar nga VM-të"
+    }
+  },
+  
+  "technologies_used": {
+    "backend": {
+      "Apache Spark": "Procesimi i shpërndarë i të dhënave në 10 VM",
+      "Python 3.x": "Gjuha kryesore programuese",
+      "Flask": "Web framework për dashboard",
+      "Pandas": "Manipulimi i të dhënave",
+      "NumPy": "Llogaritje numerike dhe algoritme ML",
+      "PyArrow": "Leximi/shkrimi i skedarëve Parquet"
+    },
+    "frontend": {
+      "HTML5/CSS3": "Strukturimi dhe stilizimi",
+      "JavaScript": "Interaktiviteti",
+      "Chart.js": "Grafikët dhe vizualizimet",
+      "Bootstrap": "Dizajni responsiv"
+    },
+    "data_storage": {
+      "Apache Parquet": "Format i optimizuar për Big Data",
+      "Partitioned Storage": "Organizimi sipas datës/orës"
+    },
+    "apis_used": {
+      "CoinGecko API": "Të dhëna për 250 kriptovaluta",
+      "Binance API": "Të dhëna real-time të çifteve USDT",
+      "Yahoo Finance API": "Të dhëna për aksione dhe forex"
+    }
+  },
+  
+  "security_note": {
+    "vm_credentials": "Kredencialet e VM-ve nuk shfaqen në dashboard për arsye sigurie. Ato ruhen vetëm në cluster_manager.py dhe përdoren vetëm për SSH në VM-të e klasterit.",
+    "api_keys": "Nuk përdoren API keys (vetëm endpoints publike)",
+    "data_privacy": "Të gjitha të dhënat janë publike nga burimi"
+  }
+}

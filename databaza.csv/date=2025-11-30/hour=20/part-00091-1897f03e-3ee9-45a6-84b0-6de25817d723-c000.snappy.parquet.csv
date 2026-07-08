@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.04148,"true-usd",492586407,"TrueUSD",0.99615,154,"coingecko","TUSD","2025-11-30T20:11:28.925474",6476348,"2025-11-30",20
+0,"cgeth-hashkey-cloud",491909683,"cgETH Hashkey Cloud",2460.42,155,"coingecko","CGETH.HASHKEY","2025-11-30T20:11:28.925481",265.78,"2025-11-30",20

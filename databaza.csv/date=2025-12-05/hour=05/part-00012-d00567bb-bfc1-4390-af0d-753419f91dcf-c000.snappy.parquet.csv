@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.57819,"weth",8834697443,"WETH",3170.71,23,"coingecko","WETH","2025-12-05T05:11:24.976145",189046614,"2025-12-05",5
+-1.8768,"stellar",8133190897,"Stellar",0.251619,24,"coingecko","XLM","2025-12-05T05:11:24.976152",132365561,"2025-12-05",5

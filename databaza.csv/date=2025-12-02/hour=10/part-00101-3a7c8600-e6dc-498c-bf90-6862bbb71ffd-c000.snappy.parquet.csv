@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.12528,"pendle",401859886,"Pendle",2.44,171,"coingecko","PENDLE","2025-12-02T10:36:54.775272",62149006,"2025-12-02",10
+0.98172,"bitcoin-cash-sv",401707007,"Bitcoin SV",20.13,172,"coingecko","BSV","2025-12-02T10:36:54.775279",18606373,"2025-12-02",10

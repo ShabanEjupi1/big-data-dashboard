@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.22905,"pendle",403239600,"Pendle",2.46,176,"coingecko","PENDLE","2025-12-07T19:39:48.892329",32029136,"2025-12-07",19
+3.47033,"coinbase-wrapped-staked-eth",400654011,"Coinbase Wrapped Staked ETH",3482.54,178,"coingecko","CBETH","2025-12-07T19:39:48.892336",2006972,"2025-12-07",19

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-12.95406,"origintrail",268252106,"OriginTrail",0.601793,241,"coingecko","TRAC","2025-12-04T08:51:29.996782",11666053,"2025-12-04",8
+4.38748,"wrapped-ether-mantle-bridge",266726668,"Mantle Bridged WETH (Mantle)",3191.37,242,"coingecko","WETH","2025-12-04T08:51:29.996789",5263910,"2025-12-04",8

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-1.15788,"bittorrent",400458724,"BitTorrent",4.06186e-7,177,"coingecko","BTT","2025-12-05T09:49:25.562853",19551425,"2025-12-05",9
+-2.74406,"coinbase-wrapped-staked-eth",398260133,"Coinbase Wrapped Staked ETH",3460.42,178,"coingecko","CBETH","2025-12-05T09:49:25.562860",6862850,"2025-12-05",9

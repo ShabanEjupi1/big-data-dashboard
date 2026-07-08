@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+-4.5949963378906205,-1.977363085416396,233.5,226.8000030517578,2.435070820352e+12,232.38,227.78500366210938,"yfinance_lib","AMZN","2025-12-04T16:27:48.555917",18314506,"2025-12-04",16

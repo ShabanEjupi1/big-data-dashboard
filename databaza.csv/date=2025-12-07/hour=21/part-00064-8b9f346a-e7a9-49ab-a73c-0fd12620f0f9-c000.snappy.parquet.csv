@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.94926,"ondo-us-dollar-yield",690654628,"Ondo US Dollar Yield",1.11,122,"coingecko","USDY","2025-12-07T21:21:27.718099",282206,"2025-12-07",21
+-0.00848,"bridged-usdc-polygon-pos-bridge",668800577,"Polygon Bridged USDC (Polygon PoS)",0.999727,123,"coingecko","USDC.E","2025-12-07T21:21:27.718104",20728375,"2025-12-07",21

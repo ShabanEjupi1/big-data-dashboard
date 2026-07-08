@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.03568,"savings-dai",236893101,"Savings Dai",1.17,242,"coingecko","SDAI","2025-12-01T11:15:56.202050",662102,"2025-12-01",11
+-5.8598,"wrapped-ether-mantle-bridge",236842726,"Mantle Bridged WETH (Mantle)",2833.17,243,"coingecko","WETH","2025-12-01T11:15:56.202056",3183844,"2025-12-01",11

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-2.5689,"eigenlayer",243639187,"EigenCloud (prev. EigenLayer)",0.501795,242,"coingecko","EIGEN","2025-12-02T09:39:29.514724",43921424,"2025-12-02",9
+-1.16509,"wrapped-ether-mantle-bridge",234689480,"Mantle Bridged WETH (Mantle)",2799.99,243,"coingecko","WETH","2025-12-02T09:39:29.514730",3721406,"2025-12-02",9

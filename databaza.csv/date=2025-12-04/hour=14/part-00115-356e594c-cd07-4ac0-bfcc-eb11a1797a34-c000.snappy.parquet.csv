@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.00013,"crvusd",305863229,"crvUSD",1,219,"coingecko","CRVUSD","2025-12-04T14:43:37.950970",13660597,"2025-12-04",14
+3.18489,"mantle-restaked-eth",305856497,"Mantle Restaked ETH",3433.19,218,"coingecko","CMETH","2025-12-04T14:43:37.950977",8581881,"2025-12-04",14

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.26592,"stellar",7621517066,"Stellar",0.236059,24,"coingecko","XLM","2025-12-02T11:47:29.771811",157180682,"2025-12-02",11
+-0.4294,"wrapped-eeth",7212683610,"Wrapped eETH",3057.97,25,"coingecko","WEETH","2025-12-02T11:47:29.771818",39519826,"2025-12-02",11

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.59175,"usdb",403433124,"USDB",0.994542,177,"coingecko","USDB","2025-12-03T20:03:52.657193",698796,"2025-12-03",20
+3.94651,"coinbase-wrapped-staked-eth",401865136,"Coinbase Wrapped Staked ETH",3476.05,178,"coingecko","CBETH","2025-12-03T20:03:52.657199",6832172,"2025-12-03",20

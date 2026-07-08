@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+0.9050122070312341,0.2929600566590813,310.4800109863281,307.0899963378906,8.51942506496e+11,308.92,309.82501220703125,"yfinance_lib","JPM","2025-12-02T16:07:50.626177",1656156,"2025-12-02",16

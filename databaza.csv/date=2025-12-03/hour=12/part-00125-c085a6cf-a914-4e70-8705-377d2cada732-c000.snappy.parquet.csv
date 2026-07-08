@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.01823,"frax",281651880,"Legacy Frax Dollar",0.993614,237,"coingecko","FRAX","2025-12-03T12:01:20.711988",1603549,"2025-12-03",12
+14.29389,"eigenlayer",279356566,"EigenCloud (prev. EigenLayer)",0.575686,238,"coingecko","EIGEN","2025-12-03T12:01:20.711995",69907041,"2025-12-03",12

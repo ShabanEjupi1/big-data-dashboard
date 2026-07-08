@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.04356,"ethena-usde",6829008538,"Ethena USDe",0.999751,27,"coingecko","USDE","2025-12-05T09:03:44.037330",160337825,"2025-12-05",9
+-1.358,"coinbase-wrapped-btc",6551005653,"Coinbase Wrapped BTC",92061,28,"coingecko","CBBTC","2025-12-05T09:03:44.037337",379279742,"2025-12-05",9

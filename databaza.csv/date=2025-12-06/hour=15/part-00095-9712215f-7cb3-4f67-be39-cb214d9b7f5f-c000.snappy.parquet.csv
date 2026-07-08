@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.90425,"sbtc-2",392364035,"sBTC",89488,180,"coingecko","SBTC","2025-12-06T15:07:21.487890",36351,"2025-12-06",15
+-1.65453,"coinbase-wrapped-staked-eth",390657374,"Coinbase Wrapped Staked ETH",3393.95,181,"coingecko","CBETH","2025-12-06T15:07:21.487897",3321355,"2025-12-06",15

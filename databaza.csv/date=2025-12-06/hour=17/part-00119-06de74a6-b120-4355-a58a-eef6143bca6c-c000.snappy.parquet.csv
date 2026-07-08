@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.06849,"polygon-pos-bridged-weth-polygon-pos",285586634,"Polygon PoS Bridged WETH (Polygon POS)",3049.86,226,"coingecko","WETH","2025-12-06T17:16:52.862602",7426193,"2025-12-06",17
+-1.5574,"zksync",284884067,"ZKsync",0.03329032,227,"coingecko","ZK","2025-12-06T17:16:52.862608",25582127,"2025-12-06",17

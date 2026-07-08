@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.48782,"monad",314758576,"Monad",0.02903105,211,"coingecko","MON","2025-12-03T09:15:10.297687",470627130,"2025-12-03",9
+-0.00068,"binance-peg-busd",312227135,"Binance-Peg BUSD",0.999916,212,"coingecko","BUSD","2025-12-03T09:15:10.297694",4248081,"2025-12-03",9

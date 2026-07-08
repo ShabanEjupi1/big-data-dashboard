@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.00325,"polygon-pos-bridged-dai-polygon-pos",632842764,"Polygon PoS Bridged DAI (Polygon POS)",0.999814,127,"coingecko","DAI","2025-12-07T08:45:30.561375",6577064,"2025-12-07",8
+1.305,"stakewise-v3-oseth",610976444,"StakeWise Staked ETH",3131.31,128,"coingecko","OSETH","2025-12-07T08:45:30.561382",132253,"2025-12-07",8

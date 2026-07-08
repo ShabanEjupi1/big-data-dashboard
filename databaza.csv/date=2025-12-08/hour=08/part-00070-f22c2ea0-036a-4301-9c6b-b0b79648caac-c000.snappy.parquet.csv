@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+3.09897,"l2-standard-bridged-weth-base",608782051,"L2 Standard Bridged WETH (Base)",3131.65,133,"coingecko","WETH","2025-12-08T08:08:04.528190",839344211,"2025-12-08",8
+-0.70384,"beldex",599786205,"Beldex",0.085193,134,"coingecko","BDX","2025-12-08T08:08:04.528197",9654145,"2025-12-08",8

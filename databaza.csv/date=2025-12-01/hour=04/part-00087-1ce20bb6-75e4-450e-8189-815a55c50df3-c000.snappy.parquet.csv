@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-10.67602,"blockstack",510131050,"Stacks",0.281211,147,"coingecko","STX","2025-12-01T04:36:37.870178",13619720,"2025-12-01",4
+-6.36929,"arbitrum-bridged-weth-arbitrum-one",492619966,"Arbitrum Bridged WETH (Arbitrum One)",2808.05,148,"coingecko","WETH","2025-12-01T04:36:37.870185",277963465,"2025-12-01",4

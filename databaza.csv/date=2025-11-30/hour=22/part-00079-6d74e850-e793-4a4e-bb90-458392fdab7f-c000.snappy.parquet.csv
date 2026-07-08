@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.89529,"stakewise-v3-oseth",613050590,"StakeWise Staked ETH",3137.23,134,"coingecko","OSETH","2025-11-30T22:35:52.761232",360137,"2025-11-30",22
+-0.11915,"beldex",612352679,"Beldex",0.081871,135,"coingecko","BDX","2025-11-30T22:35:52.761240",11562212,"2025-11-30",22

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.30084,"merlin-chain",387029859,"Merlin Chain",0.367441,180,"coingecko","MERL","2025-12-05T19:54:47.622415",31040945,"2025-12-05",19
+-2.93686,"coinbase-wrapped-staked-eth",386975280,"Coinbase Wrapped Staked ETH",3367.05,181,"coingecko","CBETH","2025-12-05T19:54:47.622421",3910689,"2025-12-05",19

@@ -1,0 +1,2 @@
+"change","change_percent","high","low","market_cap","previous_close","price","source","symbol","timestamp","volume","date","hour"
+-0.955002746582025,-0.9186251890939063,103.63999938964844,101.7699966430664,4.36465467392e+11,103.96,103.00499725341797,"yfinance_lib","NFLX","2025-12-04T18:31:34.575293",22134766,"2025-12-04",18

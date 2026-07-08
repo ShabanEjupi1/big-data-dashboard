@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+5.17546,"frax-ether",314221398,"Frax Ether",3178.02,213,"coingecko","FRXETH","2025-12-04T04:40:12.915521",1130684,"2025-12-04",4
+-0.43577,"binance-peg-busd",312528497,"Binance-Peg BUSD",0.998044,214,"coingecko","BUSD","2025-12-04T04:40:12.915527",2518104,"2025-12-04",4

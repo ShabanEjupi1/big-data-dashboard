@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.03669,"polygon-pos-bridged-dai-polygon-pos",631053324,"Polygon PoS Bridged DAI (Polygon POS)",0.999644,133,"coingecko","DAI","2025-12-05T01:55:42.525115",12871875,"2025-12-05",1
+-1.59333,"optimism",610059856,"Optimism",0.321583,134,"coingecko","OP","2025-12-05T01:55:42.525122",58897566,"2025-12-05",1

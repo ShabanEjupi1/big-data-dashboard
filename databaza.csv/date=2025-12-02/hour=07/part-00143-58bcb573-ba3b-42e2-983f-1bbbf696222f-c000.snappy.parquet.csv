@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.18494,"cheems-token",244076048,"Cheems Token",0.0000012,242,"coingecko","CHEEMS","2025-12-02T07:23:41.736783",1840313,"2025-12-02",7
+-0.42842,"wrapped-ether-mantle-bridge",235446488,"Mantle Bridged WETH (Mantle)",2811.14,243,"coingecko","WETH","2025-12-02T07:23:41.736790",3668532,"2025-12-02",7

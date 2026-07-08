@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+2.12456,"swissborg",280743240,"SwissBorg",0.284292,227,"coingecko","BORG","2025-12-02T03:27:06.343362",1241724,"2025-12-02",3
+-1.37258,"mantle-restaked-eth",274704147,"Mantle Restaked ETH",3016.49,228,"coingecko","CMETH","2025-12-02T03:27:06.343369",6913360,"2025-12-02",3

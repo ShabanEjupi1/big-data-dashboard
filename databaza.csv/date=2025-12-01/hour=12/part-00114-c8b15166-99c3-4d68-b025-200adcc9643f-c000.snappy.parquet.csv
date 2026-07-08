@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-5.63648,"bitcoin-avalanche-bridged-btc-b",350482302,"Avalanche Bridged BTC (Avalanche)",85974,190,"coingecko","BTC.B","2025-12-01T12:19:54.193003",30132340,"2025-12-01",12
+-6.20665,"ether-fi-staked-eth",348343655,"ether.fi Staked ETH",2819.58,194,"coingecko","EETH","2025-12-01T12:19:54.193010",10590.8,"2025-12-01",12

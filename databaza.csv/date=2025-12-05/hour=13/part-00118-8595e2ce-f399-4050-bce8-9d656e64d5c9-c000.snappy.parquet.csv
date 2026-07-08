@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-52.69044,"fasttoken",294738092,"Fasttoken",0.679199,224,"coingecko","FTN","2025-12-05T13:14:43.067775",2555984,"2025-12-05",13
+-1.25059,"polygon-pos-bridged-weth-polygon-pos",292558268,"Polygon PoS Bridged WETH (Polygon POS)",3126.13,225,"coingecko","WETH","2025-12-05T13:14:43.067782",10835671,"2025-12-05",13

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.00824,"bfusd",1319234220,"BFUSD",0.999424,80,"coingecko","BFUSD","2025-12-05T10:10:17.812996",14873293,"2025-12-05",10
+-2.29938,"rocket-pool-eth",1314176188,"Rocket Pool ETH",3601.26,81,"coingecko","RETH","2025-12-05T10:10:17.813003",6444494,"2025-12-05",10

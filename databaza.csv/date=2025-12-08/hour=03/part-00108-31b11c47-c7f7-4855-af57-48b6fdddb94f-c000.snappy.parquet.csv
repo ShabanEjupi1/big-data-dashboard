@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.04644,"usx",326777178,"USX",0.999415,205,"coingecko","USX","2025-12-08T03:11:45.272868",2038590,"2025-12-08",3
+1.8311,"arbitrum-bridged-wrapped-eeth",324980059,"Arbitrum Bridged Wrapped eETH (Arbitrum)",3360.26,206,"coingecko","WEETH","2025-12-08T03:11:45.272875",1604797,"2025-12-08",3

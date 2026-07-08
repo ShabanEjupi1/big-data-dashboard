@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0,"cgeth-hashkey-cloud",491909683,"cgETH Hashkey Cloud",2460.42,154,"coingecko","CGETH.HASHKEY","2025-12-03T05:35:07.249523",265.78,"2025-12-03",5
+-0.07962,"mantle-bridged-usdt-mantle",484624035,"Mantle Bridged USDT (Mantle)",0.999671,155,"coingecko","USDT","2025-12-03T05:35:07.249530",1617958,"2025-12-03",5

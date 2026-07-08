@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.7603,"pendle",441435094,"Pendle",2.68,164,"coingecko","PENDLE","2025-11-30T22:12:07.102108",51129497,"2025-11-30",22
+0.29608,"ethereum-name-service",438522334,"Ethereum Name Service",11.57,165,"coingecko","ENS","2025-11-30T22:12:07.102114",26059961,"2025-11-30",22

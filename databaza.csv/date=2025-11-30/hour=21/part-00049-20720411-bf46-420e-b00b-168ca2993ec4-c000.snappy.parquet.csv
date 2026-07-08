@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.00419,"rocket-pool-eth",1282446444,"Rocket Pool ETH",3465.24,82,"coingecko","RETH","2025-11-30T21:24:29.442872",5877395,"2025-11-30",21
+-0.01954,"ripple-usd",1260941935,"Ripple USD",0.999777,84,"coingecko","RLUSD","2025-11-30T21:24:29.442879",23303746,"2025-11-30",21

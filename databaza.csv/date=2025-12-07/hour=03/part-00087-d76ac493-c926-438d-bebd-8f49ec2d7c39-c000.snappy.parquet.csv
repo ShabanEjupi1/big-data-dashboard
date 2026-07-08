@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+3.70029,"iota",432544064,"IOTA",0.103683,166,"coingecko","IOTA","2025-12-07T03:02:37.548878",7797406,"2025-12-07",3
+-0.14961,"ether-fi-liquid-eth",431953119,"Ether.Fi Liquid ETH",3223.27,165,"coingecko","LIQUIDETH","2025-12-07T03:02:37.548886",290.09,"2025-12-07",3

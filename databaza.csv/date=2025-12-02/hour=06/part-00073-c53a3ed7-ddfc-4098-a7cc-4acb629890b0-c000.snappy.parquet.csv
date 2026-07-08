@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+18.4808,"myx-finance",638262367,"MYX Finance",3.36,124,"coingecko","MYX","2025-12-02T06:38:30.370501",79666640,"2025-12-02",6
+-0.08565,"polygon-pos-bridged-dai-polygon-pos",628953220,"Polygon PoS Bridged DAI (Polygon POS)",0.999646,125,"coingecko","DAI","2025-12-02T06:38:30.370508",15502564,"2025-12-02",6

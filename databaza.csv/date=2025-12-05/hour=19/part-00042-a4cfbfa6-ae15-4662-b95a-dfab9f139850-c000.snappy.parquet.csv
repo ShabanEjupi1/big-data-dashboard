@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-5.90856,"kucoin-shares",1299256153,"KuCoin",10.02,80,"coingecko","KCS","2025-12-05T19:02:47.999170",7605038,"2025-12-05",19
+-0.0021,"binance-bridged-usdc-bnb-smart-chain",1288610647,"Binance Bridged USDC (BNB Smart Chain)",0.999755,81,"coingecko","USDC","2025-12-05T19:02:47.999177",189936397,"2025-12-05",19

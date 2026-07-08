@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+0.13579,"tbtc",552206860,"tBTC",89526,139,"coingecko","TBTC","2025-12-07T05:06:36.949070",5211414,"2025-12-07",5
+-0.72018,"curve-dao-token",551444005,"Curve DAO",0.385411,140,"coingecko","CRV","2025-12-07T05:06:36.949077",43261896,"2025-12-07",5

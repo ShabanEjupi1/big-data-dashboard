@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.2542,"l2-standard-bridged-weth-base",563760293,"L2 Standard Bridged WETH (Base)",3026.58,142,"coingecko","WETH","2025-11-30T21:08:08.916771",323089523,"2025-11-30",21
+1.19955,"msol",556301698,"Marinade Staked SOL",184.09,143,"coingecko","MSOL","2025-11-30T21:08:08.916778",1992032,"2025-11-30",21

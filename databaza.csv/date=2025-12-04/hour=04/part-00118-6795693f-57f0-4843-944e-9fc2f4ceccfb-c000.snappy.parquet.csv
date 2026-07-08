@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+-0.00345,"crvusd",301011274,"crvUSD",0.999472,224,"coingecko","CRVUSD","2025-12-04T04:27:30.897729",17596953,"2025-12-04",4
+5.2752,"polygon-pos-bridged-weth-polygon-pos",299955328,"Polygon PoS Bridged WETH (Polygon POS)",3205.11,225,"coingecko","WETH","2025-12-04T04:27:30.897736",13167212,"2025-12-04",4

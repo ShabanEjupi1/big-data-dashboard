@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+1.05744,"usdb",407842565,"USDB",1.005,169,"coingecko","USDB","2025-12-01T11:34:14.629261",319853,"2025-12-01",11
+-5.73223,"pendle",406423083,"Pendle",2.47,170,"coingecko","PENDLE","2025-12-01T11:34:14.629269",71546316,"2025-12-01",11

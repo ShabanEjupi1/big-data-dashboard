@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+45.90159,"pippin",254361450,"pippin",0.256206,241,"coingecko","PIPPIN","2025-12-06T17:56:59.016809",91340590,"2025-12-06",17
+-0.51229,"wrapped-avax",254066311,"Wrapped AVAX",13.33,242,"coingecko","WAVAX","2025-12-06T17:56:59.016815",69203334,"2025-12-06",17

@@ -1,0 +1,3 @@
+"change_24h","id","market_cap","name","price","rank","source","symbol","timestamp","volume","date","hour"
+4.3118,"weth",8989447586,"WETH",3215.23,23,"coingecko","WETH","2025-12-04T15:49:56.097377",90804466,"2025-12-04",15
+0.03055,"binance-bridged-usdt-bnb-smart-chain",8987056757,"Binance Bridged USDT (BNB Smart Chain)",1,21,"coingecko","BSC-USD","2025-12-04T15:49:56.097385",1156407443,"2025-12-04",15
