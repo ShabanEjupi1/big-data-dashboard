@@ -1,0 +1,8 @@
+# Frozen build output — regenerable from frozen/build.py + the parquet data.
+frozen/site/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

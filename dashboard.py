@@ -97,11 +97,13 @@ def load_ml_modules():
     """Attempt to import ML modules on demand. Returns tuple:
        (available, MLPredictionEngine, InvestmentRecommender, PortfolioOptimizer)
     """
+    # ML price predictions were removed (forecasting the market — dropped by request).
+    # MLPredictionEngine no longer exists; only the recommender and optimizer remain, and
+    # the import stays independent so deleting ml_predictions.py does not disable them too.
     try:
-        from ml_predictions import MLPredictionEngine
         from investment_recommender import InvestmentRecommender
         from portfolio_optimizer import PortfolioOptimizer
-        return True, MLPredictionEngine, InvestmentRecommender, PortfolioOptimizer
+        return True, None, InvestmentRecommender, PortfolioOptimizer
     except Exception as e:
         logging.warning(f"ML modules not available: {e}")
         return False, None, None, None
@@ -859,15 +861,9 @@ def export_stocks_all_csv():
     headers = {'Content-Disposition': f'attachment;filename={filename}'}
     return Response(stream_with_context(generate_text_rows()), mimetype='text/csv', headers=headers)
 
-@app.route('/predictions')
-def predictions_page():
-    """ML Predictions and Analytics page"""
-    try:
-        data = load_dashboard_data()
-        return render_template('predictions.html', data=data)
-    except Exception as e:
-        print(f"Error in predictions route: {e}")
-        return f"Error loading predictions: {e}", 500
+# The /predictions page and /api/ml/predictions endpoint were removed: forecasting future
+# prices was dropped by request. The recommender and portfolio pages (analysis of historical
+# data) remain below.
 
 @app.route('/recommendations')
 def recommendations_page():
@@ -888,78 +884,6 @@ def portfolio_page():
     except Exception as e:
         print(f"Error in portfolio route: {e}")
         return f"Error loading portfolio: {e}", 500
-
-@app.route('/api/ml/predictions')
-def get_ml_predictions():
-    """Get ML predictions for top cryptocurrencies"""
-    try:
-        # Check cache (refresh every 5 minutes for fresh predictions)
-        with prediction_cache['lock']:
-            if prediction_cache['data'] and prediction_cache['timestamp']:
-                age = (datetime.now() - prediction_cache['timestamp']).total_seconds()
-                if age < 300:  # 5 minutes
-                    return jsonify({
-                        'success': True,
-                        'predictions': prediction_cache['data'],
-                        'cached': True,
-                        'cache_age': int(age)
-                    })
-
-        # Lazy import ML modules
-        available, MLPredictionEngine, _, _ = load_ml_modules()
-        if not available or MLPredictionEngine is None:
-            return jsonify({
-                'success': False, 
-                'error': 'ML module not available. Please ensure ml_predictions.py is properly installed.',
-                'predictions': [],
-                'note': 'Install required ML dependencies: scikit-learn, numpy'
-            }), 200  # Return 200 to allow frontend to display message
-
-        # Generate new predictions
-        try:
-            engine = MLPredictionEngine()
-            predictions = engine.get_all_predictions(top_n=10)
-            try:
-                engine.close()
-            except Exception:
-                pass
-        except Exception as pred_error:
-            logging.error(f"Prediction generation error: {pred_error}")
-            return jsonify({
-                'success': False,
-                'error': f'Could not generate predictions: {str(pred_error)}',
-                'predictions': [],
-                'note': 'Ensure sufficient data is available in data/crypto directory'
-            }), 200
-
-        # Cache results
-        with prediction_cache['lock']:
-            prediction_cache['data'] = predictions
-            prediction_cache['timestamp'] = datetime.now()
-
-        # If no predictions were produced, include a helpful note
-        response = {
-            'success': True,
-            'predictions': predictions if predictions else [],
-            'cached': False,
-            'timestamp': datetime.now().isoformat()
-        }
-        if not predictions:
-            response['note'] = 'No predictions generated. This may be due to insufficient historical data. The system needs at least 10 data points per cryptocurrency.'
-            response['suggestion'] = 'Run the data collector for a few hours to gather sufficient data.'
-
-        return jsonify(response)
-
-    except Exception as e:
-        logging.error(f"Error getting ML predictions: {e}")
-        import traceback
-        traceback.print_exc()
-        return jsonify({
-            'success': False, 
-            'error': str(e),
-            'predictions': [],
-            'note': 'An unexpected error occurred. Check server logs for details.'
-        }), 200
 
 @app.route('/api/investment/recommendations')
 def get_recommendations():
@@ -1086,32 +1010,6 @@ def optimize_portfolio():
             'portfolio': None,
             'note': 'An unexpected error occurred. Check server logs for details.'
         }), 200
-
-@app.route('/api/technical/indicators/<symbol>')
-def get_technical_indicators(symbol):
-    """Get technical indicators for a specific cryptocurrency"""
-    try:
-        available, MLPredictionEngine, _, _ = load_ml_modules()
-        if not available or MLPredictionEngine is None:
-            return jsonify({'success': False, 'error': 'ML module not available'}), 503
-
-        engine = MLPredictionEngine()
-        prediction = engine.get_prediction_for_symbol(symbol.upper())
-        engine.close()
-        
-        if prediction is None:
-            return jsonify({'success': False, 'error': f'No data for {symbol}'}), 404
-        
-        return jsonify({
-            'success': True,
-            'symbol': symbol,
-            'prediction': prediction,
-            'timestamp': datetime.now().isoformat()
-        })
-    
-    except Exception as e:
-        logging.error(f"Error getting indicators for {symbol}: {e}")
-        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/market/insights')
 def get_market_insights():
