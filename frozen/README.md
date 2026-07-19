@@ -20,6 +20,28 @@ clear "not financial advice" notice.
 `portfolio_optimizer.py` once (forced onto the already-loaded DataFrame so they don't re-scan
 16k files), and writes self-contained pages to `site/`.
 
+## The methodology page
+
+`metodologjia.html` is the thesis chapter: the pipeline, the data source, every column
+(unit, meaning, why it is kept), why Parquet, the partitioning scheme, the small-file
+problem, the analysis methods, and the limitations.
+
+Its numbers are **measured on every build** by `measure_corpus()`, never hand-written — it
+rewrites the corpus into CSV/JSON/Parquet variants in a temp dir to compare sizes, and walks
+the data dir for file counts and real block allocation. Two things that fall out of that, and
+which the page states plainly rather than hiding:
+
+- **`csv.gz` and `parquet+gzip` are both SMALLER than the chosen `parquet+snappy`.** Size is
+  therefore not the reason to pick Parquet; splittability, column projection and embedded
+  types are. `csv.gz` is disqualified (unsplittable), `parquet+gzip` is a deliberate
+  speed-over-size trade.
+- **The corpus is its own worst-case example of the small-file problem**: 868 KB of data,
+  written as 15,948 tiny files plus ~16k `.crc` sidecars, consumes ~131 MB of disk — a ~151×
+  amplification caused purely by how it was written.
+
+⚠️ Use `os.walk`, not `glob`, when counting those files — `glob` silently skips dotfiles, and
+Spark's `.crc` sidecars all start with a dot (this undercounted them 16,162 → 37 once already).
+
 ```bash
 # On Ampere (this workspace's box has no python):
 ssh ampere 'sudo docker run --rm --user 1000:1000 \
